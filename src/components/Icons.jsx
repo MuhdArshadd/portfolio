@@ -23,7 +23,6 @@ import { FaReact, FaHtml5, FaCss3Alt, FaJs } from "react-icons/fa";
 export const Icons = {
     // UI Icons
     Files: () => <VscFiles size={24} />,
-    Search: () => <VscSearch size={24} />,
     Git: () => <VscSourceControl size={24} />,
     Extensions: () => <VscExtensions size={24} />,
     Account: () => <VscAccount size={24} />,

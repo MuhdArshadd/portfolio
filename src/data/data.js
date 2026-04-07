@@ -43,3 +43,11 @@ export const portfolioData = {
         linkedin: "https://www.linkedin.com/in/muhdarshad50/"
     }
 };
+
+export const fileSystem = [
+    { name: 'home.tsx', type: 'react', icon: 'ReactIcon' },
+    { name: 'about.html', type: 'html', icon: 'HtmlIcon' },
+    { name: 'projects.js', type: 'js', icon: 'JsIcon' },
+    { name: 'skills.json', type: 'json', icon: 'JsonIcon' },
+    { name: 'contact.css', type: 'css', icon: 'CssIcon' }
+];
