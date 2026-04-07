@@ -13,7 +13,11 @@ export const TitleBar = ({ openFile }) => {
     const paletteRef = useRef(null);
     const inputRef = useRef(null);
 
-    // 3. Your entire file system to search through
+    // Dropdown Menu State
+    const [activeMenu, setActiveMenu] = useState(null);
+    const menuBarRef = useRef(null);
+
+    // Your entire file system
     const allFiles = [
         { name: 'home.tsx', path: 'PORTFOLIO', type: 'react' },
         { name: 'about.html', path: 'PORTFOLIO', type: 'html' },
@@ -30,35 +34,35 @@ export const TitleBar = ({ openFile }) => {
             case 'js': return <Icons.JsIcon />;
             case 'json': return <Icons.JsonIcon />;
             case 'extension': return <Icons.ExtensionTabIcon />;
-            default: return <Icons.Files />; // Fallback icon
+            default: return <Icons.Files />; 
         }
     }
 
-    // Filter files based on search query
     const filteredFiles = allFiles.filter(file => 
         file.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
-    // Listen for the Custom Event from the Activity Bar
-    useEffect(() => {
-        const openPalette = () => setIsPaletteOpen(true);
-        
-        // Start listening
-        window.addEventListener('open-command-palette', openPalette);
-        
-        // Clean up the listener when the component unmounts
-        return () => window.removeEventListener('open-command-palette', openPalette);
-    }, []);
+    // --- Window & Click Handlers ---
 
-    // Handle clicking outside the palette to close it
+    // Close palette AND menus when clicking outside
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (paletteRef.current && !paletteRef.current.contains(event.target)) {
                 setIsPaletteOpen(false);
             }
+            if (menuBarRef.current && !menuBarRef.current.contains(event.target)) {
+                setActiveMenu(null);
+            }
         };
         document.addEventListener('mousedown', handleClickOutside);
         return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
+
+    // Listen for the Custom Event from the Activity Bar
+    useEffect(() => {
+        const openPalette = () => setIsPaletteOpen(true);
+        window.addEventListener('open-command-palette', openPalette);
+        return () => window.removeEventListener('open-command-palette', openPalette);
     }, []);
 
     // Auto-focus the input when the palette opens
@@ -74,7 +78,70 @@ export const TitleBar = ({ openFile }) => {
         setSearchQuery('');
     };
 
-    // --- Existing Click Handlers ---
+    const handleMaximize = async () => {
+        try {
+            if (!document.fullscreenElement) {
+                await document.documentElement.requestFullscreen();
+                setPopup({ visible: true, text: "Immersive mode activated! 🚀" });
+            } else {
+                if (document.exitFullscreen) {
+                    await document.exitFullscreen();
+                }
+            }
+        } catch (err) {
+            setPopup({ visible: true, text: "Your browser blocked fullscreen mode!" });
+        }
+    };
+
+    // --- Dropdown Menu Data Structure ---
+    const closeMenu = () => setActiveMenu(null);
+
+    const menuItems = {
+        File: [
+            { label: 'New Tab', action: () => { openFile('home.tsx'); closeMenu(); }, shortcut: 'Ctrl+N' },
+            { divider: true },
+            { label: 'home.tsx', action: () => { openFile('home.tsx'); closeMenu(); } },
+            { label: 'about.html', action: () => { openFile('about.html'); closeMenu(); } },
+            { label: 'projects.js', action: () => { openFile('projects.js'); closeMenu(); } },
+            { label: 'skills.json', action: () => { openFile('skills.json'); closeMenu(); } },
+            { label: 'contact.css', action: () => { openFile('contact.css'); closeMenu(); } },
+            { divider: true },
+            { label: 'Close Tab', action: () => { closeMenu(); alert('Tip: Pass a closeFile prop from App.jsx to make this work!'); }, shortcut: 'Ctrl+W' },
+            { label: 'Close All Tabs', action: () => { closeMenu(); }, shortcut: 'Ctrl+K W' }
+        ],
+        Edit: [
+            { label: 'Find', action: () => { setIsPaletteOpen(true); closeMenu(); }, shortcut: 'Ctrl+F' },
+            { label: 'Select All', action: () => { document.execCommand('selectAll'); closeMenu(); }, shortcut: 'Ctrl+A' },
+            { label: 'Copy', action: () => { document.execCommand('copy'); closeMenu(); }, shortcut: 'Ctrl+C' }
+        ],
+        View: [
+            { label: 'Command Palette...', action: () => { setIsPaletteOpen(true); closeMenu(); }, shortcut: 'Ctrl+Shift+P' },
+            { label: 'Toggle Sidebar', action: () => { closeMenu(); alert('Tip: Pass toggleSidebar from App.jsx!'); }, shortcut: 'Ctrl+B' },
+            { label: 'Toggle Terminal', action: () => { closeMenu(); alert('Terminal feature coming soon!'); }, shortcut: 'Ctrl+`' },
+            { label: 'Cad Bot', action: () => { openFile('Extension: Cad Bot'); closeMenu(); } },
+            { divider: true },
+            { label: 'Enter Full Screen', action: () => { handleMaximize(); closeMenu(); }, shortcut: 'F11' },
+            { label: 'Zoom In', action: () => { document.body.style.zoom = (parseFloat(document.body.style.zoom || 1) + 0.1); closeMenu(); }, shortcut: 'Ctrl+=' },
+            { label: 'Zoom Out', action: () => { document.body.style.zoom = (parseFloat(document.body.style.zoom || 1) - 0.1); closeMenu(); }, shortcut: 'Ctrl+-' },
+            { label: 'Reset Zoom', action: () => { document.body.style.zoom = 1; closeMenu(); }, shortcut: 'Ctrl+Numpad0' }
+        ],
+        Go: [
+            { label: 'Go to File...', action: () => { setIsPaletteOpen(true); closeMenu(); }, shortcut: 'Ctrl+P' },
+            { divider: true },
+            ...allFiles.map(f => ({ label: f.name, action: () => { openFile(f.name); closeMenu(); } }))
+        ],
+        Run: [
+            { label: 'Start Terminal', action: () => { closeMenu(); alert('Booting terminal environment...'); } }
+        ],
+        Help: [
+            { label: 'Command Palette...', action: () => { setIsPaletteOpen(true); closeMenu(); }, shortcut: 'Ctrl+Shift+P' },
+            { divider: true },
+            { label: 'About Muhammad Arshad', action: () => { openFile('about.html'); closeMenu(); } },
+            { label: 'Welcome', action: () => { openFile('home.tsx'); closeMenu(); } }
+        ]
+    };
+
+    // --- Taunt Click Handlers ---
     const minimizeMessages = [
         "Minimizing a VS Code inside a browser.. wait what?",
         "Is there an interesting thing other than my portfolio??",
@@ -96,21 +163,6 @@ export const TitleBar = ({ openFile }) => {
         setMinCount(prev => (prev + 1) % minimizeMessages.length);
     };
 
-    const handleMaximize = async () => {
-        try {
-            if (!document.fullscreenElement) {
-                await document.documentElement.requestFullscreen();
-                setPopup({ visible: true, text: "Immersive mode activated! 🚀" });
-            } else {
-                if (document.exitFullscreen) {
-                    await document.exitFullscreen();
-                }
-            }
-        } catch (err) {
-            setPopup({ visible: true, text: "Your browser blocked fullscreen mode!" });
-        }
-    };
-
     const handleClose = () => {
         setPopup({ visible: true, text: closeMessages[closeCount] });
         setCloseCount(prev => (prev + 1) % closeMessages.length);
@@ -125,15 +177,62 @@ export const TitleBar = ({ openFile }) => {
 
     return (
         <div className="title-bar" style={{ position: 'relative' }}>
-            <div className="title-bar-left">
-                <span className="menu-item">File</span>
-                <span className="menu-item">Edit</span>
-                <span className="menu-item">Selection</span>
-                <span className="menu-item">View</span>
-                <span className="menu-item">Go</span>
-                <span className="menu-item">Run</span>
-                <span className="menu-item">Terminal</span>
-                <span className="menu-item">Help</span>
+            
+            {/* LEFT SIDE NAV BAR */}
+            <div className="title-bar-left" ref={menuBarRef} style={{ display: 'flex', position: 'relative' }}>
+                {['File', 'Edit', 'View', 'Go', 'Run', 'Terminal', 'Help'].map((menuName) => (
+                    <div 
+                        key={menuName} 
+                        style={{ position: 'relative' }}
+                    >
+                        <span 
+                            className="menu-item" 
+                            style={{ 
+                                padding: '6px 10px', cursor: 'pointer', fontSize: '13px', 
+                                background: activeMenu === menuName ? 'rgba(255,255,255,0.1)' : 'transparent',
+                                borderRadius: '3px'
+                            }}
+                            onClick={() => {
+                                // If menu exists in our data, toggle it. Otherwise do nothing.
+                                if (menuItems[menuName]) {
+                                    setActiveMenu(activeMenu === menuName ? null : menuName);
+                                }
+                            }}
+                        >
+                            {menuName}
+                        </span>
+
+                        {/* THE DROPDOWN MENU */}
+                        {activeMenu === menuName && menuItems[menuName] && (
+                            <div style={{
+                                position: 'absolute', top: '100%', left: '0',
+                                background: '#252526', border: '1px solid #454545',
+                                borderRadius: '5px', boxShadow: '0 4px 12px rgba(0,0,0,0.5)',
+                                minWidth: '240px', zIndex: 2000, padding: '5px 0',
+                                color: '#cccccc', fontSize: '13px'
+                            }}>
+                                {menuItems[menuName].map((item, idx) => {
+                                    if (item.divider) {
+                                        return <div key={idx} style={{ height: '1px', background: '#454545', margin: '5px 10px' }} />;
+                                    }
+                                    return (
+                                        <div 
+                                            key={idx} 
+                                            className="menu-hover"
+                                            onClick={item.action}
+                                            style={{ padding: '6px 20px', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
+                                            onMouseOver={(e) => { e.currentTarget.style.background = '#04395e'; e.currentTarget.style.color = '#ffffff'; }}
+                                            onMouseOut={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#cccccc'; }}
+                                        >
+                                            <span>{item.label}</span>
+                                            {item.shortcut && <span style={{ color: '#858585', fontSize: '11px' }}>{item.shortcut}</span>}
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        )}
+                    </div>
+                ))}
             </div>
             
             {/* CENTER COMMAND PALETTE TRIGGER */}
@@ -156,13 +255,13 @@ export const TitleBar = ({ openFile }) => {
             {isPaletteOpen && (
                 <div ref={paletteRef} style={{
                     position: 'absolute', top: '0', left: '50%', transform: 'translateX(-50%)',
-                    width: '480px', // Reduced from 600px
+                    width: '480px', 
                     background: '#252526', border: '1px solid #454545',
                     borderRadius: '6px', boxShadow: '0 8px 24px rgba(0,0,0,0.5)', zIndex: 9999,
                     display: 'flex', flexDirection: 'column', overflow: 'hidden'
                 }}>
                     {/* Input Area */}
-                    <div style={{ padding: '5px' }}> {/* Reduced padding */}
+                    <div style={{ padding: '5px' }}>
                         <input 
                             ref={inputRef}
                             type="text" 
@@ -172,8 +271,7 @@ export const TitleBar = ({ openFile }) => {
                             style={{ 
                                 width: '100%', boxSizing: 'border-box', background: '#3c3c3c', 
                                 border: '1px solid #007acc', color: '#cccccc', 
-                                padding: '6px 8px', 
-                                fontSize: '12px', 
+                                padding: '6px 8px', fontSize: '12px', 
                                 outline: 'none', borderRadius: '3px' 
                             }}
                         />
@@ -181,13 +279,10 @@ export const TitleBar = ({ openFile }) => {
 
                     {/* Results List */}
                     <div style={{ maxHeight: '300px', overflowY: 'auto', paddingBottom: '4px' }}>
-                        
-                        {/* Static Action Row */}
                         <div style={{ padding: '4px 10px', display: 'flex', justifyContent: 'space-between', color: '#cccccc', fontSize: '12px', background: '#04395e', cursor: 'pointer' }}>
                             <span>Go to File <span style={{ opacity: 0.6 }}>{searchQuery}</span></span>
                         </div>
 
-                        {/* File Results Header */}
                         <div style={{ padding: '4px 10px', fontSize: '10px', color: '#858585', marginTop: '2px', textTransform: 'uppercase' }}>
                             {searchQuery ? 'search results' : 'recently opened'}
                         </div>
@@ -197,9 +292,8 @@ export const TitleBar = ({ openFile }) => {
                                 key={idx}
                                 onClick={() => handleFileSelect(file.name)}
                                 style={{ 
-                                    padding: '4px 15px', // Reduced padding for tighter rows
-                                    display: 'flex', justifyContent: 'space-between', 
-                                    alignItems: 'center', cursor: 'pointer', fontSize: '12px', color: '#cccccc' // Reduced font size
+                                    padding: '4px 15px', display: 'flex', justifyContent: 'space-between', 
+                                    alignItems: 'center', cursor: 'pointer', fontSize: '12px', color: '#cccccc' 
                                 }}
                                 onMouseOver={(e) => e.currentTarget.style.background = '#2a2d2e'}
                                 onMouseOut={(e) => e.currentTarget.style.background = 'transparent'}
@@ -223,7 +317,6 @@ export const TitleBar = ({ openFile }) => {
             
             {/* Window Controls Area */}
             <div className="window-controls" style={{ display: 'flex', alignItems: 'center', gap: '0', position: 'relative' }}>
-                
                 {popup.visible && (
                     <div style={{
                         position: 'absolute', top: '35px', right: '5px', backgroundColor: '#252526',
