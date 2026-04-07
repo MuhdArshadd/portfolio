@@ -46,6 +46,7 @@ function App() {
                     isChatOpen={isChatOpen}
                     setIsChatOpen={setIsChatOpen}
                     isBotActive={isBotActive}
+                    openFile={openFile}
                 />
 
                 {/* Left Sidebars */}

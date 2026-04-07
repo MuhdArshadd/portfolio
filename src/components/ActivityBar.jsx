@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Icons } from './icons/Icons'; 
 
-export const ActivityBar = ({ activeSidebar, sidebarVisible, handleSidebarClick, isChatOpen, setIsChatOpen, isBotActive }) => {
+// Notice openFile added to the props here
+export const ActivityBar = ({ activeSidebar, sidebarVisible, handleSidebarClick, isChatOpen, setIsChatOpen, isBotActive, openFile }) => {
     // State to track which menu is open ('account', 'settings', or null)
     const [openMenu, setOpenMenu] = useState(null);
     const menuRef = useRef(null);
@@ -21,7 +22,7 @@ export const ActivityBar = ({ activeSidebar, sidebarVisible, handleSidebarClick,
     const popupStyle = {
         position: 'absolute',
         bottom: '10px',
-        left: '55px', // Pushes it right next to the activity bar
+        left: '55px',
         backgroundColor: '#252526',
         border: '1px solid #454545',
         borderRadius: '5px',
@@ -50,7 +51,7 @@ export const ActivityBar = ({ activeSidebar, sidebarVisible, handleSidebarClick,
 
     return (
         <div className="activity-bar" ref={menuRef}>
-            {/* ... Top icons (Explorer, Git, Extensions, Bot) stay the same ... */}
+            {/* ... Top icons ... */}
             <div className={`activity-icon ${activeSidebar === 'explorer' && sidebarVisible ? 'active' : ''}`} onClick={() => handleSidebarClick('explorer')}><Icons.Files /></div>
             
             <div className={`activity-icon ${activeSidebar === 'git' ? 'active' : ''}`} onClick={() => handleSidebarClick('git')}>
@@ -83,10 +84,20 @@ export const ActivityBar = ({ activeSidebar, sidebarVisible, handleSidebarClick,
                     <div style={popupStyle}>
                         <div style={{ ...menuItemStyle, color: '#858585', cursor: 'default' }}>Signed in as Muhammad Arshad</div>
                         <div style={separatorStyle}></div>
-                        <div style={menuItemStyle} className="menu-hover">Open LinkedIn Profile</div>
-                        <div style={menuItemStyle} className="menu-hover">Open GitHub</div>
+                        
+                        {/* External Links */}
+                        <div style={menuItemStyle} className="menu-hover" onClick={() => { window.open('https://www.linkedin.com/in/muhdarshad50/', '_blank'); setOpenMenu(null); }}>
+                            Open LinkedIn Profile
+                        </div>
+                        <div style={menuItemStyle} className="menu-hover" onClick={() => { window.open('https://github.com/MuhdArshadd', '_blank'); setOpenMenu(null); }}>
+                            Open GitHub
+                        </div>
                         <div style={separatorStyle}></div>
-                        <div style={menuItemStyle} className="menu-hover">Download Resume.pdf</div>
+                        
+                        {/* Resume Download (Assumes resume.pdf is in your public folder) */}
+                        <div style={menuItemStyle} className="menu-hover" onClick={() => { window.open('/resume.pdf', '_blank'); setOpenMenu(null); }}>
+                            Download Resume.pdf
+                        </div>
                     </div>
                 )}
             </div>
@@ -99,19 +110,30 @@ export const ActivityBar = ({ activeSidebar, sidebarVisible, handleSidebarClick,
                 >
                     <div style={{ position: 'relative', display: 'flex' }}>
                         <Icons.Settings />
-                        {/* The little blue notification dot on the gear! */}
                         <div style={{ position: 'absolute', bottom: '0px', right: '-2px', backgroundColor: '#007acc', borderRadius: '50%', width: '10px', height: '10px', border: '2px solid var(--bg-sidebar)' }}></div>
                     </div>
                 </div>
 
                 {openMenu === 'settings' && (
                     <div style={{...popupStyle, bottom: '20px'}}>
-                        <div style={menuItemStyle} className="menu-hover"><span>Command Palette...</span> <span style={{ color: '#858585' }}>Ctrl+Shift+P</span></div>
+                        {/* Command Palette - No action for now, just closes menu */}
+                        <div style={menuItemStyle} className="menu-hover" onClick={() => setOpenMenu(null)}>
+                            <span>Command Palette...</span> <span style={{ color: '#858585' }}>Ctrl+Shift+P</span>
+                        </div>
+                        
                         <div style={separatorStyle}></div>
-                        <div style={menuItemStyle} className="menu-hover"><span>Extensions</span> <span style={{ color: '#858585' }}>Ctrl+Shift+X</span></div>
+                        
+                        {/* Extensions - Opens the Extensions Sidebar */}
+                        <div style={menuItemStyle} className="menu-hover" onClick={() => { handleSidebarClick('extensions'); setOpenMenu(null); }}>
+                            <span>Extensions</span> <span style={{ color: '#858585' }}>Ctrl+Shift+X</span>
+                        </div>
+                        
                         <div style={separatorStyle}></div>
-                        {/* The Easter Egg CTA */}
-                        <div style={{...menuItemStyle, color: '#4fc1ff'}} className="menu-hover">Restart to Hire Arshad (1)</div>
+                        
+                        {/* Easter Egg - Opens the contact.css file in the editor */}
+                        <div style={{...menuItemStyle, color: '#4fc1ff'}} className="menu-hover" onClick={() => { openFile('contact.css'); setOpenMenu(null); }}>
+                            Restart to Hire Arshad (1)
+                        </div>
                     </div>
                 )}
             </div>
