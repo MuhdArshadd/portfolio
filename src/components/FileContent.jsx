@@ -8,7 +8,7 @@ import {
     ExtensionView 
 } from './file-views';
 
-export const FileContent = ({ activeFile }) => {
+export const FileContent = ({ activeFile, setBotActive }) => {
     switch (activeFile) {
         case 'home.tsx':
             return <HomeView />;
@@ -21,7 +21,7 @@ export const FileContent = ({ activeFile }) => {
         case 'contact.css':
             return <ContactView />;
         case 'Extension: Cad Bot':
-            return <ExtensionView />;
+            return <ExtensionView setBotActive={setBotActive} />;
         default:
             return <div>Select a file to view content</div>;
     }

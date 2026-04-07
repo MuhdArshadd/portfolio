@@ -33,7 +33,7 @@ export const ExtensionsPanel = ({ openFile }) => (
                 <div style={{ display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
                     <span style={{ fontSize: '13px', fontWeight: 'bold', color: '#ffffff', whiteSpace: 'nowrap' }}>Cad Bot</span>
                     <span style={{ fontSize: '12px', color: 'var(--text-muted)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>Your personal AI portfolio assistant</span>
-                    <span style={{ fontSize: '11px', color: 'var(--text-muted)', marginTop: '4px' }}>Arshad Specialist </span>
+                    <span style={{ fontSize: '11px', color: 'var(--text-muted)', marginTop: '4px' }}>Installed</span>
                 </div>
             </div>
         </div>

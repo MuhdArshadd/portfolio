@@ -17,6 +17,7 @@ function App() {
     const [showDiff, setShowDiff] = useState(false);
     const [diffFile, setDiffFile] = useState(null);
     const [isChatOpen, setIsChatOpen] = useState(false);
+    const [isBotActive, setBotActive] = useState(true);
 
     // --- HELPER FUNCTIONS ---
     const toggleFolder = (folder) => setExpandedFolders(prev => prev.includes(folder) ? prev.filter(f => f !== folder) : [...prev, folder]);
@@ -27,9 +28,10 @@ function App() {
         if (newOpenFiles.length === 0) { setOpenFiles(['home.tsx']); setActiveFile('home.tsx'); } 
         else { setOpenFiles(newOpenFiles); if (activeFile === filename) setActiveFile(newOpenFiles[newOpenFiles.length - 1]); }
     };
-    const getFileIcon = (filename) => { const file = fileSystem.find(f => f.name === filename); const IconComponent = Icons[file?.icon || 'JsIcon']; return <IconComponent />; };
+    const getFileIcon = (filename) => { const file = fileSystem.find(f => f.name === filename); const IconComponent = Icons[file?.icon || 'ExtensionTabIcon']; return <IconComponent />; };
     const handleSidebarClick = (panel) => { if (activeSidebar === panel) setSidebarVisible(!sidebarVisible); else { setActiveSidebar(panel); setSidebarVisible(true); } };
 
+    console.log("2. App.jsx is holding state as:", isBotActive);
     // --- MAIN RENDER ---
     return (
         <div className="vscode-container">
@@ -44,6 +46,7 @@ function App() {
                     handleSidebarClick={handleSidebarClick}
                     isChatOpen={isChatOpen}
                     setIsChatOpen={setIsChatOpen}
+                    isBotActive={isBotActive}
                 />
 
                 {/* Left Sidebars */}
@@ -71,7 +74,7 @@ function App() {
                     </div>
                     
                     <div className="editor-content">
-                        <FileContent activeFile={activeFile} />
+                        <FileContent activeFile={activeFile} setBotActive={setBotActive}/>
                     </div>
                 </div>                
 
