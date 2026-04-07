@@ -1,14 +1,80 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Icons } from './icons/Icons'; 
 
-export const TitleBar = () => {
-    // 1. State to track how many times they clicked
+export const TitleBar = ({ openFile }) => {
+    // Taunt State
     const [minCount, setMinCount] = useState(0);
     const [closeCount, setCloseCount] = useState(0);
-    
-    // 2. State to handle the popup's visibility and text
     const [popup, setPopup] = useState({ visible: false, text: '' });
 
-    // 3. Arrays of taunts!
+    // Command Palette State
+    const [isPaletteOpen, setIsPaletteOpen] = useState(false);
+    const [searchQuery, setSearchQuery] = useState('');
+    const paletteRef = useRef(null);
+    const inputRef = useRef(null);
+
+    // 3. Your entire file system to search through
+    const allFiles = [
+        { name: 'home.tsx', path: 'PORTFOLIO', type: 'react' },
+        { name: 'about.html', path: 'PORTFOLIO', type: 'html' },
+        { name: 'projects.js', path: 'PORTFOLIO', type: 'js' },
+        { name: 'skills.json', path: 'PORTFOLIO', type: 'json' },
+        { name: 'contact.css', path: 'PORTFOLIO', type: 'css' },
+    ];
+
+    const getFileIcon = (type) => {
+        switch (type) {
+            case 'react': return <Icons.ReactIcon />;
+            case 'html': return <Icons.HtmlIcon />;
+            case 'css': return <Icons.CssIcon />;
+            case 'js': return <Icons.JsIcon />;
+            case 'json': return <Icons.JsonIcon />;
+            case 'extension': return <Icons.ExtensionTabIcon />;
+            default: return <Icons.Files />; // Fallback icon
+        }
+    }
+
+    // Filter files based on search query
+    const filteredFiles = allFiles.filter(file => 
+        file.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
+    // Listen for the Custom Event from the Activity Bar
+    useEffect(() => {
+        const openPalette = () => setIsPaletteOpen(true);
+        
+        // Start listening
+        window.addEventListener('open-command-palette', openPalette);
+        
+        // Clean up the listener when the component unmounts
+        return () => window.removeEventListener('open-command-palette', openPalette);
+    }, []);
+
+    // Handle clicking outside the palette to close it
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (paletteRef.current && !paletteRef.current.contains(event.target)) {
+                setIsPaletteOpen(false);
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
+
+    // Auto-focus the input when the palette opens
+    useEffect(() => {
+        if (isPaletteOpen && inputRef.current) {
+            inputRef.current.focus();
+        }
+    }, [isPaletteOpen]);
+
+    const handleFileSelect = (fileName) => {
+        if (openFile) openFile(fileName);
+        setIsPaletteOpen(false);
+        setSearchQuery('');
+    };
+
+    // --- Existing Click Handlers ---
     const minimizeMessages = [
         "Minimizing a VS Code inside a browser.. wait what?",
         "Is there an interesting thing other than my portfolio??",
@@ -25,12 +91,8 @@ export const TitleBar = () => {
         "Alright, I'll let you go... just close the actual browser tab!"
     ];
 
-    // 4. Click Handlers (Now with endless looping)
     const handleMinimize = () => {
-        // Grab the current message
         setPopup({ visible: true, text: minimizeMessages[minCount] });
-        
-        // Increase the count, but if it hits the length of the array, wrap back to 0
         setMinCount(prev => (prev + 1) % minimizeMessages.length);
     };
 
@@ -50,20 +112,14 @@ export const TitleBar = () => {
     };
 
     const handleClose = () => {
-        // Grab the current message
         setPopup({ visible: true, text: closeMessages[closeCount] });
-        
-        // Increase the count, wrap back to 0 when it reaches the end
         setCloseCount(prev => (prev + 1) % closeMessages.length);
     };
 
-    // 5. Auto-hide the popup after 2.5 seconds
     useEffect(() => {
         if (popup.visible) {
-            const timer = setTimeout(() => {
-                setPopup({ visible: false, text: '' });
-            }, 2500);
-            return () => clearTimeout(timer); // Cleanup the timer if they click again fast
+            const timer = setTimeout(() => setPopup({ visible: false, text: '' }), 2500);
+            return () => clearTimeout(timer);
         }
     }, [popup.visible, popup.text]);
 
@@ -80,57 +136,112 @@ export const TitleBar = () => {
                 <span className="menu-item">Help</span>
             </div>
             
-            <div style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)' }}>
-                Muhammad Arshad's Portfolio
+            {/* CENTER COMMAND PALETTE TRIGGER */}
+            <div 
+                style={{ 
+                    position: 'absolute', left: '50%', transform: 'translateX(-50%)',
+                    background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.1)',
+                    borderRadius: '6px', padding: '2px 30px', cursor: 'pointer',
+                    fontSize: '12px', color: '#cccccc', display: 'flex', alignItems: 'center', gap: '8px',
+                    width: '400px', justifyContent: 'center'
+                }}
+                onClick={() => setIsPaletteOpen(true)}
+                onMouseOver={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.12)'}
+                onMouseOut={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.08)'}
+            >
+                <span style={{ fontSize: '10px' }}></span> Muhammad Arshad's Portfolio
             </div>
+
+            {/* THE COMPACT COMMAND PALETTE MODAL */}
+            {isPaletteOpen && (
+                <div ref={paletteRef} style={{
+                    position: 'absolute', top: '0', left: '50%', transform: 'translateX(-50%)',
+                    width: '480px', // Reduced from 600px
+                    background: '#252526', border: '1px solid #454545',
+                    borderRadius: '6px', boxShadow: '0 8px 24px rgba(0,0,0,0.5)', zIndex: 9999,
+                    display: 'flex', flexDirection: 'column', overflow: 'hidden'
+                }}>
+                    {/* Input Area */}
+                    <div style={{ padding: '5px' }}> {/* Reduced padding */}
+                        <input 
+                            ref={inputRef}
+                            type="text" 
+                            placeholder="Search files by name..."
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            style={{ 
+                                width: '100%', boxSizing: 'border-box', background: '#3c3c3c', 
+                                border: '1px solid #007acc', color: '#cccccc', 
+                                padding: '6px 8px', 
+                                fontSize: '12px', 
+                                outline: 'none', borderRadius: '3px' 
+                            }}
+                        />
+                    </div>
+
+                    {/* Results List */}
+                    <div style={{ maxHeight: '300px', overflowY: 'auto', paddingBottom: '4px' }}>
+                        
+                        {/* Static Action Row */}
+                        <div style={{ padding: '4px 10px', display: 'flex', justifyContent: 'space-between', color: '#cccccc', fontSize: '12px', background: '#04395e', cursor: 'pointer' }}>
+                            <span>Go to File <span style={{ opacity: 0.6 }}>{searchQuery}</span></span>
+                        </div>
+
+                        {/* File Results Header */}
+                        <div style={{ padding: '4px 10px', fontSize: '10px', color: '#858585', marginTop: '2px', textTransform: 'uppercase' }}>
+                            {searchQuery ? 'search results' : 'recently opened'}
+                        </div>
+
+                        {filteredFiles.length > 0 ? filteredFiles.map((file, idx) => (
+                            <div 
+                                key={idx}
+                                onClick={() => handleFileSelect(file.name)}
+                                style={{ 
+                                    padding: '4px 15px', // Reduced padding for tighter rows
+                                    display: 'flex', justifyContent: 'space-between', 
+                                    alignItems: 'center', cursor: 'pointer', fontSize: '12px', color: '#cccccc' // Reduced font size
+                                }}
+                                onMouseOver={(e) => e.currentTarget.style.background = '#2a2d2e'}
+                                onMouseOut={(e) => e.currentTarget.style.background = 'transparent'}
+                            >
+                                <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                    <span style={{ display: 'flex', alignItems: 'center' }}>
+                                        {getFileIcon(file.type)}
+                                    </span>
+                                    <span>{file.name}</span>
+                                    <span style={{ fontSize: '11px', color: '#858585', marginLeft: '8px' }}>{file.path}</span>
+                                </div>
+                            </div>
+                        )) : (
+                            <div style={{ padding: '8px 15px', color: '#858585', fontSize: '12px' }}>
+                                No matching results
+                            </div>
+                        )}
+                    </div>
+                </div>
+            )}
             
             {/* Window Controls Area */}
             <div className="window-controls" style={{ display: 'flex', alignItems: 'center', gap: '0', position: 'relative' }}>
                 
-                {/* The Floating Popup */}
                 {popup.visible && (
                     <div style={{
-                        position: 'absolute',
-                        top: '35px', // Drops it right below the buttons
-                        right: '5px',
-                        backgroundColor: '#252526', // Matches VS Code sidebar color
-                        border: '1px solid #007acc', // VS Code blue accent
-                        color: '#cccccc',
-                        padding: '8px 12px',
-                        borderRadius: '4px',
-                        fontSize: '12px',
-                        whiteSpace: 'nowrap',
-                        zIndex: 1000,
-                        boxShadow: '0 4px 6px rgba(0,0,0,0.3)',
+                        position: 'absolute', top: '35px', right: '5px', backgroundColor: '#252526',
+                        border: '1px solid #007acc', color: '#cccccc', padding: '8px 12px',
+                        borderRadius: '4px', fontSize: '12px', whiteSpace: 'nowrap', zIndex: 1000,
+                        boxShadow: '0 4px 6px rgba(0,0,0,0.3)'
                     }}>
                         {popup.text}
                     </div>
                 )}
 
-                {/* Minimize Button */}
-                <div 
-                    className="window-btn" 
-                    onClick={handleMinimize}
-                    style={{ width: '46px', height: '30px', borderRadius: '0', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'transparent', cursor: 'pointer' }}
-                >
+                <div className="window-btn" onClick={handleMinimize} style={{ width: '46px', height: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><rect x="1" y="5" width="10" height="2" /></svg>
                 </div>
-
-                {/* Maximize Button */}
-                <div 
-                    className="window-btn" 
-                    onClick={handleMaximize}
-                    style={{ width: '46px', height: '30px', borderRadius: '0', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'transparent', cursor: 'pointer' }}
-                >
+                <div className="window-btn" onClick={handleMaximize} style={{ width: '46px', height: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1"><rect x="1.5" y="1.5" width="9" height="9" /></svg>
                 </div>
-
-                {/* Close Button */}
-                <div 
-                    className="window-btn" 
-                    onClick={handleClose}
-                    style={{ width: '46px', height: '30px', borderRadius: '0', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'transparent', cursor: 'pointer' }}
-                >
+                <div className="window-btn" onClick={handleClose} style={{ width: '46px', height: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5"><line x1="2" y1="2" x2="10" y2="10" /><line x1="10" y1="2" x2="2" y2="10" /></svg>
                 </div>
             </div>

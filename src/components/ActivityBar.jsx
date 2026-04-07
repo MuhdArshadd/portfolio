@@ -116,8 +116,11 @@ export const ActivityBar = ({ activeSidebar, sidebarVisible, handleSidebarClick,
 
                 {openMenu === 'settings' && (
                     <div style={{...popupStyle, bottom: '20px'}}>
-                        {/* Command Palette - No action for now, just closes menu */}
-                        <div style={menuItemStyle} className="menu-hover" onClick={() => setOpenMenu(null)}>
+                        {/* Command Palette - Now shouts an event to the window */}
+                        <div style={menuItemStyle} className="menu-hover" onClick={() => { 
+                            window.dispatchEvent(new CustomEvent('open-command-palette')); 
+                            setOpenMenu(null); 
+                        }}>
                             <span>Command Palette...</span> <span style={{ color: '#858585' }}>Ctrl+Shift+P</span>
                         </div>
                         

@@ -35,7 +35,9 @@ function App() {
     return (
         <div className="vscode-container">
             
-            <TitleBar />
+            <TitleBar 
+                openFile={openFile} 
+            />
 
             <div className="main-layout">
                 
