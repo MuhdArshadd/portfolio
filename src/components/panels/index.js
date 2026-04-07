@@ -1,3 +1,4 @@
 export { ChatPanel } from './ChatPanel';
 export { ExplorerPanel } from './ExplorerPanel';
-export { GitPanel, DiffView, ExtensionsPanel } from './GitPanel';
+export { GitPanel, DiffView } from './GitPanel';
+export { ExtensionsPanel } from './ExtensionMarketPanel';

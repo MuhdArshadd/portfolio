@@ -49,5 +49,5 @@ export const fileSystem = [
     { name: 'about.html', type: 'html', icon: 'HtmlIcon' },
     { name: 'projects.js', type: 'js', icon: 'JsIcon' },
     { name: 'skills.json', type: 'json', icon: 'JsonIcon' },
-    { name: 'contact.css', type: 'css', icon: 'CssIcon' }
+    { name: 'contact.css', type: 'css', icon: 'CssIcon' },
 ];

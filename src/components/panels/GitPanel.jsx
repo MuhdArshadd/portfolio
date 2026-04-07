@@ -59,12 +59,3 @@ export const GitPanel = ({ setShowDiff, setDiffFile }) => (
         </div>
     </div>
 );
-
-export const ExtensionsPanel = () => (
-    <div className="sidebar" style={{ width: '300px' }}>
-        <div className="sidebar-header"><span>EXTENSIONS</span><span style={{ cursor: 'pointer' }}>⋯</span></div>
-        <div className="sidebar-content" style={{ padding: '10px' }}>
-            <div style={{ color: 'var(--text-muted)', fontSize: '13px' }}>No extensions installed</div>
-        </div>
-    </div>
-);

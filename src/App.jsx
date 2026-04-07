@@ -49,7 +49,7 @@ function App() {
                 {/* Left Sidebars */}
                 {sidebarVisible && (
                     activeSidebar === 'git' ? <GitPanel setShowDiff={setShowDiff} setDiffFile={setDiffFile} /> :
-                    activeSidebar === 'extensions' ? <ExtensionsPanel /> :
+                    activeSidebar === 'extensions' ? <ExtensionsPanel openFile={openFile} /> :
                     <ExplorerPanel expandedFolders={expandedFolders} toggleFolder={toggleFolder} activeFile={activeFile} openFile={openFile} getFileIcon={getFileIcon} />
                 )}
 
