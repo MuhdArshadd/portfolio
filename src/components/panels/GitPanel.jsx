@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icons } from '../Icons';
+import { Icons } from '../icons/Icons';
 
 export const DiffView = ({ setShowDiff }) => (
     <div style={{ position: 'fixed', top: '30px', left: '48px', right: '0', bottom: '22px', background: 'var(--bg-dark)', zIndex: 100, display: 'flex' }}>

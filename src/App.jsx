@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Icons } from './components/Icons';
+import { Icons } from './components/icons/Icons';
 import { fileSystem } from "./data/data";
 import { TitleBar } from './components/TitleBar';
 import { ActivityBar } from './components/ActivityBar';

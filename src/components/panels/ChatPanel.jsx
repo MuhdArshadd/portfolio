@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Icons } from '../Icons';
+import { Icons } from '../icons/Icons';
 
 export const ChatPanel = ({ onClose }) => {
     const [messages, setMessages] = useState([

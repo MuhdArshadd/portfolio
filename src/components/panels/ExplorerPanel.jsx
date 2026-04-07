@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icons } from '../Icons';
+import { Icons } from '../icons/Icons';
 import { fileSystem } from '../../data/data';
 
 export const ExplorerPanel = ({ expandedFolders, toggleFolder, activeFile, openFile, getFileIcon }) => (
