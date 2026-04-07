@@ -1,21 +1,130 @@
-import React from 'react';
-import {portfolioData} from '../../data/index'
+import React, { useState } from 'react';
+import { Icons } from '../icons/Icons';
+import './ContactView.css';
 
-export const ContactView = () => (
-    <div className="portfolio-section">
-        <div className="code-line"><span className="line-num">1</span><span className="line-content"><span className="comment">/* Contact Styles */</span></span></div>
-        <div className="code-line"><span className="line-num">2</span><span className="line-content"></span></div>
-        <div className="code-line"><span className="line-num">3</span><span className="line-content"><span className="attr">.contact</span> {'{'}</span></div>
-        <div className="code-line"><span className="line-num">4</span><span className="line-content">  <span className="attr">email</span>: <span className="string">"{portfolioData.contact.email}"</span>;</span></div>
-        <div className="code-line"><span className="line-num">5</span><span className="line-content">  <span className="attr">github</span>: <span className="string">"{portfolioData.contact.github}"</span>;</span></div>
-        <div className="code-line"><span className="line-num">6</span><span className="line-content">  <span className="attr">linkedin</span>: <span className="string">"{portfolioData.contact.linkedin}"</span>;</span></div>
-        <div className="code-line"><span className="line-num">7</span><span className="line-content">  <span className="attr">status</span>: <span className="keyword">available</span>;</span></div>
-        <div className="code-line"><span className="line-num">8</span><span className="line-content">{'}'}</span></div>
-        <div className="code-line"><span className="line-num">9</span><span className="line-content"></span></div>
-        <div className="code-line"><span className="line-num">10</span><span className="line-content"><span className="comment">/* Let's connect! */</span></span></div>
-        <div className="code-line"><span className="line-num">11</span><span className="line-content"><span className="attr">.cta</span>:<span className="function">hover</span> {'{'}</span></div>
-        <div className="code-line"><span className="line-num">12</span><span className="line-content">  <span className="attr">transform</span>: <span className="function">scale</span>(<span className="number">1.1</span>);</span></div>
-        <div className="code-line"><span className="line-num">13</span><span className="line-content">  <span className="attr">transition</span>: <span className="keyword">all</span> <span className="number">0.3s</span> <span className="function">ease</span>;</span></div>
-        <div className="code-line"><span className="line-num">14</span><span className="line-content">{'}'}</span></div>
-    </div>
-);
+export const ContactView = () => {
+    const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
+    const [status, setStatus] = useState('idle');
+
+    const FORMSPREE_ENDPOINT = "https://formspree.io/f/mpqobeon";
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setStatus('sending');
+
+        try {
+            const response = await fetch(FORMSPREE_ENDPOINT, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            if (response.ok) {
+                setStatus('success');
+                setFormData({ name: '', email: '', subject: '', message: '' }); // Clear form
+                
+                // Reset button text after 3 seconds
+                setTimeout(() => setStatus('idle'), 3000);
+            } else {
+                setStatus('error');
+                setTimeout(() => setStatus('idle'), 3000);
+            }
+        } catch (error) {
+            setStatus('error');
+            setTimeout(() => setStatus('idle'), 3000);
+        }
+    };
+
+    return (
+        <div className="contact-container animate-view">
+            
+            {/* Header Section */}
+            <div className="contact-header">
+                <div className="comment-text" style={{ color: '#6a9955' }}>/* contact.css — let's build something */</div>
+                <h1 className="contact-title">Contact</h1>
+                <div className="comment-text" style={{ color: '#858585' }}>// open to work, permanent roles & good conversations</div>
+            </div>
+
+            <div className="contact-layout">
+                
+                {/* Left Column: Social Links */}
+                <div className="contact-socials">
+                    <h2 className="section-title">FIND ME ON</h2>
+                    
+                    <a href="mailto:arshad@example.com" className="social-card">
+                        <div className="social-icon-wrapper" style={{ borderColor: '#4ec9b0' }}>
+                            <span style={{ color: '#4ec9b0' }}><Icons.Mail /></span>
+                        </div>
+                        <div className="social-details">
+                            <div className="social-name" style={{ color: '#4ec9b0' }}>EMAIL</div>
+                            <div className="social-link">muhdarshad50@gmail.com</div>
+                        </div>
+                        <div className="social-arrow"><Icons.ExternalLink /></div>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/muhdarshad50/" target="_blank" rel="noreferrer" className="social-card">
+                        <div className="social-icon-wrapper" style={{ borderColor: '#4fc1ff' }}>
+                            <span style={{ color: '#4fc1ff' }}><Icons.LinkedIn /></span>
+                        </div>
+                        <div className="social-details">
+                            <div className="social-name" style={{ color: '#4fc1ff' }}>LINKEDIN</div>
+                            <div className="social-link">linkedin.com/in/muhdarshad50</div>
+                        </div>
+                        <div className="social-arrow"><Icons.ExternalLink /></div>
+                    </a>
+
+                    <a href="https://github.com/MuhdArshadd" target="_blank" rel="noreferrer" className="social-card">
+                        <div className="social-icon-wrapper" style={{ borderColor: '#cccccc' }}>
+                            <span style={{ color: '#cccccc' }}><Icons.GitHub /></span>
+                        </div>
+                        <div className="social-details">
+                            <div className="social-name" style={{ color: '#cccccc' }}>GITHUB</div>
+                            <div className="social-link">github.com/MuhdArshadd</div>
+                        </div>
+                        <div className="social-arrow"><Icons.ExternalLink /></div>
+                    </a>
+                </div>
+
+                {/* Right Column: Code Form */}
+                <div className="contact-form-section">
+                    <h2 className="section-title">SEND A MESSAGE</h2>
+                    
+                    <form onSubmit={handleSubmit} className="code-form">
+                        
+                        <div className="form-group">
+                            <label className="comment-text">// YOUR_NAME <span className="required">*</span></label>
+                            <input type="text" placeholder="string" required value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} />
+                        </div>
+
+                        <div className="form-group">
+                            <label className="comment-text">// YOUR_EMAIL <span className="required">*</span></label>
+                            <input type="email" placeholder="string" required value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} />
+                        </div>
+
+                        <div className="form-group">
+                            <label className="comment-text">// SUBJECT</label>
+                            <input type="text" placeholder="string" value={formData.subject} onChange={(e) => setFormData({...formData, subject: e.target.value})} />
+                        </div>
+
+                        <div className="form-group">
+                            <label className="comment-text">// MESSAGE <span className="required">*</span></label>
+                            <textarea placeholder="'''your message'''" rows="5" required value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})}></textarea>
+                        </div>
+
+                        <button type="submit" className="submit-btn">
+                            ➔ send_message()
+                        </button>
+                        
+                        <div className="comment-text form-footer">
+                            // Powered by Formspree (lands directly in my inbox)
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    );
+};

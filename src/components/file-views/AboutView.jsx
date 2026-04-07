@@ -1,24 +1,105 @@
 import React from 'react';
+import './AboutView.css';
 
-export const AboutView = () => (
-    <div className="portfolio-section">
-        <div className="code-line"><span className="line-num">1</span><span className="line-content"><span className="comment">&lt;!-- About Me --&gt;</span></span></div>
-        <div className="code-line"><span className="line-num">2</span><span className="line-content"></span></div>
-        <div className="code-line"><span className="line-num">3</span><span className="line-content">&lt;<span className="tag">section</span> <span className="attr">class</span>=<span className="string">"about"</span>&gt;</span></div>
-        <div className="code-line"><span className="line-num">4</span><span className="line-content">  &lt;<span className="tag">h1</span>&gt;About Me&lt;/<span className="tag">h1</span>&gt;</span></div>
-        <div className="code-line"><span className="line-num">5</span><span className="line-content">  &lt;<span className="tag">p</span>&gt;</span></div>
-        <div className="code-line"><span className="line-num">6</span><span className="line-content">    I'm a passionate developer with 5+ years of experience</span></div>
-        <div className="code-line"><span className="line-num">7</span><span className="line-content">    building scalable web applications. I love solving complex</span></div>
-        <div className="code-line"><span className="line-num">8</span><span className="line-content">    problems and creating intuitive user experiences.</span></div>
-        <div className="code-line"><span className="line-num">9</span><span className="line-content">  &lt;/<span className="tag">p</span>&gt;</span></div>
-        <div className="code-line"><span className="line-num">10</span><span className="line-content">  </span></div>
-        <div className="code-line"><span className="line-num">11</span><span className="line-content">  &lt;<span className="tag">h2</span>&gt;What I Do&lt;/<span className="tag">h2</span>&gt;</span></div>
-        <div className="code-line"><span className="line-num">12</span><span className="line-content">  &lt;<span className="tag">ul</span>&gt;</span></div>
-        <div className="code-line"><span className="line-num">13</span><span className="line-content">    &lt;<span className="tag">li</span>&gt;🚀 Full Stack Development&lt;/<span className="tag">li</span>&gt;</span></div>
-        <div className="code-line"><span className="line-num">14</span><span className="line-content">    &lt;<span className="tag">li</span>&gt;📱 Responsive Web Design&lt;/<span className="tag">li</span>&gt;</span></div>
-        <div className="code-line"><span className="line-num">15</span><span className="line-content">    &lt;<span className="tag">li</span>&gt;☁️ Cloud Architecture&lt;/<span className="tag">li</span>&gt;</span></div>
-        <div className="code-line"><span className="line-num">16</span><span className="line-content">    &lt;<span className="tag">li</span>&gt;🤖 AI Integration&lt;/<span className="tag">li</span>&gt;</span></div>
-        <div className="code-line"><span className="line-num">17</span><span className="line-content">  &lt;/<span className="tag">ul</span>&gt;</span></div>
-        <div className="code-line"><span className="line-num">18</span><span className="line-content">&lt;/<span className="tag">section</span>&gt;</span></div>
-    </div>
-);
+export const AboutView = () => {
+    return (
+        <div className="about-container animate-view">
+            
+            {/* Top Header */}
+            <div className="about-header-comment">
+                <span style={{ color: '#6a9955' }}>&lt;!-- about.html - Muhammad Arshad --&gt;</span>
+            </div>
+            
+            <h1 className="about-title">About Me</h1>
+            
+            <div className="about-subtitle">
+                <span style={{ color: '#6a9955' }}>// who I am · what I do · where I build</span>
+            </div>
+
+            {/* Intro Card */}
+            <div className="about-card intro-card">
+                <p>
+                    Hi! I'm <span className="highlight-blue">Muhammad Arshad</span>, a software developer living at the crossroads of <span className="highlight-blue">mobile engineering</span>, <span className="highlight-blue">test automation</span>, and <span className="highlight-blue">AI solutions</span>. I love building systems that are not just functional but genuinely <span className="highlight-blue">intelligent and scalable</span>. Currently a <span className="highlight-blue">QA Automation Intern at Teleport</span> and a proud <span className="highlight-blue">YBR Scholar</span> at UTeM, ensuring quality and building applications that make a real impact.
+                </p>
+            </div>
+
+            {/* Current Focus Section */}
+            <h2 className="section-heading">CURRENT FOCUS</h2>
+            <div className="about-card focus-card">
+                <div className="focus-grid">
+                    <div className="focus-item">
+                        <span className="focus-icon">📱</span>
+                        <span>Building fluid mobile experiences with Android & Flutter</span>
+                    </div>
+                    <div className="focus-item">
+                        <span className="focus-icon">🧪</span>
+                        <span>Ensuring system reliability through QA Automation & STLC</span>
+                    </div>
+                    <div className="focus-item">
+                        <span className="focus-icon">🤖</span>
+                        <span>Competing in hackathons to build AI-for-good solutions</span>
+                    </div>
+                    <div className="focus-item">
+                        <span className="focus-icon">🏋️</span>
+                        <span>Maintaining "Beast Mode" discipline in fitness and code</span>
+                    </div>
+                </div>
+            </div>
+
+            {/* Education Section */}
+            <h2 className="section-heading">EDUCATION</h2>
+            
+            {/* Degree 1 */}
+            <div className="about-card edu-card">
+                <div className="edu-header">
+                    <div className="edu-title">
+                        <span className="edu-icon">🎓</span> Universiti Teknikal Malaysia Melaka (UTeM)
+                    </div>
+                    <div className="edu-date">Oct 2022 - Apr 2026</div>
+                </div>
+                <div className="edu-program">Bachelor of Computer Science in Software Development (Hons.)</div>
+                <div className="edu-details">
+                    <span className="cgpa">Current CGPA: 3.87</span>
+                    <div className="edu-skills">Skills: Dart, PostgreSQL, Java, Software Engineering</div>
+                </div>
+            </div>
+
+            {/* Degree 2 */}
+            <div className="about-card edu-card">
+                <div className="edu-header">
+                    <div className="edu-title">
+                        <span className="edu-icon">🏫</span> Kolej Matrikulasi Selangor (KMS)
+                    </div>
+                    <div className="edu-date">2021 - 2022</div>
+                </div>
+                <div className="edu-program">Sains Fizikal (Physical Science)</div>
+                <div className="edu-details">
+                    <span className="cgpa">CGPA: 4.0 | MUET (BAND 4)</span>
+                    <div className="edu-desc">
+                        During the challenging COVID-19 era, I managed to excel academically and was shortlisted for the Pembiayaan Pendidikan Boleh Ubah Yayasan Bank Rakyat, which converted into a full scholarship.
+                    </div>
+                </div>
+            </div>
+
+            {/* Degree 3 */}
+            <div className="about-card edu-card">
+                <div className="edu-header">
+                    <div className="edu-title">
+                        <span className="edu-icon">🏫</span> SMK Bandar Baru Sungai Long
+                    </div>
+                    <div className="edu-date">2016 - 2020</div>
+                </div>
+                <div className="edu-program">Sijil Pelajaran Malaysia (SPM)</div>
+                <div className="edu-details">
+                    <span className="cgpa">Grade: 8A</span>
+                    <div className="edu-desc">
+                        Active in Science and Mathematics events, Kompang Club, Kawad Kaki, and Sports.
+                    </div>
+                </div>
+            </div>
+
+            {/* Bottom Spacing */}
+            <div style={{ height: '40px' }}></div>
+        </div>
+    );
+};

@@ -1,0 +1,152 @@
+/* --- ABOUT ME MAIN CONTAINER --- */
+.about-container {
+    padding: 40px;
+    max-width: 850px;
+    margin: 0 auto;
+    font-family: 'Consolas', 'Courier New', monospace;
+    color: #cccccc;
+}
+
+/* Headers */
+.about-header-comment {
+    font-size: 14px;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.about-title {
+    font-family: 'Arial Black', 'Impact', sans-serif;
+    font-size: 60px;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.about-subtitle {
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+
+/* Reusable Cards */
+.about-card {
+    background-color: transparent;
+    border: 1px solid #333333;
+    border-radius: 6px;
+    padding: 25px;
+    margin-bottom: 30px;
+    transition: border-color 0.2s ease;
+}
+
+.about-card:hover {
+    border-color: #555555;
+}
+
+/* Intro Specifics */
+.intro-card p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #9d9d9d;
+    margin: 0;
+}
+
+.highlight-blue {
+    color: #4fc1ff;
+    font-weight: bold;
+}
+
+/* Section Headings */
+.section-heading {
+    font-family: 'Consolas', monospace;
+    font-size: 16px;
+    color: #4ec9b0; /* VS Code Green */
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin: 40px 0 20px 0;
+    font-weight: normal;
+}
+
+/* Focus Grid */
+.focus-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.focus-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: #858585;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.focus-icon {
+    font-size: 16px;
+}
+
+/* Education Cards */
+.edu-card {
+    padding: 20px 25px;
+    margin-bottom: 20px;
+}
+
+.edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.edu-title {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.edu-date {
+    color: #cccccc;
+    font-size: 13px;
+}
+
+.edu-program {
+    color: #4fc1ff; /* Blue */
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.edu-details {
+    font-size: 13px;
+}
+
+.cgpa {
+    color: #4ec9b0; /* Green */
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.edu-skills, .edu-desc {
+    color: #858585;
+    line-height: 1.5;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .focus-grid {
+        grid-template-columns: 1fr; /* Stacks to 1 column on small screens */
+    }
+    .edu-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    .about-title {
+        font-size: 45px;
+    }
+}

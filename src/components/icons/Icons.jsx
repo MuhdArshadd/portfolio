@@ -18,7 +18,7 @@ import {
 } from "react-icons/vsc";
 
 // Import FontAwesome icons (fa)
-import { FaReact, FaHtml5, FaCss3Alt, FaJs } from "react-icons/fa";
+import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaGithub, FaLinkedin, FaFileAlt, FaExternalLinkAlt, FaCode, FaEnvelope } from "react-icons/fa";
 
 export const Icons = {
     // UI Icons (Sidebar size - 24px)
@@ -28,6 +28,13 @@ export const Icons = {
     Account: () => <VscAccount size={24} />,
     Bot: () => <VscRobot size={24} />,
     Settings: () => <VscSettingsGear size={24} />,
+    GitHub: () => <FaGithub size={24} />,
+    LinkedIn: () => <FaLinkedin size={24} />,
+    File: () => <FaFileAlt size={24} />,
+    ExternalLink: () => <FaExternalLinkAlt size={24} />,
+    Code: () => <FaCode size={24} />,
+    Mail: () => <FaEnvelope size={24} />,
+
     
     // UI Icons (Small)
     Close: () => <VscChromeClose size={16} />,
