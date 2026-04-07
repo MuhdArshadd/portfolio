@@ -31,7 +31,6 @@ function App() {
     const getFileIcon = (filename) => { const file = fileSystem.find(f => f.name === filename); const IconComponent = Icons[file?.icon || 'ExtensionTabIcon']; return <IconComponent />; };
     const handleSidebarClick = (panel) => { if (activeSidebar === panel) setSidebarVisible(!sidebarVisible); else { setActiveSidebar(panel); setSidebarVisible(true); } };
 
-    console.log("2. App.jsx is holding state as:", isBotActive);
     // --- MAIN RENDER ---
     return (
         <div className="vscode-container">

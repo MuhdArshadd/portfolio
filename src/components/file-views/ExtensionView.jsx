@@ -16,10 +16,7 @@ export const ExtensionView = ({ setBotActive }) => {
     // This tells the main App.jsx to show/hide the bot in the sidebar
     useEffect(() => {
         if (setBotActive) {
-            console.log("1. ExtensionView is sending:", extState === 'enabled'); // ADD THIS
             setBotActive(extState === 'enabled');
-        } else {
-            console.log("ERROR: ExtensionView did not receive setBotActive!"); // ADD THIS
         }
     }, [extState, setBotActive]);
 

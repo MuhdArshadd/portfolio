@@ -2,7 +2,6 @@ import React from 'react';
 import { Icons } from './icons/Icons'; 
 
 export const ActivityBar = ({ activeSidebar, sidebarVisible, handleSidebarClick, isChatOpen, setIsChatOpen, isBotActive }) => {
-    console.log("3. ActivityBar received state as:", isBotActive);
     return (
         <div className="activity-bar">
             <div className={`activity-icon ${activeSidebar === 'explorer' && sidebarVisible ? 'active' : ''}`} onClick={() => handleSidebarClick('explorer')}><Icons.Files /></div>
