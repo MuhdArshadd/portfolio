@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Icons } from '../icons/Icons';
 
 export const DiffView = ({ setShowDiff }) => (
@@ -20,42 +20,105 @@ export const DiffView = ({ setShowDiff }) => (
     </div>
 );
 
-export const GitPanel = ({ setShowDiff, setDiffFile }) => (
-    <div className="sidebar" style={{ width: '300px' }}>
-        <div className="sidebar-header">
-            <span>SOURCE CONTROL</span>
-            <span style={{ cursor: 'pointer' }}>⋯</span>
-        </div>
-        <div className="sidebar-content">
-            <div style={{ padding: '10px 15px', fontSize: '12px', color: 'var(--text-muted)' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '5px', marginBottom: '10px' }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <circle cx="12" cy="12" r="3" />
-                        <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
-                    </svg>
-                    <span>Changes</span>
+export const GitPanel = ({ setShowDiff, setDiffFile }) => {
+    // State to handle collapsible sections
+    const [isChangesOpen, setIsChangesOpen] = useState(true);
+    const [isGraphOpen, setIsGraphOpen] = useState(true);
+
+    return (
+        <div className="sidebar" style={{ width: '300px', background: 'var(--bg-sidebar)', display: 'flex', flexDirection: 'column' }}>
+            
+            {/* SOURCE CONTROL Header (Cleaned up, no extra icons) */}
+            <div className="sidebar-header" style={{ padding: '0 15px', height: '35px', display: 'flex', alignItems: 'center', fontSize: '11px', fontWeight: '600', letterSpacing: '0.5px' }}>
+                <span>SOURCE CONTROL</span>
+            </div>
+
+            {/* UPPER SECTION: Takes up available space to push Graph to the bottom */}
+            <div style={{ flex: 1, overflowY: 'auto' }}>
+                
+                {/* CHANGES Collapsible Header */}
+                <div 
+                    onClick={() => setIsChangesOpen(!isChangesOpen)} 
+                    style={{ padding: '0 5px', height: '22px', display: 'flex', alignItems: 'center', fontSize: '11px', cursor: 'pointer' }}
+                >
+                    <div style={{ width: '20px', display: 'flex', justifyContent: 'center' }}>
+                        {isChangesOpen ? <Icons.ChevronDown /> : <Icons.ChevronRight />}
+                    </div>
+                    <span style={{ fontWeight: '600', textTransform: 'uppercase' }}>Changes</span>
+                    <span style={{ marginLeft: 'auto', color: 'var(--text-muted)', paddingRight: '10px' }}>1</span>
                 </div>
-                <div className="file-item" onClick={() => { setShowDiff(true); setDiffFile('about.html'); }} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <span style={{ color: '#e2c08d', fontWeight: 'bold' }}>M</span>
-                    <Icons.HtmlIcon />
-                    <span>about.html</span>
+
+                {/* CHANGES Content */}
+                {isChangesOpen && (
+                    <div style={{ paddingBottom: '10px' }}>
+                        {/* Commit Message Box */}
+                        <div style={{ padding: '8px 15px' }}>
+                            <input 
+                                type="text" 
+                                className="commit-input" 
+                                placeholder="Message (Ctrl+Enter to commit)"
+                                style={{ width: '100%', boxSizing: 'border-box' }}
+                            />
+                            <div className="commit-button">
+                                ✓ Commit
+                            </div>
+                        </div>
+
+                        {/* Changes List */}
+                        <div style={{ marginTop: '4px' }}>
+                            <div className="git-file-item" onClick={() => { setShowDiff(true); setDiffFile('about.html'); }}>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ marginRight: '6px', color: '#e34c26' }}>
+                                    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/>
+                                    <polyline points="13 2 13 9 20 9"/>
+                                </svg>
+                                <span style={{ flex: 1 }}>about.html</span>
+                                <span style={{ color: '#e2c08d', fontWeight: '600', fontSize: '12px' }}>M</span>
+                            </div>
+                        </div>
+                    </div>
+                )}
+            </div>
+
+            {/* LOWER SECTION: The Graph */}
+            <div style={{ borderTop: '1px solid var(--border)' }}>
+                
+                {/* GRAPH Collapsible Header (Cleaned up, no extra icons) */}
+                <div 
+                    onClick={() => setIsGraphOpen(!isGraphOpen)} 
+                    style={{ padding: '4px 5px', height: '22px', display: 'flex', alignItems: 'center', fontSize: '11px', cursor: 'pointer' }}
+                >
+                    <div style={{ width: '20px', display: 'flex', justifyContent: 'center' }}>
+                        {isGraphOpen ? <Icons.ChevronDown /> : <Icons.ChevronRight />}
+                    </div>
+                    <span style={{ fontWeight: '600', textTransform: 'uppercase' }}>Graph</span>
                 </div>
+
+                {/* GRAPH Content */}
+                {isGraphOpen && (
+                    <div style={{ padding: '10px 15px' }}>
+                        <svg width="100%" height="200" viewBox="0 0 280 200">
+                            {/* Main straight vertical line */}
+                            <line x1="20" y1="20" x2="20" y2="180" stroke="#1dadf0" strokeWidth="2"/>
+                            
+                            {/* Commit dots on the line */}
+                            <circle cx="20" cy="30" r="5" fill="#1dadf0"/>
+                            <circle cx="20" cy="60" r="5" fill="#1dadf0"/>
+                            <circle cx="20" cy="90" r="5" fill="#1dadf0"/>
+                            <circle cx="20" cy="120" r="5" fill="#1dadf0"/>
+                            <circle cx="20" cy="150" r="5" fill="#1dadf0"/>
+                            <circle cx="20" cy="180" r="5" fill="#1dadf0"/>
+                            
+                            {/* Commit messages to the right */}
+                            <text x="35" y="34" fill="#9cdcfe" fontSize="12" fontWeight="bold">feat: interactive git graph & diff view</text>
+                            <text x="35" y="64" fill="#ccc" fontSize="12">feat: add marketplace & "vibe coded" bot</text>
+                            <text x="35" y="94" fill="#ccc" fontSize="12">fix: stop users from closing the app (taunts)</text>
+                            <text x="35" y="124" fill="#ccc" fontSize="12">feat: implement dynamic file system routing</text>
+                            <text x="35" y="154" fill="#ccc" fontSize="12">feat: setup vscode layout & activity bar</text>
+                            <text x="35" y="184" fill="#888" fontSize="12">Initial Commit</text>
+                        </svg>
+                    </div>
+                )}
             </div>
         </div>
-        <div style={{ padding: '15px', borderTop: '1px solid var(--border)', marginTop: '10px' }}>
-            <div style={{ fontSize: '11px', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '10px' }}>Git Graph</div>
-            <svg width="100%" height="120" viewBox="0 0 200 120">
-                <line x1="30" y1="20" x2="30" y2="100" stroke="#888" strokeWidth="2" />
-                <path d="M 30 40 Q 60 40 60 60 T 60 80" fill="none" stroke="#888" strokeWidth="2" />
-                <circle cx="30" cy="20" r="5" fill="#4ec9b0" />
-                <circle cx="30" cy="40" r="5" fill="#4ec9b0" />
-                <circle cx="60" cy="60" r="5" fill="#ce9178" />
-                <circle cx="30" cy="80" r="5" fill="#4ec9b0" />
-                <circle cx="30" cy="100" r="5" fill="#4ec9b0" />
-                <text x="45" y="25" fill="#ccc" fontSize="10">main</text>
-                <text x="70" y="65" fill="#ccc" fontSize="10">feature/about-update</text>
-                <text x="45" y="105" fill="#ccc" fontSize="10">HEAD</text>
-            </svg>
-        </div>
-    </div>
-);
+    );
+};

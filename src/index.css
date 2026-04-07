@@ -74,6 +74,15 @@ body {
   background: rgba(255, 255, 255, 0.1);
 }
 
+/* Custom hover for popup menus */
+.menu-hover {
+    transition: background-color 0.1s ease;
+}
+.menu-hover:hover {
+    background-color: #04395e;
+    color: #ffffff !important;
+}
+
 .window-controls {
   display: flex;
   gap: 10px;
@@ -116,13 +125,13 @@ body {
 
 /* Activity Bar */
 .activity-bar {
-  width: 48px;
+  width: 60px;
   background: var(--bg-darker);
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 8px 0;
-  gap: 4px;
+  gap: 20px;
 }
 
 .activity-icon {
@@ -207,8 +216,65 @@ body {
   font-size: 13px;
 }
 
-.file-item:hover {
-  background: rgba(255, 255, 255, 0.05);
+/* --- Git Panel Styles --- */
+
+/* The commit text input box */
+.commit-input {
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 6px 10px;
+    font-size: 13px;
+    color: var(--text-muted);
+    cursor: text;
+    transition: border-color 0.2s;
+}
+.commit-input:focus {
+    border-color: var(--blue);
+    outline: none;
+    color: var(--text);
+}
+
+/* The Commit Button */
+.commit-button {
+    margin-top: 6px;
+    background: #007acc; /* VS Code Blue */
+    color: white;
+    padding: 6px 10px;
+    border-radius: 2px;
+    text-align: center;
+    font-size: 13px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.2s, background 0.2s;
+}
+.commit-button:hover {
+    opacity: 1;
+    background: #0098ff;
+}
+
+/* The files listed under "Changes" */
+.git-file-item {
+    padding: 4px 15px 4px 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background 0.2s;
+}
+.git-file-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* The tiny SVG action icons at the top */
+.git-action-icon {
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 2px;
+    transition: background 0.2s;
+}
+.git-action-icon:hover {
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .file-item.active {

@@ -20,7 +20,7 @@ export const TitleBar = () => {
     const closeMessages = [
         "You.. you don't like my portfolio :(?",
         "Is it because I'm still a junior or vibe coded?",
-        "Plz don't leave me without a rating...",
+        "Well you can't complain we are living in AI era now",
         "Damn you still insist on leaving huh",
         "Alright, I'll let you go... just close the actual browser tab!"
     ];
