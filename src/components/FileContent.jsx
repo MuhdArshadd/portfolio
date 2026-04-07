@@ -1,5 +1,5 @@
 import React from 'react';
-import { portfolioData } from '../data/data';
+import { portfolioData } from '../data/index';
 
 export const FileContent = ({ activeFile }) => {
     switch (activeFile) {

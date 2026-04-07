@@ -1,6 +1,6 @@
 import React from 'react';
 import { Icons } from '../icons/Icons';
-import { fileSystem } from '../../data/data';
+import { fileSystem } from '../../data/index';
 
 export const ExplorerPanel = ({ expandedFolders, toggleFolder, activeFile, openFile, getFileIcon }) => (
     <div className="sidebar">

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Icons } from './components/icons/Icons';
-import { fileSystem } from "./data/data";
+import { fileSystem } from "./data/index.js";
 import { TitleBar } from './components/TitleBar';
 import { ActivityBar } from './components/ActivityBar';
 import { StatusBar } from './components/StatusBar';
