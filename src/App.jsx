@@ -112,7 +112,11 @@ function App() {
                 <div style={{ display: 'flex', flexDirection: 'column', flex: 1, minWidth: 0 }}>
                     
                     {/* Editor Area (Added flex: 1 so it pushes the terminal down) */}
-                    <div className="editor-area" style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+                    <div className="editor-area" style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden', position: 'relative' }}>
+
+                        {/* --- THE DIFF VIEW --- */}
+                        {showDiff && <DiffView setShowDiff={setShowDiff} />}
+
                         <div className="tabs">
                             {openFiles.map(file => (
                                 <div key={file} className={`tab ${activeFile === file ? 'active' : ''}`} onClick={() => setActiveFile(file)}>
@@ -165,9 +169,7 @@ function App() {
             
             </div>
 
-            <StatusBar />
-            {showDiff && <DiffView setShowDiff={setShowDiff} />}
-            
+            <StatusBar />            
         </div>
     );
 }

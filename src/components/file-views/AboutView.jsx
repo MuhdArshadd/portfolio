@@ -55,7 +55,7 @@ export const AboutView = () => {
                     <div className="edu-title">
                         <span className="edu-icon">🎓</span> Universiti Teknikal Malaysia Melaka (UTeM)
                     </div>
-                    <div className="edu-date">Oct 2022 - Apr 2026</div>
+                    <div className="edu-date">Oct 2022 - March 2026</div>
                 </div>
                 <div className="edu-program">Bachelor of Computer Science in Software Development (Hons.)</div>
                 <div className="edu-details">

@@ -52,12 +52,31 @@ export const HomeView = ({ openFile }) => {
                 // hello world !! Welcome to my portfolio
             </div>
 
-            {/* Massive Name */}
-            <h1 className="hero-name">
-                <span className="name-first">Muhammad</span>
-                <br />
-                <span className="name-last">Arshad</span>
-            </h1>
+            {/* Massive Name & Profile Picture */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '35px', flexWrap: 'wrap', marginBottom: '10px' }}>
+                <h1 className="hero-name" style={{ margin: 0 }}>
+                    <span className="name-first">Muhammad</span>
+                    <br />
+                    <span className="name-last">Arshad</span>
+                </h1>
+                
+                {/* Circular Profile Picture Frame */}
+                <div className="profile-pic-container">
+                    <img 
+                        src="/profile.jpg" 
+                        alt="Muhammad Arshad" 
+                        style={{
+                            width: '200px',
+                            height: '200px',
+                            borderRadius: '50%',          // Makes it perfectly circular
+                            objectFit: 'cover',           // Ensures the image fills the circle without stretching
+                            border: '3px solid #4fc1ff',  // VS Code Blue accent border
+                            boxShadow: '0 0 20px rgba(79, 193, 255, 0.15)', // Subtle glow effect
+                            display: 'block'
+                        }}
+                    />
+                </div>
+            </div>
 
             {/* Badges */}
             <div className="hero-badges">

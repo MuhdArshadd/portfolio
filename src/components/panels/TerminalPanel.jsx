@@ -72,7 +72,7 @@ export const TerminalPanel = ({ toggleTerminal , height}) => {
                 }
                 return `The system cannot find the file specified: ${args[1] || ''}`;
 
-            case 'cadcopilot':
+            case 'cadbot':
                 return 'Cad Copilot is currently resting in the Activity Bar. Click the robot icon to chat!';
 
             default:

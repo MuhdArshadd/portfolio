@@ -1,24 +1,115 @@
 import React, { useState } from 'react';
 import { Icons } from '../icons/Icons';
+import '../file-views/ExperiencesView.css';
 
-export const DiffView = ({ setShowDiff }) => (
-    <div style={{ position: 'fixed', top: '30px', left: '48px', right: '0', bottom: '22px', background: 'var(--bg-dark)', zIndex: 100, display: 'flex' }}>
-        <div style={{ flex: 1, borderRight: '1px solid var(--border)', padding: '20px', overflow: 'auto' }}>
-            <div style={{ color: 'var(--text-muted)', marginBottom: '10px', fontSize: '12px' }}>HEAD (Original)</div>
-            <div className="code-line"><span className="line-num">1</span><span className="line-content">&lt;<span className="tag">h1</span>&gt;About Me&lt;/<span className="tag">h1</span>&gt;</span></div>
-            <div className="code-line"><span className="line-num">2</span><span className="line-content">&lt;<span className="tag">p</span>&gt;Original content here&lt;/<span className="tag">p</span>&gt;</span></div>
+export const DiffView = ({ setShowDiff }) => {
+    return (
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: '#1e1e1e', zIndex: 50, display: 'flex', flexDirection: 'column' }}>
+            
+            {/* Diff Tab Header */}
+            <div style={{ display: 'flex', background: '#2d2d2d', padding: '10px 20px', alignItems: 'center', borderBottom: '1px solid #1e1e1e' }}>
+                <div style={{ color: '#e2c08d', display: 'flex', gap: '8px', alignItems: 'center', fontSize: '13px' }}>
+                    <Icons.JsonIcon />
+                    <span style={{ color: '#cccccc' }}>experiences.json (Working Tree)</span>
+                </div>
+                <button 
+                    onClick={() => setShowDiff(false)} 
+                    style={{ marginLeft: 'auto', background: 'transparent', border: '1px solid #555', color: '#ccc', padding: '4px 12px', cursor: 'pointer', borderRadius: '3px', fontSize: '12px', transition: 'all 0.2s' }}
+                    onMouseOver={(e) => e.target.style.background = 'rgba(255,255,255,0.1)'}
+                    onMouseOut={(e) => e.target.style.background = 'transparent'}
+                >
+                    Close Diff
+                </button>
+            </div>
+
+            {/* Split Editor */}
+            <div style={{ display: 'flex', flex: 1, overflow: 'hidden' }}>
+                
+                {/* ========================================= */}
+                {/* LEFT SIDE: ORIGINAL (HEAD)                */}
+                {/* ========================================= */}
+                <div style={{ flex: 1, borderRight: '1px solid #444', overflowY: 'auto', padding: '30px' }}>
+                    <div style={{ color: '#858585', marginBottom: '30px', fontStyle: 'italic', fontSize: '13px' }}>// HEAD (Original)</div>
+                    
+                    <div className="timeline-column" style={{ maxWidth: '100%' }}>
+                        <h2 className="column-heading">
+                            <span style={{ color: '#4fc1ff' }}>//</span> PROFESSIONAL
+                        </h2>
+                        
+                        <div className="timeline-container">
+                            {/* Original State: Just the Teleport Internship */}
+                            <div className="timeline-item">
+                                <div className="timeline-dot dot-blue active"></div>
+                                <div className="timeline-date">Oct 2025 - Apr 2026</div>
+                                <h3 className="timeline-role">Quality Assurance Intern</h3>
+                                <div className="timeline-company">@ Teleport Platforms Sdn. Bhd.</div>
+                                <p className="timeline-desc">
+                                    Managed the Software Testing Life Cycle (STLC) for logistics business flows. Ensured zero-defect deployments and maintained high quality across production systems.
+                                </p>
+                                <div className="timeline-tech">
+                                    <span className="tech-badge">Karate</span>
+                                    <span className="tech-badge">Java</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* ========================================= */}
+                {/* RIGHT SIDE: MODIFIED (WORKING TREE)       */}
+                {/* ========================================= */}
+                <div style={{ flex: 1, overflowY: 'auto', padding: '30px' }}>
+                    <div style={{ color: '#858585', marginBottom: '30px', fontStyle: 'italic', fontSize: '13px' }}>// Working Tree (Modified)</div>
+                    
+                    <div className="timeline-column" style={{ maxWidth: '100%' }}>
+                        <h2 className="column-heading">
+                            <span style={{ color: '#4fc1ff' }}>//</span> PROFESSIONAL
+                        </h2>
+                        
+                        <div className="timeline-container">
+                            
+                            {/* THE GLOWING GREEN ADDITION (The Easter Egg) */}
+                            <div className="timeline-item" style={{ borderLeftColor: '#23d18b' }}>
+                                {/* Green Active Dot */}
+                                <div className="timeline-dot" style={{ backgroundColor: '#23d18b', borderColor: '#23d18b', boxShadow: '0 0 0 4px rgba(35, 209, 139, 0.2)' }}></div>
+                                
+                                {/* Green Highlight Box */}
+                                <div style={{ backgroundColor: 'rgba(35, 209, 139, 0.1)', border: '1px solid rgba(35, 209, 139, 0.3)', borderRadius: '6px', padding: '20px', marginLeft: '-15px', marginTop: '-15px', marginBottom: '20px' }}>
+                                    
+                                    <div className="timeline-date" style={{ color: '#23d18b', fontWeight: 'bold' }}>May 2026 - Present</div>
+                                    <h3 className="timeline-role" style={{ color: '#23d18b' }}>Software Engineer</h3>
+                                    <div className="timeline-company" style={{ color: '#23d18b' }}>@ [Your Company Name Here] 👀</div>
+                                    
+                                    <p className="timeline-desc" style={{ color: '#cccccc' }}>
+                                        Hired Muhammad Arshad after being thoroughly impressed by his interactive VS Code portfolio, problem-solving skills, and proactive attitude. Best hiring decision ever.
+                                    </p>
+                                    
+                                    <div className="timeline-tech">
+                                        <span className="tech-badge" style={{ borderColor: '#23d18b', color: '#23d18b', backgroundColor: 'rgba(35, 209, 139, 0.1)' }}>+ Offer Signed</span>
+                                        <span className="tech-badge" style={{ borderColor: '#23d18b', color: '#23d18b', backgroundColor: 'rgba(35, 209, 139, 0.1)' }}>+ Ready to Work</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* The existing Teleport Internship pushed down */}
+                            <div className="timeline-item">
+                                <div className="timeline-dot dot-blue"></div>
+                                <div className="timeline-date">Oct 2025 - Apr 2026</div>
+                                <h3 className="timeline-role">Quality Assurance Intern</h3>
+                                <div className="timeline-company">@ Teleport Platforms Sdn. Bhd.</div>
+                                <p className="timeline-desc">
+                                    Managed the Software Testing Life Cycle (STLC) for logistics business flows. Ensured zero-defect deployments and maintained high quality across production systems.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
-        <div style={{ flex: 1, padding: '20px', overflow: 'auto', background: 'rgba(0,255,0,0.05)' }}>
-            <div style={{ color: 'var(--green)', marginBottom: '10px', fontSize: '12px' }}>Working Tree (Modified)</div>
-            <div className="code-line"><span className="line-num">1</span><span className="line-content">&lt;<span className="tag">h1</span>&gt;About Me&lt;/<span className="tag">h1</span>&gt;</span></div>
-            <div className="code-line"><span className="line-num">2</span><span className="line-content" style={{ background: 'rgba(0,255,0,0.2)' }}>&lt;<span className="tag">p</span>&gt;Updated content with new information&lt;/<span className="tag">p</span>&gt;</span></div>
-            <div className="code-line"><span className="line-num">3</span><span className="line-content" style={{ background: 'rgba(0,255,0,0.2)' }}>&lt;<span className="tag">p</span>&gt;Added new paragraph&lt;/<span className="tag">p</span>&gt;</span></div>
-        </div>
-        <button onClick={() => setShowDiff(false)} style={{ position: 'absolute', top: '10px', right: '10px', background: 'var(--bg-sidebar)', border: '1px solid var(--border)', color: 'var(--text)', padding: '5px 10px', cursor: 'pointer', borderRadius: '3px' }}>
-            Close Diff
-        </button>
-    </div>
-);
+    );
+};
 
 export const GitPanel = ({ setShowDiff, setDiffFile }) => {
     // State to handle collapsible sections
@@ -67,11 +158,8 @@ export const GitPanel = ({ setShowDiff, setDiffFile }) => {
                         {/* Changes List */}
                         <div style={{ marginTop: '4px' }}>
                             <div className="git-file-item" onClick={() => { setShowDiff(true); setDiffFile('about.html'); }}>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ marginRight: '6px', color: '#e34c26' }}>
-                                    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/>
-                                    <polyline points="13 2 13 9 20 9"/>
-                                </svg>
-                                <span style={{ flex: 1 }}>about.html</span>
+                                <Icons.JsonIcon />
+                                <span style={{ flex: 1 }}>experiences.json</span>
                                 <span style={{ color: '#e2c08d', fontWeight: '600', fontSize: '12px' }}>M</span>
                             </div>
                         </div>
