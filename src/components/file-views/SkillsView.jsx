@@ -23,7 +23,7 @@ const skillsData = {
     },
     {
       id: "frontend",
-      title: "FRONTEND & MOBILE",
+      title: "MOBILE FRAMEWORKS",
       skills: [
         { name: "Flutter", level: 95, color: "#02569B" }
       ]

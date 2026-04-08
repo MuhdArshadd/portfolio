@@ -37,7 +37,7 @@ export const ExtensionView = ({ setBotActive }) => {
                     <div style={{ transform: 'scale(2.5)', opacity: extState === 'uninstalled' ? 0.5 : 1 }}><Icons.Bot /></div>
                 </div>
                 <div>
-                    <h1 style={{ margin: '0 0 5px 0', color: '#ffffff', fontSize: '28px', fontWeight: '600' }}>Cad Bot</h1>
+                    <h1 style={{ margin: '0 0 5px 0', color: '#ffffff', fontSize: '28px', fontWeight: '600' }}>Cad Copilot</h1>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '15px', color: '#858585', fontSize: '13px', marginBottom: '15px' }}>
                         <span style={{ color: '#4fc1ff' }}>Arshad Specialist</span>
                         <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>⬇ 14,204</span>
@@ -123,14 +123,14 @@ export const ExtensionView = ({ setBotActive }) => {
             {/* Markdown Body: Details Tab */}
             {activeTab === 'details' && (
                 <div style={{ lineHeight: '1.6', fontSize: '14px' }}>
-                    <h2 style={{ borderBottom: '1px solid #3c3c3c', paddingBottom: '8px', color: '#ffffff', fontWeight: 'normal', fontSize: '22px' }}>Cad Bot</h2>
+                    <h2 style={{ borderBottom: '1px solid #3c3c3c', paddingBottom: '8px', color: '#ffffff', fontWeight: 'normal', fontSize: '22px' }}>Cad Copilot</h2>
                     <div style={{ display: 'flex', gap: '10px', marginBottom: '20px', marginTop: '15px' }}>
                         <span style={{ background: '#333333', padding: '2px 8px', borderRadius: '3px', fontSize: '12px' }}>version 1.2.5</span>
                         <span style={{ background: extState === 'uninstalled' ? '#666' : '#007acc', color: 'white', padding: '2px 8px', borderRadius: '3px', fontSize: '12px' }}>
                             {extState === 'uninstalled' ? 'not installed' : 'installed globally'}
                         </span>
                     </div>
-                    <p>A conversational AI assistant natively integrated into the portfolio environment. Navigate the codebase, learn about tech stacks, and discover Easter eggs by simply asking Cad Bot!</p>
+                    <p>A conversational AI assistant natively integrated into the portfolio environment. Navigate the codebase, learn about tech stacks, and discover Easter eggs by simply asking Cad Copilot!</p>
                     <h3 style={{ color: '#ffffff', marginTop: '30px', fontWeight: 'normal', fontSize: '18px' }}>Features</h3>
                     <p>Codelens will be added above each <code>Feature:</code>, <code>Scenario:</code> and <code>Scenario Outline:</code> ... just kidding. Here is what I actually do:</p>
                     <ul style={{ paddingLeft: '20px', marginTop: '10px' }}>
@@ -170,7 +170,7 @@ export const ExtensionView = ({ setBotActive }) => {
                     <div style={{ padding: '15px 0', borderBottom: '1px solid #3c3c3c' }}>
                         <h3 style={{ margin: '0 0 10px 0', color: '#4fc1ff' }}>v1.0.0</h3>
                         <ul style={{ margin: 0, paddingLeft: '20px' }}>
-                            <li>Initial release of Cad Bot.</li>
+                            <li>Initial release of Cad Copilot.</li>
                             <li>Basic Q&A functionality and auto-scroll implemented.</li>
                             <li>Integrated into secondary sidebar.</li>
                         </ul>

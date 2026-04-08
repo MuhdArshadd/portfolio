@@ -14,11 +14,11 @@ import {
     VscError,
     VscGitMerge,
     VscJson,
-    VscRobot
+    VscCopilot 
 } from "react-icons/vsc";
 
 // Import FontAwesome icons (fa)
-import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaGithub, FaLinkedin, FaFileAlt, FaExternalLinkAlt, FaCode, FaEnvelope } from "react-icons/fa";
+import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaGithub, FaLinkedin, FaFileAlt, FaExternalLinkAlt, FaCode, FaEnvelope  } from "react-icons/fa";
 
 export const Icons = {
     // UI Icons (Sidebar size - 24px)
@@ -26,7 +26,7 @@ export const Icons = {
     Git: () => <VscSourceControl size={24} />,
     Extensions: () => <VscExtensions size={24} />,
     Account: () => <VscAccount size={24} />,
-    Bot: () => <VscRobot size={24} />,
+    Bot: () => <VscCopilot size={24} />,
     Settings: () => <VscSettingsGear size={24} />,
     GitHub: () => <FaGithub size={24} />,
     LinkedIn: () => <FaLinkedin size={24} />,
@@ -51,6 +51,7 @@ export const Icons = {
     CssIcon: () => <FaCss3Alt size={16} color="#264de4" />,
     JsIcon: () => <FaJs size={16} color="#f7df1e" />,
     JsonIcon: () => <VscJson size={16} color="#a5a5a5" />,
+    GitSmall: () => <VscSourceControl size={16} />,
     
     // NEW: Small Extension icon for the file tab!
     ExtensionTabIcon: () => <VscExtensions size={16} color="#4fc1ff" />

@@ -72,8 +72,8 @@ export const TerminalPanel = ({ toggleTerminal , height}) => {
                 }
                 return `The system cannot find the file specified: ${args[1] || ''}`;
 
-            case 'cadbot':
-                return 'Cad Bot is currently resting in the Activity Bar. Click the robot icon to chat!';
+            case 'cadcopilot':
+                return 'Cad Copilot is currently resting in the Activity Bar. Click the robot icon to chat!';
 
             default:
                 return `'${cmd}' is not recognized as an internal or external command,\noperable program or batch file.\nType 'help' to see available commands.`;

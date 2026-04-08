@@ -3,7 +3,7 @@ import { Icons } from '../icons/Icons';
 
 export const ChatPanel = ({ onClose }) => {
     const [messages, setMessages] = useState([
-        { sender: 'bot', text: "Hi! I'm Cad Bot. How can I help you learn more about Cad?" }
+        { sender: 'bot', text: "Hi! I'm Cad Copilot. How can I help you learn more about Cad?" }
     ]);
     const messagesEndRef = useRef(null);
 
@@ -28,7 +28,7 @@ export const ChatPanel = ({ onClose }) => {
     return (
         <div className="sidebar" style={{ width: '300px', display: 'flex', flexDirection: 'column', borderLeft: '1px solid var(--border)', borderRight: 'none' }}>
             <div className="sidebar-header">
-                <span>CAD BOT</span>
+                <span>CAD COPILOT</span>
                 <span style={{ cursor: 'pointer' }} onClick={onClose}><Icons.Close /></span>
             </div>
             

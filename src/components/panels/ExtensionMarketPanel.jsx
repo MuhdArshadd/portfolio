@@ -8,7 +8,7 @@ export const ExtensionsPanel = ({ openFile }) => {
     const extensions = [
         {
             id: 'cad-bot',
-            name: 'Cad Bot',
+            name: 'Cad Copilot',
             description: 'Your personal AI portfolio assistant',
             author: 'Arshad Specialist',
             icon: <Icons.Bot color="white" />,
@@ -56,7 +56,7 @@ export const ExtensionsPanel = ({ openFile }) => {
                         filteredExtensions.map(ext => (
                             <div 
                                 key={ext.id}
-                                onClick={() => openFile('Extension: Cad Bot')}
+                                onClick={() => openFile('Extension: Cad Copilot')}
                                 style={{ 
                                     display: 'flex', 
                                     gap: '12px', 

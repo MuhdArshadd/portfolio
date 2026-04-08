@@ -54,13 +54,13 @@ export const ContactView = () => {
                 <div className="contact-socials">
                     <h2 className="section-title">FIND ME ON</h2>
                     
-                    <a href="mailto:arshad@example.com" className="social-card">
+                    <a href="mailto:arshadmuhd50@gmail.com" className="social-card">
                         <div className="social-icon-wrapper" style={{ borderColor: '#4ec9b0' }}>
                             <span style={{ color: '#4ec9b0' }}><Icons.Mail /></span>
                         </div>
                         <div className="social-details">
                             <div className="social-name" style={{ color: '#4ec9b0' }}>EMAIL</div>
-                            <div className="social-link">muhdarshad50@gmail.com</div>
+                            <div className="social-link">arshadmuhd50@gmail.com</div>
                         </div>
                         <div className="social-arrow"><Icons.ExternalLink /></div>
                     </a>

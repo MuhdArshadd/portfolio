@@ -160,7 +160,7 @@ function App() {
                 </div> 
 
 
-                {/* Right Sidebar (Cad Bot) */}
+                {/* Right Sidebar (Cad Copilot) */}
                 {isChatOpen && <ChatPanel onClose={() => setIsChatOpen(false)} />}
             
             </div>

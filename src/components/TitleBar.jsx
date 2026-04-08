@@ -22,9 +22,11 @@ export const TitleBar = ({ openFile, closeFile, closeAllFiles, toggleSidebar, to
     const allFiles = [
         { name: 'home.tsx', path: 'PORTFOLIO', type: 'react' },
         { name: 'about.html', path: 'PORTFOLIO', type: 'html' },
+        { name: 'experiences.json', path: 'PORTFOLIO', type: 'json' },
         { name: 'projects.js', path: 'PORTFOLIO', type: 'js' },
         { name: 'skills.json', path: 'PORTFOLIO', type: 'json' },
         { name: 'contact.css', path: 'PORTFOLIO', type: 'css' },
+        { name: '.gitignore', path: 'PORTFOLIO', type: 'git' }
     ];
 
     const getFileIcon = (type) => {
@@ -35,6 +37,7 @@ export const TitleBar = ({ openFile, closeFile, closeAllFiles, toggleSidebar, to
             case 'js': return <Icons.JsIcon />;
             case 'json': return <Icons.JsonIcon />;
             case 'extension': return <Icons.ExtensionTabIcon />;
+            case 'git': return <Icons.GitSmall />;
             default: return <Icons.Files />; 
         }
     };
@@ -183,7 +186,7 @@ export const TitleBar = ({ openFile, closeFile, closeAllFiles, toggleSidebar, to
             { label: 'Command Palette...', action: () => { setIsPaletteOpen(true); closeMenu(); }, shortcut: 'Ctrl+Shift+P' },
             { label: 'Toggle Sidebar', action: () => { if(toggleSidebar) toggleSidebar(); closeMenu(); }, shortcut: 'Ctrl+B' },
             { label: 'Toggle Terminal', action: () => { if(toggleTerminal) toggleTerminal(); closeMenu(); }, shortcut: 'Ctrl+`' },
-            { label: 'Cad Bot', action: () => { if(openFile) openFile('Extension: Cad Bot'); closeMenu(); } },
+            { label: 'Cad Copilot', action: () => { if(openFile) openFile('Extension: Cad Copilot'); closeMenu(); } },
             { divider: true },
             { label: 'Enter Full Screen', action: () => { handleMaximize(); closeMenu(); }, shortcut: 'F11' },
             { label: 'Zoom In', action: () => { handleZoomIn(); closeMenu(); }, shortcut: 'Ctrl+=' },
