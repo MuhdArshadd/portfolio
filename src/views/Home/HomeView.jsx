@@ -54,7 +54,7 @@ export const HomeView = ({ openFile }) => {
                 {/* Circular Profile Picture Frame */}
                 <div className="profile-pic-container">
                     <img 
-                        src="src/assets/profile.jpg" 
+                        src="/profile.jpg" 
                         alt="Muhammad Arshad" 
                         className="profile-pic"
                     />
@@ -120,7 +120,7 @@ export const HomeView = ({ openFile }) => {
                 <a href="https://www.linkedin.com/in/muhdarshad50/" target="_blank" rel="noreferrer" className="social-badge">
                     <Icons.LinkedIn /> LinkedIn
                 </a>
-                <a href="src/assets/resume.pdf" target="_blank" rel="noreferrer" className="social-badge">
+                <a href="/resume.pdf" target="_blank" rel="noreferrer" className="social-badge">
                     <Icons.File /> Resume
                 </a>
             </div>

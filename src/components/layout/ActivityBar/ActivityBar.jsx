@@ -68,7 +68,7 @@ export const ActivityBar = ({ activeSidebar, sidebarVisible, handleSidebarClick,
                         
                         <div className="activity-popup-separator"></div>
                         
-                        <div className="activity-popup-item" onClick={() => { window.open('src/assets/resume.pdf', '_blank'); setOpenMenu(null); }}>
+                        <div className="activity-popup-item" onClick={() => { window.open('/resume.pdf', '_blank'); setOpenMenu(null); }}>
                             Download Resume.pdf
                         </div>
                     </div>

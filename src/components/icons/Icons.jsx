@@ -33,7 +33,8 @@ import {
   FaSchool,
   FaMobileAlt,
   FaCheckDouble,
-  FaSearch 
+  FaSearch,
+  FaExclamationCircle 
 } from "react-icons/fa";
 
 export const Icons = {
@@ -50,6 +51,8 @@ export const Icons = {
   ExternalLink: () => <FaExternalLinkAlt size={24} />,
   Code: () => <FaCode size={24} />,
   Mail: () => <FaEnvelope size={24} />,
+  CheckBig: () => <VscCheck size={24} color="#89d185" />,
+  AlertCircle: () => <FaExclamationCircle size={24} color="#89d185" />,
 
   // UI Icons (Small)
   Close: () => <VscChromeClose size={16} />,

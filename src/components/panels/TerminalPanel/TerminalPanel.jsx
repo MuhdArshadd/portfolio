@@ -64,7 +64,7 @@ export const TerminalPanel = ({ toggleTerminal, height }) => {
                 
             case 'start':
                 if (args[1] === 'resume') {
-                    window.open('src/assets/resume.pdf', '_blank');
+                    window.open('/resume.pdf', '_blank');
                     return 'Opening resume.pdf in a new tab...';
                 }
                 return `The system cannot find the file specified: ${args[1] || ''}`;
