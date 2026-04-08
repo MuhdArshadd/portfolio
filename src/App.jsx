@@ -1,16 +1,17 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Icons } from './components/icons/Icons';
-import { fileSystem } from "./data/index.js";
-import { TitleBar } from './components/TitleBar';
-import { ActivityBar } from './components/ActivityBar';
-import { StatusBar } from './components/StatusBar';
-import { FileContent } from './components/FileContent';
-import { DiffView, GitPanel, ExtensionsPanel, ChatPanel, ExplorerPanel, TerminalPanel  } from './components/panels';
+import { Icons } from './components/icons/Icons.jsx';
+import { fileSystem } from './data/index.js';
+import { TitleBar } from './components/layout/TitleBar/TitleBar.jsx';
+import { ActivityBar } from './components/layout/ActivityBar/ActivityBar.jsx';
+import { StatusBar } from './components/layout/StatusBar/StatusBar.jsx';
+import { FileContent } from './components/layout/FileContent/FileContent.jsx';
+import { DiffView, GitPanel, ExtensionsPanel, ChatPanel, ExplorerPanel, TerminalPanel  } from './components/panels/index.js';
+import './index.css';
 
 function App() {
     // --- STATE ---
-    const [activeFile, setActiveFile] = useState('home.tsx');
-    const [openFiles, setOpenFiles] = useState(['home.tsx', 'about.html']);
+    const [activeFile, setActiveFile] = useState('home.jsx');
+    const [openFiles, setOpenFiles] = useState(['home.jsx', 'about.html']);
     const [sidebarVisible, setSidebarVisible] = useState(true);
     const [activeSidebar, setActiveSidebar] = useState('explorer');
     const [expandedFolders, setExpandedFolders] = useState(['PORTFOLIO']);
@@ -30,8 +31,8 @@ function App() {
         const targetFile = filenameToClose || activeFile;
         const newOpenFiles = openFiles.filter(f => f !== targetFile);
         if (newOpenFiles.length === 0) { 
-            setOpenFiles(['home.tsx']); 
-            setActiveFile('home.tsx'); 
+            setOpenFiles(['home.jsx']); 
+            setActiveFile('home.jsx'); 
         } else { 
             setOpenFiles(newOpenFiles); 
             if (activeFile === targetFile) {
@@ -42,9 +43,9 @@ function App() {
     const getFileIcon = (filename) => { const file = fileSystem.find(f => f.name === filename); const IconComponent = Icons[file?.icon || 'ExtensionTabIcon']; return <IconComponent />; };
     const handleSidebarClick = (panel) => { if (activeSidebar === panel) setSidebarVisible(!sidebarVisible); else { setActiveSidebar(panel); setSidebarVisible(true); } };
     const closeAllFiles = () => {
-        // Keeps only home.tsx open
-        setOpenFiles(['home.tsx']);
-        setActiveFile('home.tsx');
+        // Keeps only home.jsx open
+        setOpenFiles(['home.jsx']);
+        setActiveFile('home.jsx');
     };
     const toggleSidebar = () => {
         setSidebarVisible(!sidebarVisible);
@@ -133,7 +134,7 @@ function App() {
                         </div>
                         
                         <div className="editor-content" style={{ flex: 1, overflowY: 'auto' }}>
-                            <FileContent activeFile={activeFile} setBotActive={setBotActive}/>
+                            <FileContent activeFile={activeFile} setBotActive={setBotActive} openFile={openFile}/>
                         </div>
                     </div>                
 

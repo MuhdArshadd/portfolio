@@ -1,0 +1,31 @@
+/* Status Bar */
+.status-bar {
+  height: 22px;
+  background: var(--bg-titlebar);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  font-size: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.status-left,
+.status-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+.status-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}

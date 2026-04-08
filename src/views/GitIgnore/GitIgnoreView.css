@@ -1,0 +1,13 @@
+.gitignore-container {
+    padding: 20px 0;
+    font-family: 'Consolas', 'Courier New', monospace;
+    color: #cccccc;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.gitignore-comment {
+    color: #6a9955;
+    font-style: italic;
+    margin-left: 15px;
+}

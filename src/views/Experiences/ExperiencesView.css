@@ -1,0 +1,135 @@
+/* --- EXPERIENCES CONTAINER --- */
+.experiences-container {
+    padding: 40px;
+    max-width: 1200px; /* Made wider to accommodate two columns */
+    margin: 0 auto;
+    font-family: 'Consolas', 'Courier New', monospace;
+    color: #cccccc;
+}
+
+/* Headers */
+.exp-header-comment {
+    font-size: 14px;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.exp-title {
+    font-family: 'Arial Black', 'Impact', sans-serif;
+    font-size: 60px;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.exp-subtitle {
+    font-size: 14px;
+    margin-bottom: 50px;
+    line-height: 1.5;
+}
+
+/* --- SPLIT LAYOUT (THE NEW FEATURE) --- */
+.split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px; /* Space between the two timelines */
+}
+
+.column-heading {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    font-weight: normal;
+}
+
+/* --- TIMELINE LAYOUT --- */
+.timeline-container {
+    padding-left: 20px; 
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 30px; 
+    padding-bottom: 40px; 
+    border-left: 1px solid #444444; 
+}
+
+.timeline-item:last-child {
+    border-left-color: transparent;
+    padding-bottom: 0;
+}
+
+/* --- TIMELINE DOTS --- */
+.timeline-dot {
+    position: absolute;
+    left: -7px; 
+    top: 0;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: #1e1e1e;
+    border: 2px solid #555555;
+    z-index: 2;
+}
+
+/* Color variations for the two columns */
+.timeline-dot.dot-blue.active {
+    background-color: #4fc1ff;
+    border-color: #4fc1ff;
+    box-shadow: 0 0 0 4px rgba(79, 193, 255, 0.15);
+}
+
+.timeline-dot.dot-purple.active {
+    background-color: #c586c0;
+    border-color: #c586c0;
+    box-shadow: 0 0 0 4px rgba(197, 134, 192, 0.15);
+}
+
+/* --- JOB DETAILS --- */
+.timeline-date {
+    font-size: 12px;
+    color: #858585;
+    margin-bottom: 6px;
+    line-height: 1; 
+}
+
+.timeline-role {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 20px; /* Slightly smaller to fit side-by-side */
+    color: #ffffff;
+    margin: 0 0 5px 0;
+    letter-spacing: -0.5px;
+}
+
+.timeline-company {
+    font-size: 13px;
+    color: #858585; 
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.timeline-desc {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #9d9d9d;
+    margin: 0 0 15px 0;
+}
+
+/* --- TECH BADGES --- */
+.timeline-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech-badge {
+    border: 1px solid #333333;
+    color: #cccccc;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    background: rgba(255, 255, 255, 0.02);
+    cursor: default;
+}

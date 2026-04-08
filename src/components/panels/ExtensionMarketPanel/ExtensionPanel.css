@@ -1,0 +1,87 @@
+/* --- EXTENSIONS SEARCH BAR --- */
+.extensions-search-container {
+    padding: 10px;
+}
+
+.extensions-search-input {
+    width: 100%;
+    box-sizing: border-box;
+    background: var(--bg-dark, #1e1e1e);
+    border: 1px solid var(--border, #444444);
+    color: var(--text, #cccccc);
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.extensions-search-input:focus {
+    border-color: #007acc;
+}
+
+/* --- EXTENSION CARDS --- */
+.extension-list {
+    margin-top: 5px;
+}
+
+.extension-card {
+    display: flex;
+    gap: 12px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--border, #444444);
+    background-color: transparent;
+    transition: background 0.2s;
+}
+
+.extension-card:hover {
+    background-color: #2a2d2e;
+}
+
+/* --- EXTENSION ICON --- */
+.extension-icon-wrapper {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    background: linear-gradient(135deg, #007acc, #004d80);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+}
+
+/* --- EXTENSION TEXT --- */
+.extension-text-block {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.extension-title {
+    font-size: 13px;
+    font-weight: bold;
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+.extension-desc {
+    font-size: 12px;
+    color: var(--text-muted, #858585);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.extension-meta {
+    font-size: 11px;
+    color: var(--text-muted, #858585);
+    margin-top: 4px;
+}
+
+.extension-empty-state {
+    padding: 20px;
+    text-align: center;
+    color: var(--text-muted, #858585);
+    font-size: 13px;
+}

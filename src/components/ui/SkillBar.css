@@ -1,0 +1,37 @@
+/* Skill Bars */
+.skill-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+}
+
+.skill-name {
+    color: #9d9d9d;
+    font-size: 13px;
+}
+
+.skill-percent {
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Consolas', monospace;
+}
+
+.skill-track {
+    height: 3px;
+    background: #333333;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.skill-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}

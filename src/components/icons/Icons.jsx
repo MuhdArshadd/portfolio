@@ -74,6 +74,6 @@ export const Icons = {
   JsonIcon: () => <VscJson size={16} color="#a5a5a5" />,
   GitSmall: () => <VscSourceControl size={16} />,
 
-  // NEW: Small Extension icon for the file tab!
+  // Small Extension icon for the file tab
   ExtensionTabIcon: () => <VscExtensions size={16} color="#4fc1ff" />,
 };

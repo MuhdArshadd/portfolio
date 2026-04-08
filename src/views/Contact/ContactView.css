@@ -1,0 +1,165 @@
+/* --- CONTACT CONTAINER --- */
+.contact-container {
+    padding: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-family: 'Consolas', 'Courier New', monospace;
+    color: #cccccc;
+}
+
+.contact-header {
+    margin-bottom: 50px;
+}
+
+.comment-text {
+    font-size: 13px;
+    font-style: italic;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.contact-title {
+    font-family: 'Arial Black', 'Impact', sans-serif;
+    font-size: 55px;
+    color: #ffffff;
+    margin: 5px 0;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+/* --- TWO COLUMN LAYOUT --- */
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.section-title {
+    font-size: 16px;
+    color: #4ec9b0;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+    font-weight: normal;
+}
+
+/* --- SOCIAL CARDS (LEFT COLUMN) --- */
+.social-card {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.social-card:hover {
+    border-color: #555;
+    background: rgba(255, 255, 255, 0.02);
+    transform: translateX(5px);
+}
+
+.social-icon-wrapper {
+    width: 36px;
+    height: 36px;
+    border: 1px solid;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    background: rgba(0,0,0,0.2);
+}
+
+.social-details {
+    flex: 1;
+}
+
+.social-name {
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.social-link {
+    font-size: 12px;
+    color: #858585;
+}
+
+.social-arrow {
+    color: #555;
+    transition: color 0.2s;
+}
+
+.social-card:hover .social-arrow {
+    color: #cccccc;
+}
+
+/* --- CODE FORM (RIGHT COLUMN) --- */
+.code-form .form-group {
+    margin-bottom: 20px;
+}
+
+.required {
+    color: #f48771; /* Red asterisk */
+}
+
+.code-form input,
+.code-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    background: transparent;
+    border: 1px solid #333;
+    border-radius: 4px;
+    color: #cccccc;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 13px;
+    padding: 12px 15px;
+    transition: border-color 0.2s;
+    outline: none;
+}
+
+.code-form textarea {
+    resize: vertical;
+}
+
+.code-form input:focus,
+.code-form textarea:focus {
+    border-color: #007acc;
+}
+
+/* Placeholder styling */
+.code-form input::placeholder,
+.code-form textarea::placeholder {
+    color: #555;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    background: #007acc;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 12px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.2s;
+    margin-bottom: 15px;
+}
+
+.submit-btn:hover {
+    background: #005f9e;
+}
+
+.form-footer {
+    color: #555;
+    text-align: left;
+}

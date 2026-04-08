@@ -1,0 +1,22 @@
+.code-line {
+    display: flex;
+    gap: 25px;
+    padding: 0 20px;
+}
+
+.code-line-number {
+    color: #858585;
+    min-width: 25px;
+    text-align: right;
+    user-select: none;
+}
+
+.code-line-content {
+    flex: 1;
+    color: inherit; /* Inherits from parent file */
+}
+
+/* Heading color for .gitignore comments or Markdown headers */
+.code-line-content.heading {
+    color: #ce9178; 
+}

@@ -1,0 +1,198 @@
+/* --- CONTAINER --- */
+.ext-container {
+    padding: 30px;
+    max-width: 900px;
+    color: #cccccc;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    height: auto; 
+    min-height: 100%;
+}
+
+/* --- HEADER SECTION --- */
+.ext-header-row {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 100px;
+}
+
+.ext-icon-box {
+    width: 110px;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    transition: background 0.3s, opacity 0.3s;
+}
+
+.ext-icon-box.enabled {
+    background: linear-gradient(135deg, #007acc, #004d80);
+}
+
+.ext-icon-box.uninstalled {
+    background: #333333;
+}
+
+.ext-icon-inner {
+    transform: scale(2.5);
+    transition: opacity 0.3s;
+}
+
+.ext-icon-inner.dimmed {
+    opacity: 0.5;
+}
+
+/* --- TYPOGRAPHY --- */
+.ext-title {
+    margin: 0 0 5px 0;
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.ext-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #858585;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.ext-desc {
+    margin: 0 0 15px 0;
+    font-size: 14px;
+}
+
+/* --- BUTTONS & MENUS --- */
+.ext-actions-row {
+    display: flex;
+    gap: 10px;
+    position: relative; 
+    z-index: 10; 
+}
+
+.ext-btn-wrapper {
+    position: relative;
+    z-index: 20; 
+}
+
+.ext-btn {
+    padding: 4px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    font-family: inherit;
+    font-size: 13px;
+    white-space: nowrap; 
+}
+
+.ext-btn.primary {
+    background: #007acc;
+    color: #ffffff;
+    border: 1px solid #007acc;
+}
+
+.ext-btn.secondary {
+    background: #333333;
+    color: #ffffff;
+    border: 1px solid #3c3c3c;
+}
+
+.ext-btn.icon-only {
+    padding: 4px 8px;
+}
+
+.ext-dropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    background-color: #252526 !important; 
+    opacity: 1 !important; 
+    backdrop-filter: none; 
+    border: 1px solid #454545;
+    border-radius: 4px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.9); 
+    min-width: 140px; 
+    padding: 4px 0;
+}
+
+.ext-dropdown-item {
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ext-dropdown-item:hover {
+    background: #04395e;
+    color: #ffffff;
+}
+
+/* --- TABS --- */
+.ext-tabs-row {
+    display: flex;
+    gap: 25px;
+    border-bottom: 1px solid #3c3c3c;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.ext-tab {
+    padding-bottom: 8px;
+    cursor: pointer;
+    color: #858585;
+    border-bottom: 2px solid transparent;
+}
+
+.ext-tab.active {
+    border-bottom-color: #4fc1ff;
+    color: #ffffff;
+}
+
+/* --- MARKDOWN BODY --- */
+.ext-body {
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.ext-h2 {
+    border-bottom: 1px solid #3c3c3c;
+    padding-bottom: 8px;
+    color: #ffffff;
+    font-weight: normal;
+    font-size: 22px;
+    margin-top: 0;
+}
+
+.ext-h3 {
+    color: #ffffff;
+    margin-top: 30px;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.ext-tag {
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.ext-tag.dark { background: #333333; }
+.ext-tag.blue { background: #007acc; color: white; }
+.ext-tag.grey { background: #666666; color: white; }
+
+.ext-changelog-block {
+    padding: 15px 0;
+    border-bottom: 1px solid #3c3c3c;
+}
+
+.ext-changelog-version {
+    margin: 0 0 10px 0;
+    color: #4fc1ff;
+}

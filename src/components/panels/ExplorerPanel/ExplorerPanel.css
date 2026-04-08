@@ -1,0 +1,58 @@
+/* --- FOLDER HEADER --- */
+.explorer-folder-header {
+    display: flex;
+    align-items: center;
+    padding: 4px 15px 4px 5px; 
+    cursor: pointer;
+    user-select: none;
+    color: #cccccc;
+    font-size: 13px;
+    transition: background 0.2s;
+}
+
+.explorer-folder-header:hover {
+    background: #2a2d2e;
+}
+
+.explorer-folder-icon {
+    margin-right: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.explorer-folder-name {
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* --- FILE LIST & ITEMS --- */
+.explorer-file-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.explorer-file-item {
+    padding: 4px 15px 4px 35px; 
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    color: #cccccc;
+    font-size: 13px;
+    user-select: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.explorer-file-item:hover {
+    background: #2a2d2e;
+}
+
+/* When the file is open/selected in the editor */
+.explorer-file-item.active {
+    background: #04395e;
+    color: #ffffff;
+}
+
+.folder-section {
+  padding: 5px 0;
+}
