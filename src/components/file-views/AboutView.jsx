@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icons } from '../icons/Icons'
 import './AboutView.css';
 
 export const AboutView = () => {
@@ -19,7 +20,9 @@ export const AboutView = () => {
             {/* Intro Card */}
             <div className="about-card intro-card">
                 <p>
-                    Hi! I'm <span className="highlight-blue">Muhammad Arshad</span>, a software developer living at the crossroads of <span className="highlight-blue">mobile engineering</span>, <span className="highlight-blue">test automation</span>, and <span className="highlight-blue">AI solutions</span>. I love building systems that are not just functional but genuinely <span className="highlight-blue">intelligent and scalable</span>. Currently a <span className="highlight-blue">QA Automation Intern at Teleport</span> and a proud <span className="highlight-blue">YBR Scholar</span> at UTeM, ensuring quality and building applications that make a real impact.
+                    Hi! I'm <span className="highlight-blue">Muhammad Arshad</span>, a software developer living at the crossroads of <span className="highlight-blue">mobile engineering</span>, <span className="highlight-blue">test automation</span>, and <span className="highlight-blue">AI solutions</span>. I love building systems that are not just functional, but genuinely <span className="highlight-blue">intelligent and scalable</span>. 
+                    <br /><br />
+                    Having just wrapped up a high-impact <span className="highlight-blue">QA Automation Internship at Teleport</span>, I am actively seeking a permanent role. As a proud <span className="highlight-blue">YBR Scholar</span>, I am looking to bring my dedication to zero-defect deployments and user-centric applications to a forward-thinking team!
                 </p>
             </div>
 
@@ -28,20 +31,20 @@ export const AboutView = () => {
             <div className="about-card focus-card">
                 <div className="focus-grid">
                     <div className="focus-item">
-                        <span className="focus-icon">📱</span>
-                        <span>Building fluid mobile experiences with Android & Flutter</span>
+                        <span className="focus-icon"><Icons.Mobile /></span>
+                        <span>Building mobile experiences with Android & Flutter</span>
                     </div>
                     <div className="focus-item">
-                        <span className="focus-icon">🧪</span>
+                        <span className="focus-icon"><Icons.CheckMark /></span>
                         <span>Ensuring system reliability through QA Automation & STLC</span>
                     </div>
                     <div className="focus-item">
-                        <span className="focus-icon">🤖</span>
-                        <span>Competing in hackathons to build AI-for-good solutions</span>
+                        <span className="focus-icon"><Icons.CodeSmall /></span>
+                        <span>Competing in hackathons to build AI-for-good solutions and explore innovative ideas</span>
                     </div>
                     <div className="focus-item">
-                        <span className="focus-icon">🏋️</span>
-                        <span>Maintaining "Beast Mode" discipline in fitness and code</span>
+                        <Icons.Search />
+                        <span>Exploring and learning new tech (as we live in AI era)</span>
                     </div>
                 </div>
             </div>
@@ -53,14 +56,16 @@ export const AboutView = () => {
             <div className="about-card edu-card">
                 <div className="edu-header">
                     <div className="edu-title">
-                        <span className="edu-icon">🎓</span> Universiti Teknikal Malaysia Melaka (UTeM)
+                        <span className="edu-icon"><Icons.Graduation /></span> Universiti Teknikal Malaysia Melaka (UTeM)
                     </div>
-                    <div className="edu-date">Oct 2022 - March 2026</div>
+                    <div className="edu-date">Oct 2022 - Mar 2026</div>
                 </div>
                 <div className="edu-program">Bachelor of Computer Science in Software Development (Hons.)</div>
                 <div className="edu-details">
-                    <span className="cgpa">Current CGPA: 3.87</span>
-                    <div className="edu-skills">Skills: Dart, PostgreSQL, Java, Software Engineering</div>
+                    <span className="cgpa">CGPA: 3.88 (First Class Honours)</span>
+                    <div className="edu-desc" style={{ marginTop: '8px' }}>
+                        Graduated with top academic standing. Specialized in building scalable architectures and full-stack development.
+                    </div>
                 </div>
             </div>
 
@@ -68,7 +73,7 @@ export const AboutView = () => {
             <div className="about-card edu-card">
                 <div className="edu-header">
                     <div className="edu-title">
-                        <span className="edu-icon">🏫</span> Kolej Matrikulasi Selangor (KMS)
+                        <span className="edu-icon"><Icons.School /></span> Kolej Matrikulasi Selangor (KMS)
                     </div>
                     <div className="edu-date">2021 - 2022</div>
                 </div>
@@ -85,13 +90,13 @@ export const AboutView = () => {
             <div className="about-card edu-card">
                 <div className="edu-header">
                     <div className="edu-title">
-                        <span className="edu-icon">🏫</span> SMK Bandar Baru Sungai Long
+                        <span className="edu-icon"><Icons.School /></span> SMK Bandar Baru Sungai Long
                     </div>
                     <div className="edu-date">2016 - 2020</div>
                 </div>
                 <div className="edu-program">Sijil Pelajaran Malaysia (SPM)</div>
                 <div className="edu-details">
-                    <span className="cgpa">Grade: 8A</span>
+                    <span className="cgpa">Grade: 8A 1B+</span>
                     <div className="edu-desc">
                         Active in Science and Mathematics events, Kompang Club, Kawad Kaki, and Sports.
                     </div>
