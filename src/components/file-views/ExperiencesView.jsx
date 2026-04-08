@@ -74,8 +74,8 @@ export const ExperiencesView = () => {
                         <div className="timeline-item">
                             <div className="timeline-dot dot-purple"></div>
                             <div className="timeline-date">2025</div>
-                            <h3 className="timeline-role">Distinction Graduate (Top 15%)</h3>
-                            <div className="timeline-company">@ Khazanah Nasional KYouthXGIFT</div>
+                            <h3 className="timeline-role">KYouthXGIFT Distinction Graduate (Top 15%)</h3>
+                            <div className="timeline-company">@ Khazanah Nasional</div>
                             <p className="timeline-desc">
                                 Completed an intensive industry-preparation and upskilling initiative, graduating in the top 15% of the cohort with distinction.
                             </p>
@@ -89,7 +89,7 @@ export const ExperiencesView = () => {
                         <div className="timeline-item">
                             <div className="timeline-dot dot-purple"></div>
                             <div className="timeline-date">2025</div>
-                            <h3 className="timeline-role">2nd Place Winner</h3>
+                            <h3 className="timeline-role">UTeM Hackathon | 2nd Place Winner</h3>
                             <div className="timeline-company">@ CODE FOR INNOVATION Hackathon</div>
                             <p className="timeline-desc">
                                 Competed in a 24-hour C++ hackathon tackling local waste management. Showcased rapid debugging by successfully rebuilding the core solution from scratch in under 12 hours.
@@ -104,7 +104,7 @@ export const ExperiencesView = () => {
                         <div className="timeline-item">
                             <div className="timeline-dot dot-purple"></div>
                             <div className="timeline-date">2024</div>
-                            <h3 className="timeline-role">1st Place Winner</h3>
+                            <h3 className="timeline-role">UPSI DICRATHON | 1st Place Winner</h3>
                             <div className="timeline-company">@ Digital Creative Marathon (UPSI)</div>
                             <p className="timeline-desc">
                                 Developed 'TourEase', a Flutter-based travel assistant. Handled backend integrations and API performance testing to digitize processes for Malaysian SME vendors.
@@ -119,7 +119,7 @@ export const ExperiencesView = () => {
                         <div className="timeline-item">
                             <div className="timeline-dot dot-purple"></div>
                             <div className="timeline-date">2024</div>
-                            <h3 className="timeline-role">Bronze Award & IoT Mentor</h3>
+                            <h3 className="timeline-role">UTEM Micro:bit Club | Bronze Award & IoT Mentor</h3>
                             <div className="timeline-company">@ STGEMS x SULAM Bootcamp</div>
                             <p className="timeline-desc">
                                 Mentored primary students to build an IoT-based automated system using Micro:bit, securing the Bronze Award in the final exhibition phase for technical execution.

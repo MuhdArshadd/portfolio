@@ -17,8 +17,9 @@ const skillsData = {
         { name: "Python", level: 85, color: "#3776AB" },
         { name: "C++", level: 75, color: "#00599C" },
         { name: "Java", level: 70, color: "#E76F00" },
-        { name: "SQL", level: 88, color: "#336791" },
-        { name: "HTML/CSS", level: 92, color: "#E34F26" }
+        { name: "SQL", level: 90, color: "#336791" },
+        { name: "HTML/CSS", level: 90, color: "#E34F26" },
+        { name: "NoSQL", level: 75, color: "#00ED64" }
       ]
     },
     {
@@ -43,7 +44,6 @@ const skillsData = {
         { name: "PostgreSQL", level: 85, color: "#336791" },
         { name: "MySQL", level: 80, color: "#4479A1" },
         { name: "MongoDB", level: 78, color: "#47A248" },
-        { name: "NoSQL", level: 75, color: "#00ED64" }
       ]
     },
     {
@@ -52,7 +52,7 @@ const skillsData = {
       skills: [
         { name: "Google Cloud Platform", level: 80, color: "#4285F4" },
         { name: "Microsoft Azure", level: 75, color: "#0078D4" },
-        { name: "Firebase", level: 90, color: "#FFCA28" },
+        { name: "Firebase", level: 80, color: "#FFCA28" },
         { name: "Supabase", level: 85, color: "#3ECF8E" }
       ]
     },
@@ -101,8 +101,7 @@ const skillsData = {
     "Proactive Learning", "Team Collaboration", "Communication", "Resilience"
   ],
   alsoFamiliar: [
-    "Cucumber", "Karate", "Swagger", "TensorFlow Lite", 
-    "Azure DevOps", "GCP Cloud Functions", "Miro", "Visily"
+    "Playwright", "Selenium", "Swagger", "LLM", "RAG", "GCP Cloud Functions",
   ]
 };
 
