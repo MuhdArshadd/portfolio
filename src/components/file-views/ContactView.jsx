@@ -43,7 +43,7 @@ export const ContactView = () => {
             
             {/* Header Section */}
             <div className="contact-header">
-                <div className="comment-text" style={{ color: '#6a9955' }}>/* contact.css — let's build something */</div>
+                <div className="comment-text" style={{ color: '#6a9955' }}>// contact.css — let's build something</div>
                 <h1 className="contact-title">Contact</h1>
                 <div className="comment-text" style={{ color: '#858585' }}>// open to work, permanent roles & good conversations</div>
             </div>
@@ -95,31 +95,31 @@ export const ContactView = () => {
                     <form onSubmit={handleSubmit} className="code-form">
                         
                         <div className="form-group">
-                            <label className="comment-text">// YOUR_NAME <span className="required">*</span></label>
-                            <input type="text" placeholder="string" required value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} />
+                            <label className="comment-text">YOUR_NAME <span className="required">*</span></label>
+                            <input type="text" placeholder="name" required value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} />
                         </div>
 
                         <div className="form-group">
-                            <label className="comment-text">// YOUR_EMAIL <span className="required">*</span></label>
-                            <input type="email" placeholder="string" required value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} />
+                            <label className="comment-text">YOUR_EMAIL <span className="required">*</span></label>
+                            <input type="email" placeholder="email" required value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} />
                         </div>
 
                         <div className="form-group">
-                            <label className="comment-text">// SUBJECT</label>
-                            <input type="text" placeholder="string" value={formData.subject} onChange={(e) => setFormData({...formData, subject: e.target.value})} />
+                            <label className="comment-text">SUBJECT</label>
+                            <input type="text" placeholder="subject" value={formData.subject} onChange={(e) => setFormData({...formData, subject: e.target.value})} />
                         </div>
 
                         <div className="form-group">
-                            <label className="comment-text">// MESSAGE <span className="required">*</span></label>
-                            <textarea placeholder="'''your message'''" rows="5" required value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})}></textarea>
+                            <label className="comment-text">MESSAGE <span className="required">*</span></label>
+                            <textarea placeholder="'your message'" rows="5" required value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})}></textarea>
                         </div>
 
                         <button type="submit" className="submit-btn">
-                            ➔ send_message()
+                            Send Message
                         </button>
                         
                         <div className="comment-text form-footer">
-                            // Powered by Formspree (lands directly in my inbox)
+                            // Powered by Formspree
                         </div>
                     </form>
                 </div>

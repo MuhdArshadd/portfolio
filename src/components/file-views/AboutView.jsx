@@ -7,7 +7,7 @@ export const AboutView = () => {
             
             {/* Top Header */}
             <div className="about-header-comment">
-                <span style={{ color: '#6a9955' }}>&lt;!-- about.html - Muhammad Arshad --&gt;</span>
+                <span style={{ color: '#6a9955' }}>// about.html - Muhammad Arshad</span>
             </div>
             
             <h1 className="about-title">About Me</h1>
