@@ -232,7 +232,7 @@ export const ContactView = () => {
           onClick={handleBackdropClick}
         >
           <div 
-            className={`modal-content ${modalType} ${isClosing ? 'closing' : ''}`}
+            className={`contact-modal-box ${modalType} ${isClosing ? 'closing' : ''}`}
             onClick={(e) => e.stopPropagation()}
           >
             <div className="modal-header">
