@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { Icons } from './components/icons/Icons.jsx';
 import { fileSystem } from './data/index.js';
 import { TitleBar } from './components/layout/TitleBar/TitleBar.jsx';
@@ -170,7 +171,8 @@ function App() {
             
             </div>
 
-            <StatusBar />            
+            <StatusBar />   
+            <Analytics />         
         </div>
     );
 }
