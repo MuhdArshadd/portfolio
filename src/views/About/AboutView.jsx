@@ -33,7 +33,7 @@ export const AboutView = () => {
                 <div className="focus-grid">
                     <div className="focus-item">
                         <span className="focus-icon"><Icons.Mobile /></span>
-                        <span>Building mobile experiences with Android & Flutter</span>
+                        <span>Building mobile and web experiences</span>
                     </div>
                     <div className="focus-item">
                         <span className="focus-icon"><Icons.CheckMark /></span>
@@ -62,7 +62,7 @@ export const AboutView = () => {
                 </div>
                 <div className="edu-program">Bachelor of Computer Science in Software Development (Hons.)</div>
                 <div className="edu-details">
-                    <span className="cgpa">CGPA: 3.88 (First Class Honours)</span>
+                    <span className="cgpa">CGPA: 3.87 (First Class Honours)</span>
                     <div className="edu-desc" style={{ marginTop: '8px' }}>
                         Graduated with top academic standing. Specialized in building scalable architectures and full-stack development.
                     </div>

@@ -20,18 +20,13 @@ export const techSkillsData = {
       ]
     },
     {
-      id: "frontend",
-      title: "MOBILE FRAMEWORKS",
+      id: "frameworks",
+      title: "FRAMEWORKS & LIBRARIES",
       skills: [
-        { name: "Flutter", level: 95, color: "#02569B" }
-      ]
-    },
-    {
-      id: "backend",
-      title: "BACKEND FRAMEWORKS",
-      skills: [
-        { name: "Node.js", level: 85, color: "#339933" },
-        { name: "Express.js", level: 82, color: "#336791" }
+        { name: "Flutter (Mobile)", level: 95, color: "#02569B" },
+        { name: "React (Web)", level: 60, color: "#61DAFB" },
+        { name: "Node.js (Backend)", level: 85, color: "#339933" },
+        { name: "Express.js (Backend)", level: 82, color: "#336791" }
       ]
     },
     {

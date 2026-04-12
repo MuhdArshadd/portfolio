@@ -95,7 +95,7 @@ export const HomeView = ({ openFile }) => {
             {/* Stats Bar */}
             <div className="hero-stats">
                 <div className="stat-box">
-                    <div className="stat-number">3.88</div>
+                    <div className="stat-number">3.87</div>
                     <div className="stat-label">CGPA (CS HONS)</div>
                 </div>
                 <div className="stat-box">
