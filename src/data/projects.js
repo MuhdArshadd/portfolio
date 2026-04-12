@@ -23,7 +23,30 @@ export const projectsData = [
     }
   },
   {
-    id: 2,
+    id: 2, 
+    categories: ["FRONTEND", "UI/UX", "FREELANCE"],
+    title: "BWR Services - Aircond Specialist",
+    description: "A responsive landing page built for a friend's air conditioning business. Focused on making it easy for customers to trust his work and book him instantly via WhatsApp.",
+    tech: ["React.js", "Tailwind CSS", "Vite", "Vercel"],
+    links: [
+        { type: "github", url: "https://github.com/MuhdArshadd/BWR_SERVICES" },
+        { type: "website", url: "https://bwr-services.vercel.app/" }
+    ],
+    status: "In Progress",
+    details: {
+      challenge: "My friend's air conditioning business was only using TikTok and Instagram to get customers. Without an official website, it was hard for him to look fully professional, especially when trying to win bigger jobs from companies instead of just regular houses.",
+      solution: "I built him a fully responsive React website that adapts perfectly—whether a customer opens it on a tiny mobile phone or a wide desktop monitor. It acts as his official business hub, making his services look totally legit and letting people book him instantly through a WhatsApp integration.",
+      features: [
+          "Fully responsive design optimized for mobile and desktop views",
+          "Interactive Booking Flow with pre-filled WhatsApp messages",
+          "Vertical scrolling feed to show off real customer reviews",
+          "Auto-cycling image gallery to prove his quality of work"
+      ],
+      outcome: "He now has a professional platform to share with clients that actually builds trust. The site is live and making it way easier for people to hire him, and I'm still actively working on adding new features and enhancement!"
+    }
+  },
+  {
+    id: 3,
     categories: ["MOBILE", "AI", "TOURISM"],
     title: "TourEase - Smart Heritage Guide",
     description: "Intelligent tourism mobile platform offering personalized recommendations, real-time updates, and an interactive AI assistant to help tourists explore Malaysia's heritage. 1st Place at DICRATHON 2024.",
@@ -45,7 +68,7 @@ export const projectsData = [
     }
   },
   {
-    id: 3,
+    id: 4,
     categories: ["MOBILE", "DATA AUTOMATION", "SOCIAL IMPACT"],
     title: "MYCare - Community Support Hub",
     description: "Mobile application designed to centralize access to essential support services for underserved communities, featuring live data automated via Python web scraping.",
@@ -68,7 +91,7 @@ export const projectsData = [
     }
   },
   {
-    id: 4,
+    id: 5,
     categories: ["FULL STACK", "WEB DEV", "E-COMMERCE"],
     title: "Grillz - Restaurant Ordering System",
     description: "Full-stack web application developed for a burger establishment. Supports both online ordering and walk-in QR-code scanning, managed through a centralized staff dashboard.",
@@ -90,7 +113,7 @@ export const projectsData = [
     }
   },
   {
-    id: 5,
+    id: 6,
     categories: ["DESKTOP", "OOP", "MANAGEMENT"],
     title: "Car Service Maintenance System",
     description: "Object-Oriented Programming (OOP) system developed in Java. Facilitates customer car service requests, payment processing, and staff job assignments.",
@@ -112,7 +135,7 @@ export const projectsData = [
     }
   },
   {
-    id: 6,
+    id: 7,
     categories: ["CLI", "C++", "DATABASES"],
     title: "Tuition Centre Management System",
     description: "Command Line Interface (CLI) application addressing operational inefficiencies in secondary education institutions. Handles enrollment, fee tracking, and feedback.",
@@ -132,5 +155,5 @@ export const projectsData = [
       ],
       outcome: "Successfully prototyped a digital transformation solution for post-COVID academic administration."
     }
-  }
+  },
 ];

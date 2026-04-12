@@ -8,17 +8,19 @@ import './ProjectsView.css';
 const ProjectCard = ({ project, onClick }) => (
   <div className="project-card" onClick={() => onClick(project)}>
     <div className="project-header">
+      
+      {/* Row 1: Categories on Top */}
+      <div className="project-categories" style={{ marginBottom: '15px' }}>
+        {project.categories.map((cat, idx) => (
+          <span key={cat}>
+            <span className="category-name">{cat}</span>
+            {idx < project.categories.length - 1 && <span className="category-dot">•</span>}
+          </span>
+        ))}
+      </div>
+      
+      {/* Row 2: Links on Left, Status on Right */}
       <div className="project-meta-row">
-        
-        <div className="project-categories">
-          {project.categories.map((cat, idx) => (
-            <span key={cat}>
-              <span className="category-name">{cat}</span>
-              {idx < project.categories.length - 1 && <span className="category-dot">•</span>}
-            </span>
-          ))}
-        </div>
-        
         <div className="project-links" onClick={(e) => e.stopPropagation()}>
           {project.links.map((link) => (
             <a 
@@ -28,12 +30,19 @@ const ProjectCard = ({ project, onClick }) => (
               target="_blank"
               rel="noopener noreferrer"
             >
-              {link.type === 'github' ? 'GitHub →' : 'YouTube Demo →'}
+              {link.type === 'github' ? 'GitHub →' : link.type === 'website' ? 'Live Site →' : 'YouTube Demo →'}
             </a>
           ))}
         </div>
 
+        {/* The New Conditional Status Badge */}
+        {project.status === "In Progress" && (
+          <div className="project-status in-progress">
+            <span className="status-dot"></span> In Progress
+          </div>
+        )}
       </div>
+
     </div>
 
     <h2 className="project-title">{project.title}</h2>
@@ -115,7 +124,7 @@ const ProjectModal = ({ project, isClosing, onClose, onBackdropClick }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {link.type === 'github' ? 'View Source Code →' : 'Watch Demo →'}
+                {link.type === 'github' ? 'View Source Code →' : link.type === 'website' ? 'Visit Live Site →' : 'Watch Demo →'}
               </a>
             ))}
           </div>
