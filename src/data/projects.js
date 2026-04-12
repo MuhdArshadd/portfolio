@@ -24,7 +24,7 @@ export const projectsData = [
   },
   {
     id: 2, 
-    categories: ["FRONTEND", "UI/UX", "FREELANCE"],
+    categories: ["WEB", "FRONT-END", "FREELANCE"],
     title: "BWR Services - Aircond Specialist",
     description: "A responsive landing page built for a friend's air conditioning business. Focused on making it easy for customers to trust his work and book him instantly via WhatsApp.",
     tech: ["React.js", "Tailwind CSS", "Vite", "Vercel"],
@@ -92,7 +92,7 @@ export const projectsData = [
   },
   {
     id: 5,
-    categories: ["FULL STACK", "WEB DEV", "E-COMMERCE"],
+    categories: ["WEB", "FULLSTACK", "E-COMMERCE"],
     title: "Grillz - Restaurant Ordering System",
     description: "Full-stack web application developed for a burger establishment. Supports both online ordering and walk-in QR-code scanning, managed through a centralized staff dashboard.",
     tech: ["PHP", "JavaScript", "HTML/CSS", "Azure PostgreSQL", "XAMPP"],
