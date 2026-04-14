@@ -46,7 +46,7 @@ export const ActivityBar = ({
                 
                 {/* Mobile Files Popup Chat Bubble */}
                 {isMobile && openMenu === 'files' && (
-                    <div className="activity-popup mobile-bubble">
+                    <div className="activity-popup mobile-bubble menu-files">
                         <div className="activity-popup-item disabled" style={{ fontSize: '11px', textAlign: 'center' }}>EXPLORER</div>
                         <div className="activity-popup-separator"></div>
                         

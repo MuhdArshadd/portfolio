@@ -215,12 +215,15 @@
     .activity-popup.mobile-bubble {
         left: 50%;
         transform: translateX(-50%);
-        bottom: 75px; /* Pops UP from the capsule */
+        bottom: 75px; 
         border-radius: 12px;
         min-width: 180px;
         border: 1px solid rgba(255, 255, 255, 0.15);
         background: rgba(37, 37, 38, 0.95);
         backdrop-filter: blur(10px);
+        
+        max-height: 55vh; 
+        overflow-y: auto; 
     }
 
     /* Create the little chat bubble tail pointing down */
@@ -233,6 +236,25 @@
         border-width: 6px 6px 0;
         border-style: solid;
         border-color: rgba(37, 37, 38, 0.95) transparent transparent transparent;
+    }
+
+    .activity-popup.mobile-bubble::-webkit-scrollbar {
+            width: 6px;
+        }
+    .activity-popup.mobile-bubble::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 4px;
+    }
+
+    .activity-popup.menu-files.mobile-bubble {
+        left: -10px;       /* Anchor it to the left instead of centering */
+        transform: none;   /* Turn off the centering shift */
+    }
+    
+    /* Move the little chat tail so it still points directly at the Files icon */
+    .activity-popup.menu-files.mobile-bubble::after {
+        left: 28px;
+        transform: none;
     }
 
     /* Adjust specific bubble positions so they don't go off-screen */
@@ -257,5 +279,27 @@
     .activity-popup.more-bubble::after {
         left: auto;
         right: 20px;
+    }
+}
+
+/* ==========================================
+   TRUE MOBILE COMPRESSION (Max 550px)
+   ========================================== */
+@media (max-width: 550px) {
+    /* 1. Hide the text inside the pill to save massive amounts of space */
+    .bot-pill-text {
+        display: none !important;
+    }
+    
+    /* 2. Shrink the pill back down to a circular-ish button */
+    .activity-icon.bot-pill {
+        padding: 0 10px;
+        border-radius: 8px; /* Match standard icons slightly more */
+    }
+
+    /* 3. Give the capsule itself a tiny bit more breathing room on the edges */
+    .activity-bar {
+        padding: 0 8px;
+        width: 95%; 
     }
 }
