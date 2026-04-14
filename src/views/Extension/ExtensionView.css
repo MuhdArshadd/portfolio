@@ -196,3 +196,47 @@
     margin: 0 0 10px 0;
     color: #4fc1ff;
 }
+
+/* ==========================================
+   MOBILE EXTENSION VIEW (Max 768px)
+   ========================================== */
+@media (max-width: 768px) {
+    /* 1. Reclaim horizontal screen space */
+    .ext-container {
+        padding: 20px;
+    }
+
+    /* 2. Stack the icon and the extension details vertically */
+    .ext-header-row {
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 30px; /* Reduce the massive 100px gap */
+    }
+
+    /* 3. Slightly shrink the extension icon box for mobile */
+    .ext-icon-box {
+        width: 80px;
+        height: 80px;
+    }
+
+    .ext-icon-inner {
+        transform: scale(1.8); /* Scale down the robot icon to fit the new box */
+    }
+
+    /* 4. Scale down the title */
+    .ext-title {
+        font-size: 24px;
+    }
+
+    /* 5. Allow the metadata (downloads, stars) to wrap naturally */
+    .ext-meta-row {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    /* 6. Allow the action buttons (Enable/Uninstall/Settings) to wrap */
+    .ext-actions-row {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
