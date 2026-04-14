@@ -197,3 +197,74 @@
     box-shadow: 0 0 20px rgba(79, 193, 255, 0.15);
     display: block;
 }
+
+/* ==========================================
+   MOBILE HOME VIEW (Max 768px)
+   ========================================== */
+@media (max-width: 768px) {
+    /* 1. Reclaim horizontal space and reduce top padding */
+    .home-hero-container {
+        padding: 30px 20px;
+    }
+
+    /* 2. Scale down the massive 80px title */
+    .hero-name {
+        font-size: 42px;
+        margin-bottom: 20px;
+    }
+
+    /* 3. Shrink the profile picture so it doesn't dominate the screen */
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* 4. Fix the Stats Bar: Convert from a 1x4 flex row to a 2x2 Grid */
+    .hero-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        background: transparent;
+        border: none;
+    }
+
+    /* Add borders back to individual boxes since we removed the container border */
+    .stat-box {
+        border: 1px solid #333;
+        border-radius: 6px;
+        background: rgba(0,0,0,0.2);
+        padding: 15px 5px;
+    }
+
+    /* 5. Stack the action buttons vertically for easy thumb-tapping */
+    .hero-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .btn {
+        justify-content: center; /* Centers the icon and text in the full-width button */
+        padding: 12px 20px; /* Slightly taller for touch targets */
+    }
+
+    /* 6. Slightly shrink the bio text for readability */
+    .hero-bio {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    /* Fix the awkward wrapping by stacking the image ABOVE the name */
+    .hero-header-flex {
+        flex-direction: column-reverse; 
+        align-items: flex-start;
+        gap: 15px; /* Tighter gap between the image and the text */
+        margin-bottom: 20px;
+    }
+
+    /* Reset the margin on the name since the layout changed */
+    .hero-name {
+        font-size: 42px;
+        margin-bottom: 0; 
+    }
+    
+}
