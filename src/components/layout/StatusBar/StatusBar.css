@@ -29,3 +29,25 @@
 .status-item:hover {
   background: rgba(255, 255, 255, 0.1);
 }
+
+/* --- RESPONSIVE STATUS BAR (Mobile: Max 500px) --- */
+@media (max-width: 500px) {
+    /* 1. Reduce the gap between items to save space */
+    .status-left,
+    .status-right {
+        gap: 5px;
+    }
+
+    /* 2. Hide Line/Col (1st item), UTF-8 (2nd item), and Prettier (4th item) */
+    .status-right .status-item:nth-child(1),
+    .status-right .status-item:nth-child(2),
+    .status-right .status-item:nth-child(4) {
+        display: none;
+    }
+
+    /* Make the font slightly smaller to ensure it all fits */
+    .status-bar {
+        font-size: 11px;
+        padding: 0 5px;
+    }
+}
