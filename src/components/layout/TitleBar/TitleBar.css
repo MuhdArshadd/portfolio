@@ -175,3 +175,43 @@
     z-index: 1000;
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
+
+/* --- RESPONSIVE TITLE BAR --- */
+
+/* 1. Medium Screens: Let it shrink slightly instead of forcing 400px */
+@media (max-width: 1260px) {
+    .command-palette-btn {
+        width: auto;
+        min-width: 200px;
+        max-width: 350px;
+    }
+}
+
+/* 2. Small Laptops / Tablets: Hide the search bar completely */
+@media (max-width: 1024px) {
+    .command-palette-btn {
+        display: none;
+    }
+}
+
+/* 3. Mobile Screens: Hide the rest of the desktop UI */
+@media (max-width: 768px) {
+    /* Hide the window controls (phones handle their own window closing) */
+    .window-controls {
+        display: none !important;
+    }
+    
+    /* Hide the text menus (File, Edit, etc) */
+    .title-bar-left {
+        display: none !important;
+    }
+    
+    /* Add a simple, centered title for the mobile view */
+    .title-bar::before {
+        content: "Muhammad Arshad's Portfolio";
+        display: block;
+        margin: 0 auto;
+        color: #cccccc;
+        font-size: 13px;
+    }
+}

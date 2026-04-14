@@ -122,7 +122,7 @@ function App() {
                         <div className="tabs">
                             {openFiles.map(file => (
                                 <div key={file} className={`tab ${activeFile === file ? 'active' : ''}`} onClick={() => setActiveFile(file)}>
-                                    {getFileIcon(file)}<span>{file}</span>
+                                    {getFileIcon(file)}<span className="tab-text">{file}</span>
                                     <span className="tab-close" onClick={(e) => closeFile(file, e)}><Icons.Close /></span>
                                 </div>
                             ))}
