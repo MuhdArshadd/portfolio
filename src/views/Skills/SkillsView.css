@@ -198,3 +198,60 @@
     border-color: #ce9178;
     color: #ce9178;
 }
+
+/* ==========================================
+   MOBILE SCROLL CLEARANCE (Max 1000px)
+   ========================================== */
+@media (max-width: 1000px) {
+    /* Add invisible padding to the bottom of the main scrollable area */
+    .editor-content {
+        /* 60px for the capsule + 25px for its bottom position + 25px extra breathing room = 110px */
+        padding-bottom: 110px !important; 
+    }
+}
+
+/* ==========================================
+   MOBILE SKILLS VIEW (Max 768px)
+   ========================================== */
+@media (max-width: 768px) {
+    /* 1. Reclaim horizontal screen space by reducing container padding */
+    .skills-container {
+        padding: 20px;
+    }
+
+    /* 2. Scale down the massive title */
+    .skills-title {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    /* 3. Wrap the JSON meta text so it doesn't cause horizontal scrolling */
+    .skills-meta {
+        white-space: normal;
+        line-height: 1.6;
+    }
+
+    /* 4. Stack the main skill cards vertically */
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 15px; 
+    }
+
+    /* 5. Stack the languages vertically */
+    .languages-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    /* 6. Slightly reduce the padding inside the cards themselves */
+    .skill-card,
+    .soft-skills-card,
+    .familiar-card {
+        padding: 15px;
+    }
+    
+    /* 7. Reduce the massive margin above section headings */
+    .section-heading {
+        margin: 25px 0 10px 0;
+    }
+}
