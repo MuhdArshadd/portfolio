@@ -133,3 +133,34 @@
     background: rgba(255, 255, 255, 0.02);
     cursor: default;
 }
+
+/* ==========================================
+   MOBILE EXPERIENCES VIEW (Max 768px)
+   ========================================== */
+@media (max-width: 768px) {
+    /* 1. Reclaim horizontal screen space */
+    .experiences-container {
+        padding: 20px;
+    }
+
+    /* 2. Scale down the massive title */
+    .exp-title {
+        font-size: 36px;
+    }
+
+    /* 3. Stack the two timeline columns vertically */
+    .split-layout {
+        grid-template-columns: 1fr;
+        gap: 50px; /* Adds a nice gap between the end of Professional and start of Activities */
+    }
+
+    /* 4. Reduce bottom margins for tighter mobile spacing */
+    .exp-subtitle {
+        margin-bottom: 30px;
+    }
+
+    /* 5. Slightly tighten the padding between individual timeline items */
+    .timeline-item {
+        padding-bottom: 30px;
+    }
+}
