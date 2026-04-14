@@ -31,19 +31,24 @@ export const ExplorerPanel = ({ expandedFolders, toggleFolder, activeFile, openF
                 {/* --- FILES INSIDE FOLDER --- */}
                 {expandedFolders.includes('PORTFOLIO') && (
                     <div className="explorer-file-list">
-                        {fileSystem.map(file => (
-                            <div 
-                                key={file.name} 
-                                className={`explorer-file-item ${activeFile === file.name ? 'active' : ''}`} 
-                                onClick={() => openFile(file.name)}
-                            >
-                                {getFileIcon(file.name)}
-                                <span>{file.name}</span>
-                            </div>
-                        ))}
+                        
+                        {/* --- ADD THE FILTER HERE --- */}
+                        {fileSystem
+                            .filter(file => file.name !== 'source_control.git' && file.name !== 'Extension: Cad Copilot')
+                            .map(file => (
+                                <div 
+                                    key={file.name} 
+                                    className={`explorer-file-item ${activeFile === file.name ? 'active' : ''}`} 
+                                    onClick={() => openFile(file.name)}
+                                >
+                                    {getFileIcon(file.name)}
+                                    <span>{file.name}</span>
+                                </div>
+                            ))
+                        }
+                        
                     </div>
                 )}
-                
             </div>
         </div>
     </div>

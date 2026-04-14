@@ -56,3 +56,10 @@
 .folder-section {
   padding: 5px 0;
 }
+
+/* --- MOBILE OVERRIDE: NUKE THE SIDEBAR --- */
+@media (max-width: 1000px) {
+    .sidebar {
+        display: none !important;
+    }
+}

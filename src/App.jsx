@@ -102,6 +102,7 @@ function App() {
                     setIsChatOpen={setIsChatOpen}
                     isBotActive={isBotActive}
                     openFile={openFile}
+                    closeAllFiles={closeAllFiles}
                 />
 
                 {/* Left Sidebars */}
@@ -135,7 +136,7 @@ function App() {
                         </div>
                         
                         <div className="editor-content" style={{ flex: 1, overflowY: 'auto' }}>
-                            <FileContent activeFile={activeFile} setBotActive={setBotActive} openFile={openFile}/>
+                            <FileContent activeFile={activeFile} setBotActive={setBotActive} openFile={openFile} closeFile={closeFile}/>
                         </div>
                     </div>                
 

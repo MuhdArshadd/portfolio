@@ -10,7 +10,11 @@ import {
     GitIgnoreView 
 } from '../../../views';
 
-export const FileContent = ({ activeFile, openFile, setBotActive }) => {
+import {
+    DiffView,
+} from '../../panels/index'
+
+export const FileContent = ({ activeFile, openFile, setBotActive, closeFile }) => {
     switch (activeFile) {
         case 'home.jsx':
             return <HomeView openFile={openFile}/>;
@@ -28,6 +32,13 @@ export const FileContent = ({ activeFile, openFile, setBotActive }) => {
             return <ExtensionView setBotActive={setBotActive} />;
         case '.gitignore':
             return <GitIgnoreView />;
+        case 'source_control.git':
+            return (
+                <DiffView 
+                    setShowDiff={() => { if(closeFile) closeFile('source_control.git'); }} 
+                    setDiffFile={() => {}} 
+                />
+            );
         default:
             return <HomeView openFile={openFile} />;
     }

@@ -128,3 +128,134 @@
     height: 10px;
     border: 2px solid var(--bg-sidebar, #252526);
 }
+
+/* Add this class to your spacer div in the JSX so we can turn it off on mobile */
+.activity-spacer {
+    flex: 1;
+}
+
+/* Hide the bot text by default on Desktop */
+.bot-pill-text {
+    display: none;
+}
+
+/* ==========================================
+   MOBILE CAPSULE NAVIGATION (Max 1000px)
+   ========================================== */
+@media (max-width: 1000px) {
+    /* 1. Transform the bar into a floating bottom capsule */
+    .activity-bar {
+        flex-direction: row;        /* Lay out horizontally */
+        justify-content: space-evenly;
+        position: fixed;
+        bottom: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;                 /* Takes up most of the screen */
+        max-width: 450px;           /* But stops growing on tablets */
+        height: 60px;
+        padding: 0 15px;
+        gap: 0;                     /* Let justify-content handle spacing */
+        
+        /* The Capsule Look */
+        border-radius: 30px;
+        background: rgba(30, 30, 30, 0.75); /* Dark Glassmorphism */
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+        z-index: 9999;
+    }
+
+    .activity-spacer {
+        display: none; /* Turn off the spacer */
+    }
+
+    /* 2. Hide Settings */
+    .settings-wrapper {
+        display: none;
+    }
+
+    /* 3. Change Active State from a left line to a bottom dot */
+    .activity-icon.active::before {
+        top: auto;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: var(--blue-bright, #4fc1ff);
+    }
+
+    /* 4. Style the "Ask Rubi" inspired Bot Pill */
+    .activity-icon.bot-pill {
+        width: auto;
+        padding: 0 20px;
+        border-radius: 20px;
+        background: rgba(79, 193, 255, 0.1);
+        border: 1px solid rgba(79, 193, 255, 0.3);
+        color: var(--blue-bright, #4fc1ff);
+        gap: 8px;
+        transition: all 0.2s ease;
+    }
+
+    .activity-icon.bot-pill:hover {
+        background: rgba(79, 193, 255, 0.2);
+    }
+
+    .bot-pill-text {
+        display: block; /* Show text on mobile */
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+
+    /* 5. Mobile Popups (The Chat Bubble look) */
+    .activity-popup.mobile-bubble {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 75px; /* Pops UP from the capsule */
+        border-radius: 12px;
+        min-width: 180px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        background: rgba(37, 37, 38, 0.95);
+        backdrop-filter: blur(10px);
+    }
+
+    /* Create the little chat bubble tail pointing down */
+    .activity-popup.mobile-bubble::after {
+        content: '';
+        position: absolute;
+        bottom: -6px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 6px 6px 0;
+        border-style: solid;
+        border-color: rgba(37, 37, 38, 0.95) transparent transparent transparent;
+    }
+
+    /* Adjust specific bubble positions so they don't go off-screen */
+    .activity-popup.menu-account.mobile-bubble {
+        left: auto;
+        right: -20px;
+        transform: none;
+    }
+    
+    .activity-popup.menu-account.mobile-bubble::after {
+        left: auto;
+        right: 30px;
+    }
+
+    .activity-popup.more-bubble {
+        left: auto;
+        right: -10px;
+        transform: none;
+        min-width: 140px;
+    }
+
+    .activity-popup.more-bubble::after {
+        left: auto;
+        right: 20px;
+    }
+}
