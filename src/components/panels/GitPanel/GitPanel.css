@@ -150,3 +150,40 @@
     font-size: 12px;
     margin-left: auto;
 }
+
+/* ==========================================
+   MOBILE GIT DIFF VIEW (Max 768px)
+   ========================================== */
+@media (max-width: 768px) {
+    
+    .diff-overlay {
+        padding-bottom: 110px;
+    }
+
+    /* 1. Stack the diff panes vertically instead of side-by-side */
+    .diff-split-container {
+        flex-direction: column;
+        overflow-y: auto; /* Let the entire container scroll */
+    }
+
+    /* 2. Remove individual pane scrolling so it flows as one long page */
+    .diff-pane {
+        flex: none; /* Stop it from forcing 50% height */
+        overflow-y: visible;
+        padding: 20px; /* Slightly reduce padding for mobile */
+    }
+
+    /* 3. Swap the divider border from right to bottom */
+    .diff-pane.left {
+        border-right: none;
+        border-bottom: 1px solid #444444;
+    }
+    
+    /* 4. Ensure the Easter Egg box doesn't overflow horizontally */
+    .diff-addition-box {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
