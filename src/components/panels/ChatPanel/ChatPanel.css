@@ -93,3 +93,26 @@
     background-color: rgba(79, 193, 255, 0.1);
     border-color: var(--blue, #4fc1ff);
 }
+
+/* ==========================================
+   MOBILE COPILOT CHAT (Max 1000px)
+   ========================================== */
+@media (max-width: 1000px) {
+    .chat-panel-container {
+        /* 1. The Core Fix: Anchor the bottom above your navigation capsule */
+        bottom: 95px; 
+        
+        /* 2. Mobile Polish: Un-stick it from the top/right edges so it floats */
+        top: 15px;
+        right: 15px;
+        height: auto; /* Let the top/bottom coordinates control the height */
+        
+        /* 3. Ensure it fits on smaller phones */
+        width: calc(100% - 30px);
+        max-width: 350px; 
+        
+        /* 4. Round all the corners to match the capsule's aesthetic */
+        border-radius: 12px;
+        border: 1px solid var(--border, #444444);
+    }
+}
