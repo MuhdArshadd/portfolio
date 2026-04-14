@@ -152,12 +152,12 @@ export const TitleBar = ({ openFile, closeFile, closeAllFiles, toggleSidebar, to
             { label: 'Close All Tabs', action: () => { if(closeAllFiles) closeAllFiles(); closeMenu(); }, shortcut: 'Alt+K W' }
         ],
         Edit: [
-            { label: 'Find', action: () => { setIsPaletteOpen(true); closeMenu(); }, shortcut: 'Ctrl+F' },
+            { label: 'Find', action: () => { setIsPaletteOpen(true); closeMenu(); }, shortcut: 'Ctrl+F', className: 'hide-with-palette' },
             { label: 'Select All', action: () => { document.execCommand('selectAll'); closeMenu(); }, shortcut: 'Ctrl+A' },
             { label: 'Copy', action: () => { document.execCommand('copy'); closeMenu(); }, shortcut: 'Ctrl+C' }
         ],
         View: [
-            { label: 'Command Palette...', action: () => { setIsPaletteOpen(true); closeMenu(); }, shortcut: 'Ctrl+Shift+P' },
+            { label: 'Command Palette...', action: () => { setIsPaletteOpen(true); closeMenu(); }, shortcut: 'Ctrl+Shift+P', className: 'hide-with-palette' },
             { label: 'Toggle Sidebar', action: () => { if(toggleSidebar) toggleSidebar(); closeMenu(); }, shortcut: 'Ctrl+B' },
             { label: 'Toggle Terminal', action: () => { if(toggleTerminal) toggleTerminal(); closeMenu(); }, shortcut: 'Ctrl+`' },
             { label: 'Cad Copilot', action: () => { if(openFile) openFile('Extension: Cad Copilot'); closeMenu(); } },
@@ -168,7 +168,7 @@ export const TitleBar = ({ openFile, closeFile, closeAllFiles, toggleSidebar, to
             { label: 'Reset Zoom', action: () => { handleResetZoom(); closeMenu(); }, shortcut: 'Ctrl+Numpad0' }
         ],
         Go: [
-            { label: 'Go to File...', action: () => { setIsPaletteOpen(true); closeMenu(); }, shortcut: 'Ctrl+P' },
+            { label: 'Go to File...', action: () => { setIsPaletteOpen(true); closeMenu(); }, shortcut: 'Ctrl+P', className: 'hide-with-palette' },
             { divider: true },
             ...fileSystem.map(f => ({ label: f.name, action: () => { if(openFile) openFile(f.name); closeMenu(); } }))
         ],
@@ -182,7 +182,7 @@ export const TitleBar = ({ openFile, closeFile, closeAllFiles, toggleSidebar, to
             { label: 'Clear Terminal', action: () => { window.dispatchEvent(new CustomEvent('clear-terminal')); closeMenu(); }}
         ],
         Help: [
-            { label: 'Command Palette...', action: () => { setIsPaletteOpen(true); closeMenu(); }, shortcut: 'Ctrl+Shift+P' },
+            { label: 'Command Palette...', action: () => { setIsPaletteOpen(true); closeMenu(); }, shortcut: 'Ctrl+Shift+P', className: 'hide-with-palette' },
             { divider: true },
             { label: 'About Muhammad Arshad', action: () => { if(openFile) openFile('about.html'); closeMenu(); } },
             { label: 'Welcome', action: () => { if(openFile) openFile('home.jsx'); closeMenu(); } }
@@ -223,7 +223,8 @@ export const TitleBar = ({ openFile, closeFile, closeAllFiles, toggleSidebar, to
                                 {menuItems[menuName].map((item, idx) => {
                                     if (item.divider) return <div key={idx} className="title-dropdown-divider" />;
                                     return (
-                                        <div key={idx} className="title-dropdown-item" onClick={item.action}>
+                                        // UPDATE THIS LINE TO INJECT THE CLASS:
+                                        <div key={idx} className={`title-dropdown-item ${item.className || ''}`} onClick={item.action}>
                                             <span>{item.label}</span>
                                             {item.shortcut && <span className="title-shortcut">{item.shortcut}</span>}
                                         </div>

@@ -147,11 +147,13 @@ export const ActivityBar = ({
                 </div>
                 {openMenu === 'settings' && !isMobile && (
                     <div className="activity-popup menu-settings">
-                        <div className="activity-popup-item" onClick={() => { window.dispatchEvent(new CustomEvent('open-command-palette')); setOpenMenu(null); }}>
-                            <span>Command Palette...</span> <span className="popup-shortcut">Ctrl+Shift+P</span>
-                        </div>
-                        <div className="activity-popup-separator"></div>
-                        <div className="activity-popup-item highlight" onClick={() => { openFile('contact.css'); setOpenMenu(null); }}>
+                    {/* ADDED hide-with-palette TO THE ITEM */}
+                    <div className="activity-popup-item hide-with-palette" onClick={() => { window.dispatchEvent(new CustomEvent('open-command-palette')); setOpenMenu(null); }}>
+                        <span>Command Palette...</span> <span className="popup-shortcut">Ctrl+Shift+P</span>
+                    </div>
+                        {/* ADDED hide-with-palette TO THE SEPARATOR SO WE DON'T GET A WEIRD GAP */}
+                    <div className="activity-popup-separator hide-with-palette"></div>
+                         <div className="activity-popup-item highlight" onClick={() => { openFile('contact.css'); setOpenMenu(null); }}>
                             Restart to Hire Arshad (1)
                         </div>
                     </div>

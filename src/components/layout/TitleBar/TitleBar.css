@@ -192,6 +192,9 @@
     .command-palette-btn {
         display: none;
     }
+    .hide-with-palette {
+        display: none !important;
+    }
 }
 
 /* 3. Mobile Screens: Hide the rest of the desktop UI */
