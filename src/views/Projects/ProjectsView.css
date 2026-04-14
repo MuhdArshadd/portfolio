@@ -471,3 +471,47 @@
     50% { opacity: 0.4; transform: scale(0.8); }
     100% { opacity: 1; transform: scale(1); }
 }
+
+/* ==========================================
+   MOBILE PROJECTS VIEW (Max 768px)
+   ========================================== */
+@media (max-width: 768px) {
+    /* 1. Reclaim horizontal screen space */
+    .projects-container {
+        padding: 20px;
+    }
+
+    /* 2. Scale down the massive title */
+    .projects-title {
+        font-size: 36px;
+    }
+
+    /* 3. Stack project cards vertically */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* 4. Fix Modal padding and sizing for mobile screens */
+    .modal-content {
+        padding: 20px;
+        padding-bottom: 35px;
+        width: 90%;
+        height: 85vh; /* Give a bit more vertical room */
+    }
+
+    .modal-title {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    /* 5. Stack modal links so they are easy to tap with a thumb */
+    .modal-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .modal-link {
+        justify-content: center; /* Center the text when the button spans full width */
+    }
+}
