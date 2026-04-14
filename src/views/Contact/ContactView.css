@@ -351,3 +351,29 @@
     justify-content: center;
     width: 100%;
 }
+
+/* ==========================================
+   MOBILE CONTACT VIEW (Max 550px)
+   ========================================== */
+@media (max-width: 550px) {
+    /* 1. Stack the grid vertically */
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 40px; /* Reduce the massive 60px gap to fit mobile screens better */
+    }
+
+    /* 2. Scale down the container padding so it doesn't squish the form */
+    .contact-container {
+        padding: 20px;
+    }
+
+    /* 3. Shrink the massive 55px title so it doesn't wrap awkwardly */
+    .contact-title {
+        font-size: 38px;
+    }
+
+    /* 4. Reduce bottom margin of the header */
+    .contact-header {
+        margin-bottom: 30px;
+    }
+}
