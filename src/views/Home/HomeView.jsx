@@ -63,14 +63,14 @@ export const HomeView = ({ openFile }) => {
 
             {/* Badges */}
             <div className="hero-badges">
-                <div className="badge"><span className="dot dot-green"></span> Android Developer</div>
-                <div className="badge"><span className="dot dot-blue"></span> QA Automation Intern</div>
-                <div className="badge"><span className="dot dot-purple"></span> Software Engineer</div>
+                <div className="badge"><span className="dot dot-green"></span> Software Engineer</div>
+                <div className="badge"><span className="dot dot-blue"></span>Android Developer</div>
+                <div className="badge"><span className="dot dot-purple"></span>Quality Assurance Engineer</div>
             </div>
 
             {/* Typewriter Effect */}
             <div className="hero-typewriter">
-                I can be your <span style={{ color: '#FFF6DA', fontWeight: 'bold' }}>{currentText}</span>
+                I can <span style={{ color: '#FFF6DA', fontWeight: 'bold' }}>{currentText}</span>
                 <span className="cursor">|</span>
             </div>
 
@@ -95,7 +95,7 @@ export const HomeView = ({ openFile }) => {
             {/* Stats Bar */}
             <div className="hero-stats">
                 <div className="stat-box">
-                    <div className="stat-number">3.87</div>
+                    <div className="stat-number">3.88</div>
                     <div className="stat-label">CGPA (CS HONS)</div>
                 </div>
                 <div className="stat-box">

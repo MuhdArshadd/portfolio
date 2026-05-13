@@ -21,9 +21,11 @@ export const AboutView = () => {
             {/* Intro Card */}
             <div className="about-card intro-card">
                 <p>
-                    Hi! I'm <span className="highlight-blue">Muhammad Arshad</span>, a software developer living at the crossroads of <span className="highlight-blue">mobile engineering</span>, <span className="highlight-blue">test automation</span>, and <span className="highlight-blue">AI solutions</span>. I love building systems that are not just functional, but genuinely <span className="highlight-blue">intelligent and scalable</span>. 
+                    Hi! I'm <span className="highlight-blue">Muhammad Arshad</span>, a software engineer who believes technology should be utilized to solve real-world bottlenecks and tangibly improve daily lives. 
                     <br /><br />
-                    Having just wrapped up a high-impact <span className="highlight-blue">QA Automation Internship at Teleport</span>, I am actively seeking a permanent role. As a proud <span className="highlight-blue">YBR Scholar</span>, I am looking to bring my dedication to zero-defect deployments and user-centric applications to a forward-thinking team!
+                    Having recently wrapped up a QA Automation Internship at <span className="highlight-blue">Teleport</span>, I was exposed to the realities of large-scale enterprise systems. Working in high-stakes air logistics—where software processes thousands of parcels per minute—taught me the critical importance of system uptime. I specialise in bridging the gap between dynamic <span className="highlight-blue">mobile engineering</span>, <span className="highlight-blue">test automation</span>, and <span className="highlight-blue">AI solutions</span>.
+                    <br /><br />
+                    Whether I am translating business requirements into automated CI/CD pipelines, building AI-driven health apps, or facing down a heavy lift at the gym, my mindset remains the same: I tackle complex, intimidating challenges with discipline and resilience until the job is done.
                 </p>
             </div>
 
@@ -44,8 +46,8 @@ export const AboutView = () => {
                         <span>Competing in hackathons to build AI-for-good solutions and explore innovative ideas</span>
                     </div>
                     <div className="focus-item">
-                        <Icons.Search />
-                        <span>Exploring and learning new tech (as we live in AI era)</span>
+                        <span className="focus-icon"><Icons.Search /></span>
+                        <span>Integrating on-device machine learning (TensorFlow Lite) and LLM APIs into mobile environments</span>
                     </div>
                 </div>
             </div>
@@ -62,9 +64,9 @@ export const AboutView = () => {
                 </div>
                 <div className="edu-program">Bachelor of Computer Science in Software Development (Hons.)</div>
                 <div className="edu-details">
-                    <span className="cgpa">CGPA: 3.87 (First Class Honours)</span>
+                    <span className="cgpa">CGPA: 3.88 (First Class Honours)</span>
                     <div className="edu-desc" style={{ marginTop: '8px' }}>
-                        Graduated with top academic standing. Specialized in building scalable architectures and full-stack development.
+                        Graduated with top academic standing. Specialised in building scalable architectures and full-stack development with a strictly quality-first mindset.
                     </div>
                 </div>
             </div>

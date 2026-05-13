@@ -62,7 +62,7 @@ export const DiffView = ({ setShowDiff }) => {
                                 <div className="timeline-dot" style={{ backgroundColor: '#23d18b', borderColor: '#23d18b', boxShadow: '0 0 0 4px rgba(35, 209, 139, 0.2)' }}></div>
                                 
                                 <div className="diff-addition-box">
-                                    <div className="timeline-date" style={{ color: '#23d18b', fontWeight: 'bold' }}>May 2026 - Present</div>
+                                    <div className="timeline-date" style={{ color: '#23d18b', fontWeight: 'bold' }}>Present - Future</div>
                                     <h3 className="timeline-role" style={{ color: '#23d18b' }}>Software Engineer</h3>
                                     <div className="timeline-company" style={{ color: '#23d18b' }}>@ [Your Company Name Here] 👀</div>
                                     

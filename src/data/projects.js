@@ -32,7 +32,7 @@ export const projectsData = [
         { type: "github", url: "https://github.com/MuhdArshadd/BWR_SERVICES" },
         { type: "website", url: "https://bwr-services.vercel.app/" }
     ],
-    status: "In Progress",
+    status: "Completed",
     details: {
       challenge: "My friend's air conditioning business was only using TikTok and Instagram to get customers. Without an official website, it was hard for him to look fully professional, especially when trying to win bigger jobs from companies instead of just regular houses.",
       solution: "I built him a fully responsive React website that adapts perfectly—whether a customer opens it on a tiny mobile phone or a wide desktop monitor. It acts as his official business hub, making his services look totally legit and letting people book him instantly through a WhatsApp integration.",

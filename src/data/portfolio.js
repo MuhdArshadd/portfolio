@@ -23,10 +23,10 @@ export const portfolioData = {
 };
 
 export const rolesData = [
-    "Android Developer", 
-    "QA Automation Engineer", 
-    "Software Engineer", 
-    "Problem Solver"
+    "build scalable mobile applications.", 
+    "automate enterprise QA pipelines.", 
+    "integrate AI models into real-world apps.",
+    "bridge the gap between development and testing."
 ];
 
 export const chatData = [
