@@ -39,7 +39,7 @@ export const DiffView = ({ setShowDiff }) => {
                                 <h3 className="timeline-role">Quality Assurance Intern</h3>
                                 <div className="timeline-company">@ Teleport Platforms Sdn. Bhd.</div>
                                 <p className="timeline-desc">
-                                    Managed the Software Testing Life Cycle (STLC) for logistics business flows. Ensured zero-defect deployments and maintained high quality across production systems.
+                                    Managed the Software Testing Life Cycle (STLC) for logistics business flows. Engineered automated API regression scripts (Karate/Cucumber) and integrated them into a GCP CI/CD pipeline to ensure zero-defect production deployments.
                                 </p>
                             </div>
                         </div>
@@ -67,7 +67,7 @@ export const DiffView = ({ setShowDiff }) => {
                                     <div className="timeline-company" style={{ color: '#23d18b' }}>@ [Your Company Name Here] 👀</div>
                                     
                                     <p className="timeline-desc" style={{ color: '#cccccc' }}>
-                                        Hired Muhammad Arshad after being thoroughly impressed by his interactive VS Code portfolio, problem-solving skills, and proactive attitude. Best hiring decision ever.
+                                        Hired Muhammad Arshad after being thoroughly impressed by his interactive VS Code portfolio and 'quality-first' mindset. He immediately began contributing to high-impact projects and bridging the gap between development and QA.
                                     </p>
                                     
                                     <div className="timeline-tech">
@@ -84,7 +84,7 @@ export const DiffView = ({ setShowDiff }) => {
                                 <h3 className="timeline-role">Quality Assurance Intern</h3>
                                 <div className="timeline-company">@ Teleport Platforms Sdn. Bhd.</div>
                                 <p className="timeline-desc">
-                                    Managed the Software Testing Life Cycle (STLC) for logistics business flows. Ensured zero-defect deployments and maintained high quality across production systems.
+                                    Managed the Software Testing Life Cycle (STLC) for logistics business flows. Engineered automated API regression scripts (Karate/Cucumber) and integrated them into a GCP CI/CD pipeline to ensure zero-defect production deployments.
                                 </p>
                             </div>
 

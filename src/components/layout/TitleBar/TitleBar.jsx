@@ -190,8 +190,16 @@ export const TitleBar = ({ openFile, closeFile, closeAllFiles, toggleSidebar, to
     };
 
     // --- Taunts ---
-    const minimizeMessages = ["Minimizing a VS Code inside a browser.. wait what?", "Is there an interesting thing other than my portfolio??", "You want to watch something aaa 👀", "Your girlfriend discord you right now?", "I'm like a persistent notification, you can't ignore me forever!"];
-    const closeMessages = ["You.. you don't like my portfolio :(?", "Is it because I'm still a junior or vibe coded?", "Well you can't complain we are living in AI era now", "Damn you still insist on leaving huh", "Alright, I'll let you go... just close the actual browser tab!"];
+    const minimizeMessages = [
+        "Minimizing VS Code inside a browser? That's some serious inception.", 
+        "Switching tabs to check my LinkedIn? I respect the background check.", 
+        "I'll be right here waiting in the background!"
+    ];    
+
+    const closeMessages = [ 
+        "Shutting down... don't forget to grab a copy of my resume!", 
+        "Nice try, but you have to close the actual browser tab to escape!"
+    ];
 
     const handleMinimize = () => { setPopup({ visible: true, text: minimizeMessages[minCount] }); setMinCount(prev => (prev + 1) % minimizeMessages.length); };
     const handleClose = () => { setPopup({ visible: true, text: closeMessages[closeCount] }); setCloseCount(prev => (prev + 1) % closeMessages.length); };

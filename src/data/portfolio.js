@@ -30,10 +30,10 @@ export const rolesData = [
 ];
 
 export const chatData = [
-    { q: "Who is Cad?", a: "Cad (Arshad) is a passionate developer from Malaysia focused on building intelligent, scalable systems!(Self Glazing :P)" },
-    { q: "What is your tech stack?", a: "Cad primarily focuses on Mobile Development (Flutter, Android), but he can definitely hold his own in Full-Stack Web (React, Node.js). Thanks to his QA background, he knows exactly how to catch (most of) his own bugs!" },
-    { q: "Any standout projects?", a: "Definitely! Cad built 'HeartCare', an award-winning mobile health app!" },
-    { q: "How can I hire you?", a: "You can email arshadmuhd50@gmail.com or connect on LinkedIn. Cad is currently hunting for a permanent role!" }
+    { q: "Who is Cad?", a: "Cad (Arshad) is a First-Class Software Engineer Graduate from Malaysia. He specialises in bridging the gap between building dynamic mobile apps and writing maintainable automated tests." },
+    { q: "What is your tech stack?", a: "Cad primarily builds Mobile applications using Flutter for Android and integrates AI models (TensorFlow, OpenAI). Thanks to his enterprise QA background, he also knows exactly how to catch (most of) his own bugs!" },
+    { q: "Any standout projects?", a: "Definitely! Cad built 'HeartCare', an AI-driven cardiovascular health app that predicts real-time risk levels. It won multiple Gold and Silver innovation awards and is officially copyrighted with MyIPO." },
+    { q: "How can I hire you?", a: "You can email arshadmuhd50@gmail.com or connect on LinkedIn. Cad is currently hunting for a full-time Software Engineer or QA role in the KL/Selangor area!" }
 ];
 
 export const extensionsData = [
@@ -60,10 +60,10 @@ export const extensionChangelogData = [
     {
         version: "v1.2.5",
         updates: [
-            "Idk fixed some bugs lol.",
+            "Squashed some bugs. Probably created new ones. The circle of life.",
             "Added dynamic Enable/Disable dropdowns that literally just hide the icon and do nothing else.",
             "Added this Changelog tab so it looks like I actually maintain this.",
-            "Please just hire me."
+            "Status: 100% Open to Work and ready to accept pull requests for full-time roles."
         ]
     },
     {

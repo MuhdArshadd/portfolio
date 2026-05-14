@@ -132,8 +132,7 @@ export const ExtensionView = ({ setBotActive }) => {
                     <p>A highly sophisticated "AI" assistant natively integrated into the portfolio environment. Yada, yada, yada... wait, are you actually reading the extension documentation? I admire your thoroughness! Basically, it's a fun little chat widget to help you navigate my tech stack and discover Easter eggs.</p>
                     
                     <h3 className="ext-h3">Features</h3>
-                    <p>Codelens will be added above each <code>Feature:</code>, <code>Scenario:</code> and <code>Scenario Outline:</code> ... just kidding. Here is what this actually does:</p>
-                    <ul style={{ paddingLeft: '20px', marginTop: '10px' }}>
+                        <p>This extension will aggressively auto-complete your code with incorrect syntax and break your build... just kidding. Here is what this actually does:</p>                    <ul style={{ paddingLeft: '20px', marginTop: '10px' }}>
                         <li>Context-aware portfolio guidance (it knows you are snooping around).</li>
                         <li>Instant answers about my tech stack so you don't have to hunt for my resume.</li>
                         <li>Pre-configured shortcut buttons because typing is exhausting and I don't want to implement real chatbot lol.</li>
@@ -141,7 +140,7 @@ export const ExtensionView = ({ setBotActive }) => {
                     </ul>
                     
                     <h3 className="ext-h3">Sponsors</h3>
-                    <p style={{ color: '#858585' }}>This project is proudly sponsored by excessive caffeine, 3 AM debugging sessions, and the burning desire to finally land a permanent role. (Seriously, my internship ends on April 2nd, let's talk! 👀)</p>
+                    <p style={{ color: '#858585' }}>This project is proudly sponsored by excessive caffeine, 3 AM debugging sessions, and the burning desire to finally land a permanent role.</p>
                 </div>
             )}
 

@@ -35,3 +35,7 @@
 .animate-view > *:nth-child(17) { animation-delay: 1.7s; }
 .animate-view > *:nth-child(18) { animation-delay: 1.8s; }
 .animate-view > *:nth-child(19) { animation-delay: 1.9s; }
+.animate-view > *:nth-child(20) { animation-delay: 2.0s; }
+.animate-view > *:nth-child(21) { animation-delay: 2.1s; }
+.animate-view > *:nth-child(22) { animation-delay: 2.2s; }
+.animate-view > *:nth-child(23) { animation-delay: 2.3s; }

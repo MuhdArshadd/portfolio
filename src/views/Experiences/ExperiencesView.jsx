@@ -32,7 +32,7 @@ export const ExperiencesView = () => {
                             <h3 className="timeline-role">Quality Assurance (Manual & Automation) Intern</h3>
                             <div className="timeline-company">@ Teleport Platforms Sdn. Bhd.</div>
                             <p className="timeline-desc">
-                                Managed the Software Testing Life Cycle (STLC) for logistics business flows. Ensured zero-defect deployments and maintained high quality across production systems.
+                                Managed the Software Testing Life Cycle (STLC) for logistics business flows. Engineered automated API regression scripts (Karate/Cucumber) and integrated them into a GCP CI/CD pipeline to ensure zero-defect production deployments.
                             </p>
                             <div className="timeline-tech">
                                 <span className="tech-badge">Karate Framework</span>

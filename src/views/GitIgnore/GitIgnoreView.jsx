@@ -8,31 +8,31 @@ export const GitIgnoreView = () => {
             
             <CodeLine num="1" isHeading># dependencies</CodeLine>
             <CodeLine num="2">/node_modules</CodeLine>
-            <CodeLine num="3">/.pnp</CodeLine>
-            <CodeLine num="4">.pnp.js</CodeLine>
-            
-            <CodeLine num="5"></CodeLine> {/* Empty line */}
+            <CodeLine num="3"></CodeLine> 
 
-            <CodeLine num="6" isHeading># testing</CodeLine>
-            <CodeLine num="7">/coverage</CodeLine>
+            <CodeLine num="4" isHeading># testing</CodeLine>
+            <CodeLine num="5">/coverage</CodeLine>
+            <CodeLine num="6"></CodeLine>
 
-            <CodeLine num="8"></CodeLine>
+            <CodeLine num="7" isHeading># production</CodeLine>
+            <CodeLine num="8">/build</CodeLine>
+            <CodeLine num="9">/dist</CodeLine>
+            <CodeLine num="10"></CodeLine>
 
-            <CodeLine num="9" isHeading># production</CodeLine>
-            <CodeLine num="10">/build</CodeLine>
-            <CodeLine num="11">/dist</CodeLine>
+            <CodeLine num="11" isHeading># environment variables</CodeLine>
+            <CodeLine num="13">.env</CodeLine>
+            <CodeLine num="14">.env.local</CodeLine>
+            <CodeLine num="15"></CodeLine>
 
-            <CodeLine num="12"></CodeLine>
+            <CodeLine num="16" isHeading># OS generated files</CodeLine>
+            <CodeLine num="17">.DS_Store</CodeLine>
+            <CodeLine num="18">Thumbs.db</CodeLine>
+            <CodeLine num="19"></CodeLine>
 
-            <CodeLine num="13" isHeading># environment variables</CodeLine>
-            <CodeLine num="14" isHeading># yes i dont forget about this</CodeLine>
-            <CodeLine num="15">
-                .env <span className="gitignore-comment"></span>
-            </CodeLine>
-            <CodeLine num="16">.env.local</CodeLine>
-            <CodeLine num="17">.env.development.local</CodeLine>
-            <CodeLine num="18">.env.test.local</CodeLine>
-            <CodeLine num="19">.env.production.local</CodeLine>
+            <CodeLine num="20" isHeading># editor settings</CodeLine>
+            <CodeLine num="21">.vscode/*</CodeLine>
+            <CodeLine num="22">!.vscode/settings.json</CodeLine>
+
         </div>
     );
 };
