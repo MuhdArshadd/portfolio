@@ -103,8 +103,8 @@ export const HomeView = ({ openFile }) => {
                     <div className="stat-label">INNOVATION MEDALS</div>
                 </div>
                 <div className="stat-box">
-                    <div className="stat-number" style={{ color: '#4ec9b0' }}>KL/SELANGOR</div>
-                    <div className="stat-label">PREFERRED LOCATION</div>
+                    <div className="stat-number" style={{ color: '#4ec9b0' }}>PROGRESS</div>
+                    <div className="stat-label">CORE VALUE</div>
                 </div>
                 <div className="stat-box">
                     <div className="stat-number" style={{ color: '#4fc1ff' }}>YES</div>
