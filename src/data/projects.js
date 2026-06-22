@@ -138,22 +138,22 @@ export const projectsData = [
     id: 7,
     categories: ["CLI", "C++", "DATABASES"],
     title: "Tuition Centre Management System",
-    description: "Command Line Interface (CLI) application addressing operational inefficiencies in secondary education institutions. Handles enrollment, fee tracking, and feedback.",
-    tech: ["C++", "MySQL", "Visual Studio", "OOP"],
+    description: "A robust Command Line Interface (CLI) application addressing operational inefficiencies in education institutions, upgraded with PostgreSQL for enterprise-grade transactional safety.",
+    tech: ["C++", "PostgreSQL", "Visual Studio 2026", "OOP", "libpqxx"],
     links: [
-        { type: "github", url: "https://github.com/MuhdArshadd/TutionCenter" }
+        { type: "github", url: "https://github.com/MuhdArshadd/TuitionCentre" }
     ],
     status: "Completed",
     details: {
-      challenge: "Tuition centers face administrative bottlenecks managing student enrollments, tracking unpaid fees, and updating curriculum quotas.",
-      solution: "Engineered a scalable C++ application utilizing MySQL Connector to manipulate and track real-time educational data.",
+      challenge: "Tuition centers face administrative bottlenecks managing student enrollments, tracking unpaid fees, and maintaining complex relational data integrity across multiple user types.",
+      solution: "Engineered a scalable C++ application utilizing the PostgreSQL libpqxx connector, implementing modern RAII memory management and atomic database transactions.",
       features: [
-          "Dynamic Enrollment/Unroll module with real-time quota updates", 
-          "Automated tuition fee tracking and payment status indicators", 
-          "Subject management module for curriculum flexibility", 
-          "Secure tutor and administrator account management"
+          "Dynamic Enrollment/Unroll module with real-time quota tracking and safe LEFT JOIN timetable generation", 
+          "Automated tuition fee calculation and simulated payment processing via pqxx::work transactional wrappers", 
+          "Subject and User management modules enforcing strict Foreign Key cascading and relational data integrity", 
+          "Memory-safe execution architecture designed to completely eradicate memory leaks and double-free hazards"
       ],
-      outcome: "Successfully prototyped a digital transformation solution for post-COVID academic administration."
+      outcome: "Successfully refactored a digital transformation prototype into an enterprise-ready, memory-safe CLI application with robust database architecture."
     }
   },
 ];
