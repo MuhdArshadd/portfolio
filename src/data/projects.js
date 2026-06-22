@@ -52,6 +52,7 @@ export const projectsData = [
     description: "Intelligent tourism mobile platform offering personalized recommendations, real-time updates, and an interactive AI assistant to help tourists explore Malaysia's heritage. 1st Place at DICRATHON 2024.",
     tech: ["Flutter", "Dart", "OpenAI API", "Google Maps API", "Azure SQL"],
     links: [
+        { type: "github", url: "https://github.com/MuhdArshadd/TourEase" },
         { type: "demo", url: "https://youtu.be/gQyQ8sYruE4" }
     ],
     status: "Completed",
