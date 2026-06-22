@@ -92,28 +92,6 @@ export const projectsData = [
   },
   {
     id: 5,
-    categories: ["WEB", "FULLSTACK", "E-COMMERCE"],
-    title: "Grillz - Restaurant Ordering System",
-    description: "Full-stack web application developed for a burger establishment. Supports both online ordering and walk-in QR-code scanning, managed through a centralized staff dashboard.",
-    tech: ["PHP", "JavaScript", "HTML/CSS", "Azure PostgreSQL", "XAMPP"],
-    links: [
-        { type: "github", url: "https://github.com/MuhdArshadd/Grillz" }
-    ],
-    status: "Prototype",
-    details: {
-      challenge: "Restaurants need a unified system to handle both digital walk-in orders (QR codes) and remote online orders without confusing the kitchen staff.",
-      solution: "Developed a role-based full-stack PHP application integrating secure cloud databases and real-time dashboard updates.",
-      features: [
-          "Role-based access for Staff and Customers", 
-          "Walk-in ordering via table QR Code scanning", 
-          "Digital menu with cart management and checkout", 
-          "Automated email confirmations via PHPMailer"
-      ],
-      outcome: "Delivered a fully functional production-ready database architecture hosted on Azure PostgreSQL."
-    }
-  },
-  {
-    id: 6,
     categories: ["DESKTOP", "OOP", "MANAGEMENT"],
     title: "Car Service Maintenance System",
     description: "Object-Oriented Programming (OOP) system developed in Java. Facilitates customer car service requests, payment processing, and staff job assignments.",
@@ -135,7 +113,7 @@ export const projectsData = [
     }
   },
   {
-    id: 7,
+    id: 6,
     categories: ["CLI", "C++", "DATABASES"],
     title: "Tuition Centre Management System",
     description: "A robust Command Line Interface (CLI) application addressing operational inefficiencies in education institutions, upgraded with PostgreSQL for enterprise-grade transactional safety.",
