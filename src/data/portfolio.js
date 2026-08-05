@@ -1,19 +1,52 @@
+// Pivoting to QA
 export const portfolioData = {
     name: "Muhammad Arshad Bin Mohamad Din",
-    role: "Software Developer & QA Automation",
-    about: `const developer = {
+    role: "Quality Engineer & Test Automation",
+    about: `const qualityEngineer = {
     name: "Muhammad Arshad",
     location: "Malaysia",
-    focus: "Building intelligent, scalable systems",
-    interests: ["Backend Engineering", "AI/ML", "Data Science"],
-    mindset: "Beast Mode",
-    status: "Hunting for permanent role!"
+    focus: "Building reliable, well-tested software",
+    interests: ["Test Automation", "API Testing", "Quality Engineering"],
+    mindset: "Quality First",
+    status: "Open to full-time QA opportunities"
 };`,
     skills: [
-        { category: "Frontend & Mobile", items: ["React", "Flutter", "Tailwind CSS"] },
-        { category: "Backend", items: ["Node.js", "Android Studio"] },
-        { category: "QA & Testing", items: ["Karate", "Test Automation", "STLC", "API Testing"] },
-        { category: "Tools", items: ["Git", "VS Code", "Figma"] }
+        {
+            category: "Quality Engineering",
+            items: [
+                "Test Automation",
+                "API Testing",
+                "Manual Testing",
+                "STLC"
+            ]
+        },
+        {
+            category: "Automation",
+            items: [
+                "Karate",
+                "Playwright",
+                "Postman",
+                "Cucumber BDD"
+            ]
+        },
+        {
+            category: "Programming",
+            items: [
+                "Java",
+                "C++",
+                "JavaScript",
+                "TypeScript",
+                "SQL"
+            ]
+        },
+        {
+            category: "Tools & CI/CD",
+            items: [
+                "Git",
+                "Jira",
+                "Google Cloud Platform"
+            ]
+        }
     ],
     contact: {
         email: "arshadmuhd50@gmail.com",
@@ -22,11 +55,47 @@ export const portfolioData = {
     }
 };
 
+
+// For Dev
+// export const portfolioData = {
+//     name: "Muhammad Arshad Bin Mohamad Din",
+//     role: "Software Developer & QA Automation",
+//     about: `const developer = {
+//     name: "Muhammad Arshad",
+//     location: "Malaysia",
+//     focus: "Building intelligent, scalable systems",
+//     interests: ["Backend Engineering", "AI/ML", "Data Science"],
+//     mindset: "Beast Mode",
+//     status: "Hunting for permanent role!"
+// };`,
+//     skills: [
+//         { category: "Frontend & Mobile", items: ["React", "Flutter", "Tailwind CSS"] },
+//         { category: "Backend", items: ["Node.js", "Android Studio"] },
+//         { category: "QA & Testing", items: ["Karate", "Test Automation", "STLC", "API Testing"] },
+//         { category: "Tools", items: ["Git", "VS Code", "Figma"] }
+//     ],
+//     contact: {
+//         email: "arshadmuhd50@gmail.com",
+//         github: "https://github.com/MuhdArshadd",
+//         linkedin: "https://www.linkedin.com/in/muhdarshad50/"
+//     }
+// };
+
+// For dev
+// export const rolesData = [
+//     "build scalable mobile applications.", 
+//     "automate enterprise QA pipelines.", 
+//     "integrate AI models into real-world apps.",
+//     "bridge the gap between development and testing."
+// ];
+
+
+// Pivoting to QA
 export const rolesData = [
-    "build scalable mobile applications.", 
-    "automate enterprise QA pipelines.", 
-    "integrate AI models into real-world apps.",
-    "bridge the gap between development and testing."
+    "design reliable automated test solutions.",
+    "validate complex API and system workflows.",
+    "investigate defects across application layers.",
+    "bridge software development and quality engineering."
 ];
 
 export const chatData = [
@@ -48,39 +117,57 @@ export const extensionsData = [
 ];
 
 export const gitHistoryData = [
-    { message: "feat: interactive git graph & diff view", highlight: true },
-    { message: "feat: add marketplace & \"vibe coded\" bot", highlight: false },
-    { message: "fix: stop users from closing the app (taunts)", highlight: false },
-    { message: "feat: implement dynamic file system routing", highlight: false },
-    { message: "feat: setup vscode layout & activity bar", highlight: false },
-    { message: "Initial Commit", highlight: false, muted: true }
+    {
+        message: "feat: reposition portfolio for quality engineering",
+        highlight: true
+    },
+    {
+        message: "feat: add QA automation experience and impact metrics",
+        highlight: false
+    },
+    {
+        message: "feat: add quality engineering skills and test tools",
+        highlight: false
+    },
+    {
+        message: "feat: implement Cad Quality Copilot",
+        highlight: false
+    },
+    {
+        message: "fix: improve navigation and responsive layout",
+        highlight: false
+    },
+    {
+        message: "Initial Commit",
+        highlight: false,
+        muted: true
+    }
 ];
 
 export const extensionChangelogData = [
     {
-        version: "v1.2.5",
+        version: "v1.3.0",
         updates: [
-            "Squashed some bugs. Probably created new ones. The circle of life.",
-            "Added dynamic Enable/Disable dropdowns that literally just hide the icon and do nothing else.",
-            "Added this Changelog tab so it looks like I actually maintain this.",
-            "Status: 100% Open to Work and ready to accept pull requests for full-time roles."
+            "Repositioned the portfolio around quality engineering and test automation.",
+            "Added measurable QA automation outcomes from Teleport.",
+            "Updated technical skills to include API testing, Karate, Java and CI/CD.",
+            "Improved Cad Quality Copilot responses for recruiters."
         ]
     },
     {
-        version: "v1.1.0",
+        version: "v1.2.0",
         updates: [
-            "Fixed the state-of-the-art Q&A functionality because it was actually just crashing the browser.",
-            "Added endless loop wrapping logic for Title Bar taunt messages to aggressively prevent users from leaving.",
-            "Implemented browser Fullscreen API so you are trapped here with my portfolio.",
-            "Updated taunt messages for maximum \"vibe coded\" energy. I am not sorry."
+            "Improved responsive behaviour across desktop and mobile layouts.",
+            "Refined navigation between experience, projects and skills.",
+            "Added clearer descriptions for professional and academic work."
         ]
     },
     {
         version: "v1.0.0",
         updates: [
-            "Initial release of Cad Copilot.",
-            "Implemented state-of-the-art Q&A functionality powered by a highly sophisticated array of hardcoded strings.",
-            "Integrated into secondary sidebar because the primary one was getting too crowded."
+            "Initial release of the VS Code-inspired portfolio.",
+            "Added interactive navigation and project exploration.",
+            "Introduced Cad Copilot as an interactive portfolio assistant."
         ]
     }
 ];
