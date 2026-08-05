@@ -63,9 +63,9 @@ export const HomeView = ({ openFile }) => {
 
             {/* Badges */}
             <div className="hero-badges">
-                <div className="badge"><span className="dot dot-green"></span> Software Engineer</div>
-                <div className="badge"><span className="dot dot-blue"></span>Android Developer</div>
-                <div className="badge"><span className="dot dot-purple"></span>Quality Assurance Engineer</div>
+                <div className="badge"><span className="dot dot-green"></span>Quality Engineer</div>
+                <div className="badge"><span className="dot dot-blue"></span>Test Automation</div>
+                <div className="badge"><span className="dot dot-purple"></span>API/UI Testing</div>
             </div>
 
             {/* Typewriter Effect */}
@@ -76,19 +76,19 @@ export const HomeView = ({ openFile }) => {
 
             {/* Bio */}
             <p className="hero-bio">
-                Bridging the gap between <span className="highlight">dynamic mobile engineering</span> and <span className="highlight">automated quality assurance</span>. I build scalable, <span className="highlight">AI-integrated applications</span> that deliver real value from the very first tap to the backend.
-            </p>
+                Combining a strong <span className="highlight">software development foundation</span> with professional experience in <span className="highlight">test automation and API testing</span>. I help engineering teams identify risks, investigate defects and deliver <span className="highlight">reliable software that performs in production</span>.
+             </p>
 
             {/* Action Buttons */}
             <div className="hero-actions">
                 <button className="btn btn-primary" onClick={() => openFile('projects.js')}>
-                    <span style={{ color: '#ffd700' }}>📁</span> Projects
+                     Projects
                 </button>
                 <button className="btn btn-outline" onClick={() => openFile('about.html')}>
-                    <span style={{ color: '#c586c0' }}>👤</span> About Me
+                     About Me
                 </button>
                 <button className="btn btn-outline" onClick={() => openFile('contact.css')}>
-                    <span style={{ color: '#ce9178' }}>✉️</span> Contact
+                     Contact
                 </button>
             </div>
 
