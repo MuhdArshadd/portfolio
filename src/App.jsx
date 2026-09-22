@@ -6,7 +6,7 @@ import { TitleBar } from './components/layout/TitleBar/TitleBar.jsx';
 import { ActivityBar } from './components/layout/ActivityBar/ActivityBar.jsx';
 import { StatusBar } from './components/layout/StatusBar/StatusBar.jsx';
 import { FileContent } from './components/layout/FileContent/FileContent.jsx';
-import { DiffView, GitPanel, ExtensionsPanel, ChatPanel, ExplorerPanel, TerminalPanel  } from './components/panels/index.js';
+import { GitPanel, ExtensionsPanel, ChatPanel, ExplorerPanel, TerminalPanel } from './components/panels/index.js';
 import './index.css';
 
 function App() {
@@ -16,17 +16,26 @@ function App() {
     const [sidebarVisible, setSidebarVisible] = useState(true);
     const [activeSidebar, setActiveSidebar] = useState('explorer');
     const [expandedFolders, setExpandedFolders] = useState(['PORTFOLIO']);
-    const [showDiff, setShowDiff] = useState(false);
-    const [diffFile, setDiffFile] = useState(null);
     const [isChatOpen, setIsChatOpen] = useState(false);
     const [isBotActive, setBotActive] = useState(true);
     const [terminalVisible, setTerminalVisible] = useState(false);
     const [terminalHeight, setTerminalHeight] = useState(250);
     const isDraggingRef = useRef(false);
+    const editorContentRef = useRef(null);
+
+    useEffect(() => {
+        if (editorContentRef.current) {
+            editorContentRef.current.scrollTop = 0;
+        }
+    }, [activeFile]);
 
     // --- HELPER FUNCTIONS ---
     const toggleFolder = (folder) => setExpandedFolders(prev => prev.includes(folder) ? prev.filter(f => f !== folder) : [...prev, folder]);
-    const openFile = (filename) => { if (!openFiles.includes(filename)) setOpenFiles([...openFiles, filename]); setActiveFile(filename); };
+    const activateFile = (filename) => setActiveFile(filename);
+    const openFile = (filename) => {
+        setOpenFiles((currentFiles) => currentFiles.includes(filename) ? currentFiles : [...currentFiles, filename]);
+        activateFile(filename);
+    };
     const closeFile = (filenameToClose, e) => {
         if (e) e.stopPropagation();
         const targetFile = filenameToClose || activeFile;
@@ -42,7 +51,13 @@ function App() {
         }
     };
     const getFileIcon = (filename) => { const file = fileSystem.find(f => f.name === filename); const IconComponent = Icons[file?.icon || 'ExtensionTabIcon']; return <IconComponent />; };
-    const handleSidebarClick = (panel) => { if (activeSidebar === panel) setSidebarVisible(!sidebarVisible); else { setActiveSidebar(panel); setSidebarVisible(true); } };
+    const handleSidebarClick = (panel) => {
+        if (activeSidebar === panel) setSidebarVisible(!sidebarVisible);
+        else {
+            setActiveSidebar(panel);
+            setSidebarVisible(true);
+        }
+    };
     const closeAllFiles = () => {
         // Keeps only home.jsx open
         setOpenFiles(['home.jsx']);
@@ -107,7 +122,7 @@ function App() {
 
                 {/* Left Sidebars */}
                 {sidebarVisible && (
-                    activeSidebar === 'git' ? <GitPanel setShowDiff={setShowDiff} setDiffFile={setDiffFile} /> :
+                    activeSidebar === 'git' ? <GitPanel openFile={openFile} /> :
                     activeSidebar === 'extensions' ? <ExtensionsPanel openFile={openFile} /> :
                     <ExplorerPanel expandedFolders={expandedFolders} toggleFolder={toggleFolder} activeFile={activeFile} openFile={openFile} getFileIcon={getFileIcon} />
                 )}
@@ -117,12 +132,9 @@ function App() {
                     {/* Editor Area (Added flex: 1 so it pushes the terminal down) */}
                     <div className="editor-area" style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden', position: 'relative' }}>
 
-                        {/* --- THE DIFF VIEW --- */}
-                        {showDiff && <DiffView setShowDiff={setShowDiff} />}
-
                         <div className="tabs">
                             {openFiles.map(file => (
-                                <div key={file} className={`tab ${activeFile === file ? 'active' : ''}`} onClick={() => setActiveFile(file)}>
+                                <div key={file} className={`tab ${activeFile === file ? 'active' : ''}`} onClick={() => activateFile(file)}>
                                     {getFileIcon(file)}<span className="tab-text">{file}</span>
                                     <span className="tab-close" onClick={(e) => closeFile(file, e)}><Icons.Close /></span>
                                 </div>
@@ -135,7 +147,7 @@ function App() {
                             <span className="breadcrumb-item">{activeFile}</span>
                         </div>
                         
-                        <div className="editor-content" style={{ flex: 1, overflowY: 'auto' }}>
+                        <div ref={editorContentRef} className="editor-content" style={{ flex: 1, overflowY: 'auto' }}>
                             <FileContent activeFile={activeFile} setBotActive={setBotActive} openFile={openFile} closeFile={closeFile}/>
                         </div>
                     </div>                

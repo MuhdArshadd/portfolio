@@ -34,7 +34,7 @@ export const ExplorerPanel = ({ expandedFolders, toggleFolder, activeFile, openF
                         
                         {/* --- ADD THE FILTER HERE --- */}
                         {fileSystem
-                            .filter(file => file.name !== 'source_control.git' && file.name !== 'Extension: Cad Copilot')
+                            .filter(file => file.name !== 'experiences.json (Working Tree)' && file.name !== 'Extension: Cad Copilot')
                             .map(file => (
                                 <div 
                                     key={file.name} 

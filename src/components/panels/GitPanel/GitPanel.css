@@ -1,8 +1,8 @@
-.diff-overlay {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+.diff-view {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
     background: #1e1e1e;
-    z-index: 50;
     display: flex;
     flex-direction: column;
 }
@@ -25,18 +25,27 @@
 
 .diff-close-btn {
     margin-left: auto;
-    background: transparent;
-    border: 1px solid #555555;
-    color: #cccccc;
-    padding: 4px 12px;
+    background: #c42b1c;
+    border: 1px solid #e05243;
+    color: #ffffff;
+    padding: 6px 14px;
     cursor: pointer;
     border-radius: 3px;
     font-size: 12px;
-    transition: background 0.2s;
+    font-weight: 600;
+    transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 0 1px rgba(196, 43, 28, 0.2);
 }
 
 .diff-close-btn:hover {
-    background: rgba(255,255,255,0.1);
+    background: #e03b2d;
+    border-color: #ff6b5d;
+}
+
+.diff-close-btn:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(224, 59, 45, 0.35);
 }
 
 .diff-split-container {

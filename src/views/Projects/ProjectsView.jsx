@@ -2,11 +2,46 @@ import React, { useState, useEffect } from 'react';
 import { projectsData } from '../../data/index.js';
 import './ProjectsView.css';
 
+const projectLinkLabels = {
+  github: {
+    card: 'GitHub →',
+    modal: 'View on GitHub →'
+  },
+  gitlab: {
+    card: 'GitLab →',
+    modal: 'View on GitLab →'
+  },
+  website: {
+    card: 'Live Site →',
+    modal: 'Visit Live Site →'
+  },
+  demo: {
+    card: 'YouTube Demo →',
+    modal: 'Watch Demo →'
+  }
+};
+
+const getProjectLinkLabel = (type, context) => (
+  projectLinkLabels[type]?.[context] ?? 'Open Link →'
+);
+
 // ==========================================
 // 1. PROJECT CARD COMPONENT
 // ==========================================
 const ProjectCard = ({ project, onClick }) => (
-  <div className="project-card" onClick={() => onClick(project)}>
+  <article
+    className={`project-card ${project.featured ? 'featured' : ''}`}
+    onClick={() => onClick(project)}
+    onKeyDown={(event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        onClick(project);
+      }
+    }}
+    role="button"
+    tabIndex="0"
+    aria-label={`View details for ${project.title}`}
+  >
     <div className="project-header">
       
       {/* Row 1: Categories on Top */}
@@ -30,15 +65,14 @@ const ProjectCard = ({ project, onClick }) => (
               target="_blank"
               rel="noopener noreferrer"
             >
-              {link.type === 'github' ? 'GitHub →' : link.type === 'website' ? 'Live Site →' : 'YouTube Demo →'}
+              {getProjectLinkLabel(link.type, 'card')}
             </a>
           ))}
         </div>
 
-        {/* The New Conditional Status Badge */}
-        {project.status === "In Progress" && (
-          <div className="project-status in-progress">
-            <span className="status-dot"></span> In Progress
+        {project.featured && (
+          <div className="project-status featured-project">
+            Featured Project
           </div>
         )}
       </div>
@@ -53,7 +87,7 @@ const ProjectCard = ({ project, onClick }) => (
         <span key={tech} className="tech-tag">{tech}</span>
       ))}
     </div>
-  </div>
+  </article>
 );
 
 // ==========================================
@@ -64,7 +98,7 @@ const ProjectModal = ({ project, isClosing, onClose, onBackdropClick }) => {
 
   return (
     <div className={`modal-backdrop ${isClosing ? 'closing' : ''}`} onClick={onBackdropClick}>
-      <div className={`modal-content ${isClosing ? 'closing' : ''}`}>
+      <div className={`modal-content ${isClosing ? 'closing' : ''}`} role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
         
         <div className="modal-header">
           <div className="modal-categories">
@@ -75,10 +109,10 @@ const ProjectModal = ({ project, isClosing, onClose, onBackdropClick }) => {
               </span>
             ))}
           </div>
-          <button className="modal-close" onClick={onClose}>×</button>
+          <button className="modal-close" onClick={onClose} aria-label="Close project details">×</button>
         </div>
 
-        <h2 className="modal-title">{project.title}</h2>
+        <h2 className="modal-title" id="project-modal-title">{project.title}</h2>
 
         <div className="modal-body">
           <div className="modal-section">
@@ -124,7 +158,7 @@ const ProjectModal = ({ project, isClosing, onClose, onBackdropClick }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {link.type === 'github' ? 'View Source Code →' : link.type === 'website' ? 'Visit Live Site →' : 'Watch Demo →'}
+                {getProjectLinkLabel(link.type, 'modal')}
               </a>
             ))}
           </div>
@@ -160,6 +194,19 @@ export const ProjectsView = () => {
     if (e.target === e.currentTarget) closeModal();
   };
 
+  const projectSections = [
+    {
+      id: 'quality',
+      title: 'Quality Engineering / Testing',
+      description: 'Focused projects demonstrating browser automation, unit testing, test design and repeatable CI workflows.'
+    },
+    {
+      id: 'development',
+      title: 'Software Development',
+      description: 'Mobile, backend and full-stack systems built through university, hackathon and client project work.'
+    }
+  ];
+
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === 'Escape' && selectedProject) closeModal();
@@ -172,20 +219,32 @@ export const ProjectsView = () => {
     <div className="projects-container animate-view">
       
       <div className="projects-header-comment">
-        <span style={{ color: '#6a9955' }}>// projects.js : architecture, algorithms & applications</span>
+        <span style={{ color: '#6a9955' }}>// projects.js : quality engineering + software development</span>
       </div>
       <h1 className="projects-title">Projects</h1>
+      <p className="projects-intro">
+        Testing projects show how I validate software; development projects show how I design and build it. HeartCare remains my flagship full-stack mobile project.
+      </p>
 
-      {/* Render the Grid using our extracted Card component */}
-      <div className="projects-grid">
-        {projectsData.map((project) => (
-          <ProjectCard 
-            key={project.id} 
-            project={project} 
-            onClick={openModal} 
-          />
-        ))}
-      </div>
+      {projectSections.map((section) => (
+        <section className="project-section" key={section.id} aria-labelledby={`${section.id}-projects-title`}>
+          <div className="project-section-header">
+            <h2 id={`${section.id}-projects-title`} className="project-section-title">{section.title}</h2>
+            <p className="project-section-description">{section.description}</p>
+          </div>
+          <div className="projects-grid">
+            {projectsData
+              .filter((project) => project.projectArea === section.id)
+              .map((project) => (
+                <ProjectCard
+                  key={project.id}
+                  project={project}
+                  onClick={openModal}
+                />
+              ))}
+          </div>
+        </section>
+      ))}
 
       {/* Render the extracted Modal component */}
       <ProjectModal 

@@ -32,11 +32,10 @@ export const FileContent = ({ activeFile, openFile, setBotActive, closeFile }) =
             return <ExtensionView setBotActive={setBotActive} />;
         case '.gitignore':
             return <GitIgnoreView />;
-        case 'source_control.git':
+        case 'experiences.json (Working Tree)':
             return (
                 <DiffView 
-                    setShowDiff={() => { if(closeFile) closeFile('source_control.git'); }} 
-                    setDiffFile={() => {}} 
+                    onClose={() => { if (closeFile) closeFile('experiences.json (Working Tree)'); }}
                 />
             );
         default:

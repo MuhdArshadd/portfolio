@@ -40,7 +40,7 @@ export const HomeView = ({ openFile }) => {
         <div className="home-hero-container animate-view">
             {/* Greeting */}
             <div className="hero-greeting">
-                // hello world !! Welcome to my portfolio
+                // Software Engineer · Quality Engineering
             </div>
 
             {/* Massive Name & Profile Picture */}
@@ -63,9 +63,9 @@ export const HomeView = ({ openFile }) => {
 
             {/* Badges */}
             <div className="hero-badges">
-                <div className="badge"><span className="dot dot-green"></span>Quality Engineer</div>
-                <div className="badge"><span className="dot dot-blue"></span>Test Automation</div>
-                <div className="badge"><span className="dot dot-purple"></span>API/UI Testing</div>
+                <div className="badge"><span className="dot dot-green"></span>Software Engineer</div>
+                <div className="badge"><span className="dot dot-blue"></span>Quality Assurance</div>
+                <div className="badge"><span className="dot dot-purple"></span>Backend & Mobile</div>
             </div>
 
             {/* Typewriter Effect */}
@@ -76,12 +76,12 @@ export const HomeView = ({ openFile }) => {
 
             {/* Bio */}
             <p className="hero-bio">
-                Combining a strong <span className="highlight">software development foundation</span> with professional experience in <span className="highlight">test automation and API testing</span>. I help engineering teams identify risks, investigate defects and deliver <span className="highlight">reliable software that performs in production</span>.
+                First Class Honours Computer Science graduate with professional experience in <span className="highlight">QA automation and API testing during internship</span>. I combine quality engineering with hands-on <span className="highlight">backend and mobile development</span> to build, test and improve reliable software.
              </p>
 
             {/* Action Buttons */}
             <div className="hero-actions">
-                <button className="btn btn-primary" onClick={() => openFile('projects.js')}>
+                <button className="btn btn-outline" onClick={() => openFile('projects.js')}>
                      Projects
                 </button>
                 <button className="btn btn-outline" onClick={() => openFile('about.html')}>
@@ -95,16 +95,16 @@ export const HomeView = ({ openFile }) => {
             {/* Stats Bar */}
             <div className="hero-stats">
                 <div className="stat-box">
-                    <div className="stat-number">3.88</div>
-                    <div className="stat-label">CGPA (CS HONS)</div>
+                    <div className="stat-number">QA + DEV</div>
+                    <div className="stat-label">ENGINEERING PERSPECTIVE</div>
                 </div>
                 <div className="stat-box">
-                    <div className="stat-number">5</div>
-                    <div className="stat-label">INNOVATION MEDALS</div>
+                    <div className="stat-number">API + UI</div>
+                    <div className="stat-label">TEST AUTOMATION COVERAGE</div>
                 </div>
                 <div className="stat-box">
-                    <div className="stat-number" style={{ color: '#4ec9b0' }}>PROGRESS</div>
-                    <div className="stat-label">CORE VALUE</div>
+                    <div className="stat-number" style={{ color: '#4ec9b0' }}>3.88</div>
+                    <div className="stat-label">CGPA · FIRST CLASS</div>
                 </div>
                 <div className="stat-box">
                     <div className="stat-number" style={{ color: '#4fc1ff' }}>YES</div>
@@ -119,9 +119,6 @@ export const HomeView = ({ openFile }) => {
                 </a>
                 <a href="https://www.linkedin.com/in/muhdarshad50/" target="_blank" rel="noreferrer" className="social-badge">
                     <Icons.LinkedIn /> LinkedIn
-                </a>
-                <a href="/resume.pdf" target="_blank" rel="noreferrer" className="social-badge">
-                    <Icons.File /> Resume
                 </a>
             </div>
         </div>

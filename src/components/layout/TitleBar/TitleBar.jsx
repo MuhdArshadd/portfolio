@@ -11,6 +11,7 @@ export const TitleBar = ({ openFile, closeFile, closeAllFiles, toggleSidebar, to
     const [isPaletteOpen, setIsPaletteOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const [activeMenu, setActiveMenu] = useState(null);
+    const [zoomLevel, setZoomLevel] = useState(1);
 
     // --- Refs ---
     const paletteRef = useRef(null);
@@ -37,18 +38,23 @@ export const TitleBar = ({ openFile, closeFile, closeAllFiles, toggleSidebar, to
 
     // --- ZOOM FUNCTIONS WITH MIN/MAX BOUNDS ---
     const handleZoomIn = () => {
-        const currentZoom = parseFloat(document.body.style.zoom || 1);
-        if (currentZoom < 1.3) document.body.style.zoom = (currentZoom + 0.1).toFixed(1);
+        setZoomLevel((currentZoom) => Math.min(1.3, Number((currentZoom + 0.1).toFixed(1))));
     };
 
     const handleZoomOut = () => {
-        const currentZoom = parseFloat(document.body.style.zoom || 1);
-        if (currentZoom > 0.8) document.body.style.zoom = (currentZoom - 0.1).toFixed(1);
+        setZoomLevel((currentZoom) => Math.max(0.8, Number((currentZoom - 0.1).toFixed(1))));
     };
 
     const handleResetZoom = () => {
-        document.body.style.zoom = 1;
+        setZoomLevel(1);
     };
+
+    useEffect(() => {
+        document.body.style.zoom = String(zoomLevel);
+        return () => {
+            document.body.style.zoom = '1';
+        };
+    }, [zoomLevel]);
 
     // --- GLOBAL KEYBOARD SHORTCUTS ---
     useEffect(() => {
@@ -130,7 +136,7 @@ export const TitleBar = ({ openFile, closeFile, closeAllFiles, toggleSidebar, to
             } else if (document.exitFullscreen) {
                 await document.exitFullscreen();
             }
-        } catch (err) {
+        } catch {
             setPopup({ visible: true, text: "Your browser blocked fullscreen mode!" });
         }
     };
@@ -197,7 +203,7 @@ export const TitleBar = ({ openFile, closeFile, closeAllFiles, toggleSidebar, to
     ];    
 
     const closeMessages = [ 
-        "Shutting down... don't forget to grab a copy of my resume!", 
+        "Shutting down... no you cannot close this way",
         "Nice try, but you have to close the actual browser tab to escape!"
     ];
 

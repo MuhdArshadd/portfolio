@@ -8,7 +8,7 @@ export const ExperiencesView = () => {
             
             {/* Header Section */}
             <div className="exp-header-comment">
-                <span style={{ color: '#6a9955' }}>// experience.json - professional & extracurricular journey</span>
+                <span style={{ color: '#6a9955' }}>// experience.json - professional engineering experience & recognition</span>
             </div>
             
             <h1 className="exp-title">Experiences</h1>
@@ -29,19 +29,27 @@ export const ExperiencesView = () => {
                         <div className="timeline-item">
                             <div className="timeline-dot dot-blue active"></div>
                             <div className="timeline-date">Oct 2025 - Apr 2026</div>
-                            <h3 className="timeline-role">Quality Assurance (Manual & Automation) Intern</h3>
+                            <h3 className="timeline-role">QA Automation Intern</h3>
                             <div className="timeline-company">@ Teleport Platforms Sdn. Bhd.</div>
                             <p className="timeline-desc">
-                                Managed the Software Testing Life Cycle (STLC) for logistics business flows. Engineered automated API regression scripts (Karate/Cucumber) and integrated them into a GCP CI/CD pipeline to ensure zero-defect production deployments.
+                                Worked across automation, API testing and defect investigation for logistics order-management workflows in QA and UAT environments.
                             </p>
+                            <ul className="timeline-achievements">
+                                <li>• Developed 50+ Karate and Cucumber regression tests for order creation, retrieval and assignment workflows.</li>
+                                <li>• Reduced a repeatable regression run from more than one hour manually to approximately ten minutes.</li>
+                                <li>• Designed test cases covering expected behaviour, edge cases, test data, preconditions and integrations.</li>
+                                <li>• Investigated failures through requests, responses, application behaviour and backend logs, then collaborated with developers to verify fixes.</li>
+                                <li>• Contributed to GCP Cloud Build configuration for repeatable automated execution across QA and UAT.</li>
+                            </ul>
                             <div className="timeline-tech">
                                 <span className="tech-badge">Karate Framework</span>
                                 <span className="tech-badge">Java</span>
-                                <span className="tech-badge">Cucumber(BDD)</span>
+                                <span className="tech-badge">Cucumber BDD</span>
                                 <span className="tech-badge">Postman</span>
                                 <span className="tech-badge">Swagger UI</span>
-                                <span className="tech-badge">CI/CD Integration</span>
-                                <span className="tech-badge">Atlassian Jira</span>
+                                <span className="tech-badge">GCP Cloud Build</span>
+                                <span className="tech-badge">Jira</span>
+                                <span className="tech-badge">Bitbucket</span>
                             </div>
                         </div>
                     </div>
@@ -60,13 +68,13 @@ export const ExperiencesView = () => {
                         <div className="timeline-item">
                             <div className="timeline-dot dot-purple active"></div>
                             <div className="timeline-date">2025 - 2026</div>
-                            <h3 className="timeline-role">Multi-Award Winner Innovation</h3>
+                            <h3 className="timeline-role">HeartCare Innovation Awards</h3>
                             <div className="timeline-company">@ iDRIVE, InnoGEN & WINSTEM</div>
                             <p className="timeline-desc">
                                 Secured Gold at iDRIVE 2025, and Silver at both InnoGEN 2026 and WINSTEM 2025 for 'HeartCare', an innovative mobile solution tackling cardiovascular health.
                             </p>
                             <div className="timeline-tech">
-                                <span className="tech-badge">Fullstack Mobile App Dev</span>
+                                <span className="tech-badge">Full-Stack Mobile Development</span>
                                 <span className="tech-badge">Innovation</span>
                             </div>
                         </div>
@@ -108,7 +116,7 @@ export const ExperiencesView = () => {
                             <h3 className="timeline-role">UPSI DICRATHON | 1st Place Winner</h3>
                             <div className="timeline-company">@ Digital Creative Marathon (UPSI)</div>
                             <p className="timeline-desc">
-                                Developed 'TourEase', a Flutter-based travel assistant. Handled backend integrations and API performance testing to digitize processes for Malaysian SME vendors.
+                                Contributed to TourEase, a Flutter travel assistant, by integrating backend data and third-party APIs and validating responses with Postman and Python checks.
                             </p>
                             <div className="timeline-tech">
                                 <span className="tech-badge">Mobile Backend Dev</span>
@@ -139,7 +147,7 @@ export const ExperiencesView = () => {
                             <h3 className="timeline-role">Scholarship Recipient</h3>
                             <div className="timeline-company">@ Yayasan Bank Rakyat (YBR)</div>
                             <p className="timeline-desc">
-                                Awarded the prestigious, bond-free YBR Scholarship in recognition of outstanding academic excellence and active extracurricular involvement.
+                                Awarded the bond-free YBR Scholarship in recognition of academic performance and extracurricular involvement.
                             </p>
                             <div className="timeline-tech">
                                 <span className="tech-badge">Academic Excellence</span>

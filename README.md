@@ -1,16 +1,32 @@
-# React + Vite
+# Muhammad Arshad - Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A VS Code-inspired React portfolio positioning Muhammad Arshad as an early-career Software Engineer whose primary professional specialization is Quality Engineering and Test Automation, supported by backend and mobile development experience.
 
-Currently, two official plugins are available:
+## Technology
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 19 and Vite
+- CSS modules by view/component
+- React Icons
+- Vercel Analytics
+- Formspree contact form
 
-## React Compiler
+## Run locally
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Requirements: a current Node.js LTS release and npm.
 
-## Expanding the ESLint configuration
+```bash
+npm install
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Open the local address printed by Vite, normally `http://localhost:5173`.
+
+## Quality checks
+
+```bash
+npm run lint
+npm run build
+npm run preview
+```
+
+The main recruiter-facing content lives in `src/views`, while project, skill and interactive portfolio data lives in `src/data`.

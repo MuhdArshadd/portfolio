@@ -86,6 +86,54 @@
     font-size: 16px;
 }
 
+/* Certifications */
+.credential-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.credential-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #333333;
+}
+
+.credential-item:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.credential-name {
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.credential-note {
+    margin-top: 4px;
+    color: #858585;
+    font-size: 12px;
+}
+
+.credential-status {
+    flex-shrink: 0;
+    padding: 4px 8px;
+    border: 1px solid #454545;
+    border-radius: 3px;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.credential-status.completed { color: #4ec9b0; border-color: rgba(78, 201, 176, 0.45); }
+.credential-status.learning { color: #4fc1ff; border-color: rgba(79, 193, 255, 0.45); }
+.credential-status.pending { color: #ce9178; border-color: rgba(206, 145, 120, 0.45); }
+
 /* Education Cards */
 .edu-card {
     padding: 20px 25px;
@@ -166,6 +214,12 @@
     /* 5. Reclaim a little space inside the cards */
     .about-card {
         padding: 15px;
+    }
+
+    .credential-item {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
     }
     
     /* 6. Tighten up the section margins */

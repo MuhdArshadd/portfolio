@@ -1,6 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Icons } from '../../components/icons/Icons';
 import './ContactView.css';
+
+const AUTO_CLOSE_DELAY = 5000;
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mpqobeon";
 
 export const ContactView = () => {
   const [formData, setFormData] = useState({ 
@@ -17,15 +20,22 @@ export const ContactView = () => {
   
   const timerRef = useRef(null);
   const intervalRef = useRef(null);
-  const AUTO_CLOSE_DELAY = 5000; // 5 seconds
-
-  const FORMSPREE_ENDPOINT = "https://formspree.io/f/mpqobeon";
 
   // Clear all timers
-  const clearTimers = () => {
+  const clearTimers = useCallback(() => {
     if (timerRef.current) clearTimeout(timerRef.current);
     if (intervalRef.current) clearInterval(intervalRef.current);
-  };
+  }, []);
+
+  const closeModal = useCallback(() => {
+    clearTimers();
+    setIsClosing(true);
+    setTimeout(() => {
+      setShowModal(false);
+      setModalType(null);
+      document.body.style.overflow = 'unset';
+    }, 300);
+  }, [clearTimers]);
 
   // Auto-close effect when modal opens
   useEffect(() => {
@@ -50,12 +60,12 @@ export const ContactView = () => {
 
       return () => clearTimers();
     }
-  }, [showModal]);
+  }, [showModal, closeModal, clearTimers]);
 
   // Cleanup on unmount
   useEffect(() => {
     return () => clearTimers();
-  }, []);
+  }, [clearTimers]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -80,22 +90,12 @@ export const ContactView = () => {
       } else {
         throw new Error('Failed');
       }
-    } catch (error) {
+    } catch {
       setModalType('error');
       setShowModal(true);
       setIsClosing(false);
       document.body.style.overflow = 'hidden';
     }
-  };
-
-  const closeModal = () => {
-    clearTimers();
-    setIsClosing(true);
-    setTimeout(() => {
-      setShowModal(false);
-      setModalType(null);
-      document.body.style.overflow = 'unset';
-    }, 300);
   };
 
   const handleBackdropClick = (e) => {
@@ -112,15 +112,15 @@ export const ContactView = () => {
     };
     window.addEventListener('keydown', handleEscape);
     return () => window.removeEventListener('keydown', handleEscape);
-  }, [showModal]);
+  }, [showModal, closeModal]);
 
   return (
     <div className="contact-container animate-view">
       
       <div className="contact-header">
-        <div className="comment-text green">// contact.css — let's build something</div>
+        <div className="comment-text green">// contact.css — let&apos;s build and test reliable software</div>
         <h1 className="contact-title">Contact</h1>
-        <div className="comment-text gray">// open to work, permanent roles & good conversations</div>
+        <div className="comment-text gray">// open to quality engineering, test automation, backend, mobile and junior software engineering opportunities</div>
       </div>
 
       <div className="contact-layout">
@@ -160,7 +160,7 @@ export const ContactView = () => {
         </div>
 
         <div className="contact-form-section">
-          <h2 className="section-title">SEND A MESSAGE</h2>
+          <h2 className="section-title">START A CONVERSATION</h2>
           
           <form onSubmit={handleSubmit} className="code-form" noValidate>
             <div className="form-group">

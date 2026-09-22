@@ -17,34 +17,37 @@ export const AboutView = () => {
 
       <div className="about-subtitle">
         <span style={{ color: "#6a9955" }}>
-          // who I am · what I do · where I build
+          // software development foundation · quality engineering specialization
         </span>
       </div>
 
       {/* Intro Card */}
       <div className="about-card intro-card">
         <p>
-          Hi! I'm <span className="highlight-blue">Muhammad Arshad</span>, a
-          Computer Science graduate building my career in quality engineering
-          and test automation. My software development background helps me
-          understand how applications are designed, while my QA experience
-          enables me to approach them from the perspective of reliability, risk
-          and software quality.
+          I&apos;m <span className="highlight-blue">Muhammad Arshad</span>, an
+          early-career Software Engineer and First Class Honours Computer
+          Science (Software Development) graduate from UTeM. My degree and
+          project work gave me hands-on experience building backend services,
+          REST APIs, mobile applications and data-driven systems with Node.js,
+          Express, Flutter and SQL databases.
           <br />
           <br />
-          During my QA Automation internship at{" "}
-          <span className="highlight-blue">Teleport</span>, I worked with
-          large-scale enterprise systems supporting high-volume air logistics
-          operations. I translated business requirements into test scenarios,
-          automated API and end-to-end workflows using Karate, investigated
-          defects and supported software releases through CI/CD pipelines.
+          My strongest professional experience comes from a six-month QA
+          Automation internship at{" "}
+          <span className="highlight-blue">Teleport</span>. There, I worked with
+          logistics order-management workflows and translated requirements into
+          test scenarios, developed 50+ Karate and Cucumber regression tests,
+          performed functional and integration testing, investigated defects
+          with developers and contributed to repeatable test execution through
+          GCP Cloud Build. The automation reduced a repeatable regression run
+          from more than one hour manually to approximately ten minutes.
           <br />
-          <br />I aim to bridge the gap between development and testing by
-          designing meaningful tests, building maintainable automation and
-          helping engineering teams deliver software that users can trust.
-          Whether I am investigating a difficult defect or facing down a heavy
-          lift at the gym, I approach challenges with the same discipline and
-          resilience until the job is done.
+          <br />
+          That combination lets me understand how software is built and how it
+          fails. Quality Engineering and Test Automation are my primary
+          professional direction, while my backend and mobile foundation also
+          supports junior Software Engineering roles where development,
+          debugging and system reliability matter.
         </p>
       </div>
 
@@ -65,8 +68,8 @@ export const AboutView = () => {
               <Icons.Search />
             </span>
             <span>
-              Strengthening test design, defect investigation and risk-based
-              testing
+              Designing and validating REST APIs, backend workflows and data
+              contracts
             </span>
           </div>
 
@@ -75,8 +78,8 @@ export const AboutView = () => {
               <Icons.CodeSmall />
             </span>
             <span>
-              Learning Playwright, JavaScript and TypeScript for modern web
-              automation
+              Developing mobile applications and integrations with Flutter and
+              Dart
             </span>
           </div>
 
@@ -85,10 +88,36 @@ export const AboutView = () => {
               <Icons.Mobile />
             </span>
             <span>
-              Applying software development knowledge to improve testability and
-              system reliability
+              Applying developer context to testability, debugging and system
+              reliability
             </span>
           </div>
+        </div>
+      </div>
+
+      <h2 className="section-heading">CERTIFICATIONS &amp; PROFESSIONAL LEARNING</h2>
+
+      <div className="about-card credential-card">
+        <div className="credential-item">
+          <div>
+            <div className="credential-name">TalentLabs Certified Associate in Back-End Development</div>
+            <div className="credential-note">Backend development programme</div>
+          </div>
+          <span className="credential-status completed">Completed</span>
+        </div>
+        <div className="credential-item">
+          <div>
+            <div className="credential-name">ISTQB Certified Tester Foundation Level (CTFL) v4.0</div>
+            <div className="credential-note">Certification preparation</div>
+          </div>
+          <span className="credential-status learning">Self-study in progress</span>
+        </div>
+        <div className="credential-item">
+          <div>
+            <div className="credential-name">Certified Quantitative Risk Management (CQRM)</div>
+            <div className="credential-note">Examination completed</div>
+          </div>
+          <span className="credential-status pending">Certification pending</span>
         </div>
       </div>
 
@@ -103,7 +132,7 @@ export const AboutView = () => {
             </span>{" "}
             Universiti Teknikal Malaysia Melaka (UTeM)
           </div>
-          <div className="edu-date">Oct 2022 - Mar 2026</div>
+          <div className="edu-date">Oct 2022 - Apr 2026</div>
         </div>
         <div className="edu-program">
           Bachelor of Computer Science in Software Development (Hons.)

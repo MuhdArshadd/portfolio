@@ -43,7 +43,6 @@ export const TerminalPanel = ({ toggleTerminal, height }) => {
   echo      - Print text to the terminal
   date      - Display current system date and time
   hire      - Initiate candidate onboarding protocol
-  start     - Open specific files (try 'start resume')
   cadbot    - Wake up the AI assistant`;
             
             case 'whoami':
@@ -62,13 +61,6 @@ export const TerminalPanel = ({ toggleTerminal, height }) => {
             case 'hire':
                 return 'Excellent choice. Initializing offer letter protocols... \n(Just kidding, but you can reach me via the contact page!)';
                 
-            case 'start':
-                if (args[1] === 'resume') {
-                    window.open('/resume.pdf', '_blank');
-                    return 'Opening resume.pdf in a new tab...';
-                }
-                return `The system cannot find the file specified: ${args[1] || ''}`;
-
             case 'cadbot':
                 return 'Cad Copilot is currently resting in the Activity Bar. Click the robot icon to chat!';
 

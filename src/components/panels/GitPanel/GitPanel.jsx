@@ -5,9 +5,9 @@ import '../../../views/Experiences/ExperiencesView.css';
 import './GitPanel.css';
 import '../index.css';
 
-export const DiffView = ({ setShowDiff }) => {
+export const DiffView = ({ onClose }) => {
     return (
-        <div className="diff-overlay">
+        <div className="diff-view">
             
             {/* Diff Tab Header */}
             <div className="diff-header">
@@ -15,7 +15,7 @@ export const DiffView = ({ setShowDiff }) => {
                     <Icons.JsonIcon />
                     <span style={{ color: '#cccccc' }}>experiences.json (Working Tree)</span>
                 </div>
-                <button className="diff-close-btn" onClick={() => setShowDiff(false)}>
+                <button type="button" className="diff-close-btn" onClick={onClose}>
                     Close Diff
                 </button>
             </div>
@@ -39,7 +39,7 @@ export const DiffView = ({ setShowDiff }) => {
                                 <h3 className="timeline-role">Quality Assurance Intern</h3>
                                 <div className="timeline-company">@ Teleport Platforms Sdn. Bhd.</div>
                                 <p className="timeline-desc">
-                                    Managed the Software Testing Life Cycle (STLC) for logistics business flows. Engineered automated API regression scripts (Karate/Cucumber) and integrated them into a GCP CI/CD pipeline to ensure zero-defect production deployments.
+                                    Developed and maintained automated API regression coverage with Karate and Cucumber for logistics order-management workflows.
                                 </p>
                             </div>
                         </div>
@@ -67,7 +67,7 @@ export const DiffView = ({ setShowDiff }) => {
                                     <div className="timeline-company" style={{ color: '#23d18b' }}>@ [Your Company Name Here] 👀</div>
                                     
                                     <p className="timeline-desc" style={{ color: '#cccccc' }}>
-                                        Hired Muhammad Arshad after being thoroughly impressed by his interactive VS Code portfolio and 'quality-first' mindset. He immediately began contributing to high-impact projects and bridging the gap between development and QA.
+                                        Hired Muhammad Arshad after exploring his interactive portfolio and evidence across quality engineering, backend systems and mobile development.
                                     </p>
                                     
                                     <div className="timeline-tech">
@@ -84,7 +84,7 @@ export const DiffView = ({ setShowDiff }) => {
                                 <h3 className="timeline-role">Quality Assurance Intern</h3>
                                 <div className="timeline-company">@ Teleport Platforms Sdn. Bhd.</div>
                                 <p className="timeline-desc">
-                                    Managed the Software Testing Life Cycle (STLC) for logistics business flows. Engineered automated API regression scripts (Karate/Cucumber) and integrated them into a GCP CI/CD pipeline to ensure zero-defect production deployments.
+                                    Developed 50+ automated Karate and Cucumber regression tests and contributed to repeatable execution through GCP Cloud Build.
                                 </p>
                             </div>
 
@@ -97,7 +97,7 @@ export const DiffView = ({ setShowDiff }) => {
     );
 };
 
-export const GitPanel = ({ setShowDiff, setDiffFile }) => {
+export const GitPanel = ({ openFile }) => {
     const [isChangesOpen, setIsChangesOpen] = useState(true);
     const [isGraphOpen, setIsGraphOpen] = useState(true);
 
@@ -127,7 +127,7 @@ export const GitPanel = ({ setShowDiff, setDiffFile }) => {
                         </div>
 
                         <div style={{ marginTop: '4px' }}>
-                            <div className="git-file-item" onClick={() => { setShowDiff(true); setDiffFile('experiences.json'); }}>
+                            <div className="git-file-item" onClick={() => openFile('experiences.json (Working Tree)')}>
                                 <Icons.JsonIcon />
                                 <span style={{ flex: 1 }}>experiences.json</span>
                                 <span className="git-file-status">M</span>

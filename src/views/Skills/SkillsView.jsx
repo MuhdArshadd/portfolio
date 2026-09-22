@@ -1,6 +1,5 @@
 import React from 'react';
 import { techSkillsData } from '../../data/index.js';
-import { SkillBar } from '../../components/ui/SkillBar';
 import './SkillsView.css';
 
 export const SkillsView = () => {
@@ -13,26 +12,22 @@ export const SkillsView = () => {
       
       <div className="skills-meta">
         {'{ '}
-        <span className="highlight-blue">"status"</span>: <span className="string-orange">"{techSkillsData.header.status}"</span>,{' '}
-        <span className="highlight-blue">"passion"</span>: <span className="string-orange">"{techSkillsData.header.passion}"</span>,{' '}
-        <span className="highlight-blue">"charateristic"</span>: <span className="string-orange">"{techSkillsData.header.charateristic}"</span>
+        <span className="highlight-blue">"identity"</span>: <span className="string-orange">"{techSkillsData.header.identity}"</span>,{' '}
+        <span className="highlight-blue">"focus"</span>: <span className="string-orange">"{techSkillsData.header.professionalFocus}"</span>{' '}
         {' }'}
       </div>
 
       {/* Skills Grid */}
       <div className="skills-grid">
-        {techSkillsData.categories.map((category, catIndex) => (
+        {techSkillsData.categories.map((category) => (
           <div key={category.id} className="skill-card">
-            <h3 className="skill-category-title">{category.title}</h3>
-            <div className="skill-list">
-              {category.skills.map((skill, skillIndex) => (
-                <SkillBar 
-                  key={skill.name}
-                  name={skill.name}
-                  level={skill.level}
-                  color={skill.color}
-                  delay={(catIndex * 100) + (skillIndex * 50)}
-                />
+            <h3 className="skill-category-title" style={{ borderBottomColor: `${category.accent}66` }}>{category.title}</h3>
+            <p className="skill-category-description">{category.description}</p>
+            <div className="skill-tag-list">
+              {category.skills.map((skill) => (
+                <span key={skill} className="skill-capability" style={{ borderColor: `${category.accent}55` }}>
+                  {skill}
+                </span>
               ))}
             </div>
           </div>
@@ -42,7 +37,9 @@ export const SkillsView = () => {
       {/* Methodologies */}
       <h3 className="section-heading">METHODOLOGIES</h3>
       <div className="methodology-card">
-        <span className="method-tag">{techSkillsData.methodologies[0]}</span>
+        {techSkillsData.methodologies.map((methodology) => (
+          <span className="method-tag" key={methodology}>{methodology}</span>
+        ))}
       </div>
 
       {/* Spoken Languages */}

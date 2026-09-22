@@ -52,7 +52,7 @@ export const ActivityBar = ({
                         
                         {/* --- ADD THE FILTER HERE --- */}
                         {fileSystem
-                            .filter(file => file.name !== 'source_control.git' && file.name !== 'Extension: Cad Copilot')
+                            .filter(file => file.name !== 'experiences.json (Working Tree)' && file.name !== 'Extension: Cad Copilot')
                             .map(file => (
                                 <div key={file.name} className="activity-popup-item" onClick={() => { openFile(file.name); setOpenMenu(null); }}>
                                     {file.name}
@@ -69,7 +69,7 @@ export const ActivityBar = ({
                 className={`activity-icon ${activeSidebar === 'git' ? 'active' : ''}`} 
                 onClick={() => {
                     if (isMobile) {
-                        openFile('source_control.git'); // Change this to whatever file you want Git to open!
+                        openFile('experiences.json (Working Tree)');
                         setOpenMenu(null);
                     } else {
                         handleSidebarClick('git');
@@ -129,7 +129,6 @@ export const ActivityBar = ({
                         <div className="activity-popup-item" onClick={() => { window.open('https://www.linkedin.com/in/muhdarshad50/', '_blank'); setOpenMenu(null); }}>LinkedIn Profile</div>
                         <div className="activity-popup-item" onClick={() => { window.open('https://github.com/MuhdArshadd', '_blank'); setOpenMenu(null); }}>GitHub</div>
                         <div className="activity-popup-separator"></div>
-                        <div className="activity-popup-item" onClick={() => { window.open('/resume.pdf', '_blank'); setOpenMenu(null); }}>Download Resume.pdf</div>
                     </div>
                 )}
             </div>

@@ -6,6 +6,6 @@ export const fileSystem = [
     { name: 'skills.json', type: 'json', icon: 'JsonIcon' },
     { name: 'contact.css', type: 'css', icon: 'CssIcon' },
     { name: '.gitignore', type: 'git', icon: 'GitSmall' },
-    { name: 'source_control.git', type: 'git', icon: 'GitSmall' },
+    { name: 'experiences.json (Working Tree)', type: 'json', icon: 'JsonIcon' },
     { name: 'Extension: Cad Copilot', type: 'extension', icon: 'ExtensionTabIcon' }
 ];

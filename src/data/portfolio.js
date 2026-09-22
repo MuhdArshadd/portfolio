@@ -1,53 +1,14 @@
-// Pivoting to QA
 export const portfolioData = {
     name: "Muhammad Arshad Bin Mohamad Din",
-    role: "Quality Engineer & Test Automation",
-    about: `const qualityEngineer = {
+    role: "Software Engineer | Quality Engineering",
+    about: `const softwareEngineer = {
     name: "Muhammad Arshad",
     location: "Malaysia",
-    focus: "Building reliable, well-tested software",
-    interests: ["Test Automation", "API Testing", "Quality Engineering"],
-    mindset: "Quality First",
-    status: "Open to full-time QA opportunities"
+    focus: "Building and testing reliable software",
+    strengths: ["Quality Engineering", "Backend", "Mobile"],
+    experience: "QA Automation at Teleport",
+    status: "Open to software and quality engineering roles"
 };`,
-    skills: [
-        {
-            category: "Quality Engineering",
-            items: [
-                "Test Automation",
-                "API Testing",
-                "Manual Testing",
-                "STLC"
-            ]
-        },
-        {
-            category: "Automation",
-            items: [
-                "Karate",
-                "Playwright",
-                "Postman",
-                "Cucumber BDD"
-            ]
-        },
-        {
-            category: "Programming",
-            items: [
-                "Java",
-                "C++",
-                "JavaScript",
-                "TypeScript",
-                "SQL"
-            ]
-        },
-        {
-            category: "Tools & CI/CD",
-            items: [
-                "Git",
-                "Jira",
-                "Google Cloud Platform"
-            ]
-        }
-    ],
     contact: {
         email: "arshadmuhd50@gmail.com",
         github: "https://github.com/MuhdArshadd",
@@ -55,54 +16,30 @@ export const portfolioData = {
     }
 };
 
-
-// For Dev
-// export const portfolioData = {
-//     name: "Muhammad Arshad Bin Mohamad Din",
-//     role: "Software Developer & QA Automation",
-//     about: `const developer = {
-//     name: "Muhammad Arshad",
-//     location: "Malaysia",
-//     focus: "Building intelligent, scalable systems",
-//     interests: ["Backend Engineering", "AI/ML", "Data Science"],
-//     mindset: "Beast Mode",
-//     status: "Hunting for permanent role!"
-// };`,
-//     skills: [
-//         { category: "Frontend & Mobile", items: ["React", "Flutter", "Tailwind CSS"] },
-//         { category: "Backend", items: ["Node.js", "Android Studio"] },
-//         { category: "QA & Testing", items: ["Karate", "Test Automation", "STLC", "API Testing"] },
-//         { category: "Tools", items: ["Git", "VS Code", "Figma"] }
-//     ],
-//     contact: {
-//         email: "arshadmuhd50@gmail.com",
-//         github: "https://github.com/MuhdArshadd",
-//         linkedin: "https://www.linkedin.com/in/muhdarshad50/"
-//     }
-// };
-
-// For dev
-// export const rolesData = [
-//     "build scalable mobile applications.", 
-//     "automate enterprise QA pipelines.", 
-//     "integrate AI models into real-world apps.",
-//     "bridge the gap between development and testing."
-// ];
-
-
-// Pivoting to QA
 export const rolesData = [
-    "design reliable automated test solutions.",
-    "validate complex API and system workflows.",
-    "investigate defects across application layers.",
-    "bridge software development and quality engineering."
+    "build and test reliable software.",
+    "automate API and end-to-end workflows.",
+    "develop backend and mobile applications.",
+    "connect development with quality engineering."
 ];
 
 export const chatData = [
-    { q: "Who is Cad?", a: "Cad (Arshad) is a First-Class Software Engineer Graduate from Malaysia. He specialises in bridging the gap between building dynamic mobile apps and writing maintainable automated tests." },
-    { q: "What is your tech stack?", a: "Cad primarily builds Mobile applications using Flutter for Android and integrates AI models (TensorFlow, OpenAI). Thanks to his enterprise QA background, he also knows exactly how to catch (most of) his own bugs!" },
-    { q: "Any standout projects?", a: "Definitely! Cad built 'HeartCare', an AI-driven cardiovascular health app that predicts real-time risk levels. It won multiple Gold and Silver innovation awards and is officially copyrighted with MyIPO." },
-    { q: "How can I hire you?", a: "You can email arshadmuhd50@gmail.com or connect on LinkedIn. Cad is currently hunting for a full-time Software Engineer or QA role in the KL/Selangor area!" }
+    {
+        q: "Who is Cad?",
+        a: "Cad (Arshad) is a First Class Honours Computer Science graduate and early-career Software Engineer. His strongest professional experience is in QA automation at Teleport, supported by backend, mobile and full-stack project work."
+    },
+    {
+        q: "What is your tech stack?",
+        a: "For quality engineering, Arshad works with Karate, Cucumber BDD, Postman, Playwright, GoogleTest and CI/CD workflows. His development stack includes JavaScript, Node.js, Express, Flutter, Dart, C++, Python, PostgreSQL and Supabase."
+    },
+    {
+        q: "Any standout projects?",
+        a: "HeartCare is Arshad's strongest development project: an award-winning Flutter and Node.js cardiovascular health application with on-device TensorFlow Lite, PostgreSQL, REST APIs and third-party integrations. His portfolio also includes Playwright UI automation and C++ unit-testing projects."
+    },
+    {
+        q: "What roles are you considering?",
+        a: "Arshad is primarily interested in Quality Engineering, QA Automation and Test Engineering roles, while also considering junior Backend, Mobile and general Software Engineering opportunities. Reach him by email or LinkedIn."
+    }
 ];
 
 export const extensionsData = [
@@ -118,19 +55,19 @@ export const extensionsData = [
 
 export const gitHistoryData = [
     {
-        message: "feat: reposition portfolio for quality engineering",
+        message: "feat: reposition portfolio for software engineering",
         highlight: true
     },
     {
-        message: "feat: add QA automation experience and impact metrics",
+        message: "feat: add verified test automation projects",
         highlight: false
     },
     {
-        message: "feat: add quality engineering skills and test tools",
+        message: "feat: balance quality, backend and mobile skills",
         highlight: false
     },
     {
-        message: "feat: implement Cad Quality Copilot",
+        message: "feat: quantify Teleport automation impact",
         highlight: false
     },
     {
@@ -146,12 +83,20 @@ export const gitHistoryData = [
 
 export const extensionChangelogData = [
     {
+        version: "v1.4.0",
+        updates: [
+            "Repositioned the portfolio under a Software Engineer identity.",
+            "Kept Quality Engineering and Test Automation as the primary professional specialization.",
+            "Added verified Playwright and C++ unit-testing portfolio projects.",
+            "Balanced recruiter paths across quality, backend and mobile engineering."
+        ]
+    },
+    {
         version: "v1.3.0",
         updates: [
-            "Repositioned the portfolio around quality engineering and test automation.",
             "Added measurable QA automation outcomes from Teleport.",
             "Updated technical skills to include API testing, Karate, Java and CI/CD.",
-            "Improved Cad Quality Copilot responses for recruiters."
+            "Improved Cad Copilot responses for recruiters."
         ]
     },
     {

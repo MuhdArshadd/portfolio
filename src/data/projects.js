@@ -1,138 +1,192 @@
 export const projectsData = [
-{
+  {
     id: 1,
-    categories: ["MOBILE", "AI", "HEALTHCARE"],
-    title: "HeartCare - AI Cardiovascular Assistant",
-    description: "Award-winning mobile app for early awareness and preventive care of Non-Communicable Diseases (NCDs) in Malaysia. Features on-device AI risk assessment, family tracking, and a smart treatment planner.",
-    tech: ["Flutter", "Node.js", "TensorFlow Lite", "PostgreSQL", "OpenAI"],
+    projectArea: "quality",
+    categories: ["UI AUTOMATION", "END-TO-END TESTING"],
+    title: "Cinema Booking Flow - Playwright Automation",
+    description: "A JavaScript UI-automation practice project covering a dynamic, multi-step cinema-booking journey with resilient Playwright selectors and assertions.",
+    tech: ["Playwright", "JavaScript", "UI Automation", "E2E Testing"],
     links: [
-        { type: "github", url: "https://github.com/MuhdArshadd/HeartCare" },
-        { type: "demo", url: "https://youtu.be/nRaeWM9NVCU" }
+      { type: "github", url: "https://github.com/MuhdArshadd/cinema-booking-flow-playwright-practice" },
     ],
-    status: "MyIPO Registered",
+    status: "Practice Project",
     details: {
-      challenge: "NCDs require early awareness and preventive care. Families need a reliable, secure way to monitor high-risk members and provide instant support in emergencies.",
-      solution: "Developed a decoupled mobile architecture separating on-device AI UI from cloud processing. Integrated TensorFlow Lite for offline predictions and Google Maps for real-time family location tracking.",
+      challenge: "Exercise a realistic browser flow that changes state across movie selection, scheduling, authentication and seat-selection navigation.",
+      solution: "Automated the journey in Playwright using locators, role-based selectors, assertions and popup handling for dynamic browser interactions.",
       features: [
-          "On-Device AI Risk Assessment via TensorFlow Lite (trained on 70k+ entries)", 
-          "Family Mode Tracking with FCM Push Notifications", 
-          "AI-Generated Smart Treatment Planner powered by OpenAI", 
-          "Health Metric & Symptom Logging (BP, Glucose, BMI)"
+        "Movie, date and time selection coverage",
+        "Authentication-gate validation",
+        "Seat-selection navigation checks",
+        "Role-based selectors and popup handling"
       ],
-      outcome: "Won Gold at iDRIVE 2025, Silver at InnoGEN 2026, and Silver at WINSTEM 2025. Officially registered under the Intellectual Property Corporation of Malaysia (MyIPO)."
+      outcome: "Demonstrates practical UI test design and browser automation across a multi-step end-to-end flow."
     }
   },
   {
-    id: 2, 
-    categories: ["WEB", "FRONT-END", "FREELANCE"],
-    title: "BWR Services - Aircond Specialist",
-    description: "A responsive landing page built for a friend's air conditioning business. Focused on making it easy for customers to trust his work and book him instantly via WhatsApp.",
-    tech: ["React.js", "Tailwind CSS", "Vite", "Vercel"],
+    id: 2,
+    projectArea: "quality",
+    categories: ["UNIT TESTING", "C++", "CI"],
+    title: "C++ Unit Testing & CI Practice",
+    description: "A focused unit-testing project using dependency injection, mocks and automated build/test workflows to isolate C++ components and verify behaviour.",
+    tech: ["C++", "GoogleTest", "GoogleMock", "CMake", "CTest", "GitLab CI"],
     links: [
-        { type: "github", url: "https://github.com/MuhdArshadd/BWR_SERVICES" },
-        { type: "website", url: "https://bwr-services.vercel.app/" }
+        { type: "github", url: "https://gitlab.com/arshad-group3/cpp-unit-testing-training" },
     ],
-    status: "Completed",
+    status: "Practice Project",
     details: {
-      challenge: "My friend's air conditioning business was only using TikTok and Instagram to get customers. Without an official website, it was hard for him to look fully professional, especially when trying to win bigger jobs from companies instead of just regular houses.",
-      solution: "I built him a fully responsive React website that adapts perfectly—whether a customer opens it on a tiny mobile phone or a wide desktop monitor. It acts as his official business hub, making his services look totally legit and letting people book him instantly through a WhatsApp integration.",
+      challenge: "Test C++ components independently from external dependencies while keeping the build and test process repeatable.",
+      solution: "Placed dependencies behind interfaces, used constructor injection, and implemented tests with GoogleTest fixtures and GoogleMock expectations.",
       features: [
-          "Fully responsive design optimized for mobile and desktop views",
-          "Interactive Booking Flow with pre-filled WhatsApp messages",
-          "Vertical scrolling feed to show off real customer reviews",
-          "Auto-cycling image gallery to prove his quality of work"
+        "Test fixtures, matchers and parameterized test concepts",
+        "Mocks, fakes, return behaviours and exception coverage",
+        "Dependency injection through interfaces",
+        "CMake, CTest and GitLab CI workflow on a Windows runner"
       ],
-      outcome: "He now has a professional platform to share with clients that actually builds trust. The site is live and making it way easier for people to hire him, and I'm still actively working on adding new features and enhancement!"
+      outcome: "Built and passed all 10 automated tests through the configured CI workflow."
     }
   },
   {
     id: 3,
-    categories: ["MOBILE", "AI", "TOURISM"],
-    title: "TourEase - Smart Heritage Guide",
-    description: "Intelligent tourism mobile platform offering personalized recommendations, real-time updates, and an interactive AI assistant to help tourists explore Malaysia's heritage. 1st Place at DICRATHON 2024.",
-    tech: ["Flutter", "Dart", "OpenAI API", "Google Maps API", "Azure SQL"],
+    projectArea: "development",
+    featured: true,
+    categories: ["MOBILE", "BACKEND", "AI", "HEALTHCARE"],
+    title: "HeartCare - AI Cardiovascular Assistant",
+    description: "Award-winning full-stack mobile application for cardiovascular health awareness, combining Flutter, REST APIs, PostgreSQL-backed services and on-device AI.",
+    tech: ["Flutter", "Dart", "Node.js", "Express.js", "PostgreSQL", "TensorFlow Lite"],
     links: [
-        { type: "github", url: "https://github.com/MuhdArshadd/TourEase" },
-        { type: "demo", url: "https://youtu.be/gQyQ8sYruE4" }
+      { type: "github", url: "https://github.com/MuhdArshadd/HeartCare" },
+      { type: "demo", url: "https://youtu.be/nRaeWM9NVCU" }
     ],
-    status: "Completed",
+    status: "MyIPO Registered",
     details: {
-      challenge: "Tourists face issues with unpersonalized support, lack of reliable event data, and overcrowding at popular heritage attractions in Malaysia.",
-      solution: "Built an AI-driven, mobile-first platform providing real-time info on crowd levels, AI-assisted guidance, and turn-by-turn navigation.",
+      challenge: "Create a secure, accessible mobile system that supports early cardiovascular-health awareness, ongoing health logging and family assistance.",
+      solution: "Built a Flutter client and Node.js/Express REST API backed by PostgreSQL/Supabase, with JWT authentication, on-device TensorFlow Lite inference and third-party service integrations.",
       features: [
-          "Interactive Map with turn-by-turn navigation and crowd levels", 
-          "Multilingual AI Chatbot for virtual tourist assistance", 
-          "Personalized AI-driven destination recommendations", 
-          "Real-time alerts for events and attraction statuses"
+        "On-device cardiovascular risk assessment with TensorFlow Lite",
+        "Family tracking and Firebase Cloud Messaging notifications",
+        "OpenAI-assisted treatment planning",
+        "Health metric and symptom logging",
+        "Google Maps integration and backend deployment"
       ],
-      outcome: "Awarded 1st Place (Best Smart Tourism Solution) at DICRATHON 2024 for innovation in digital tourism."
+      outcome: "Received Gold at iDRIVE 2025, Silver at WINSTEM 2025 and Silver at InnoGEN Challenge 2026, with intellectual property registration through MyIPO."
     }
   },
   {
     id: 4,
+    projectArea: "development",
     categories: ["MOBILE", "DATA AUTOMATION", "SOCIAL IMPACT"],
     title: "MYCare - Community Support Hub",
-    description: "Mobile application designed to centralize access to essential support services for underserved communities, featuring live data automated via Python web scraping.",
-    tech: ["Flutter", "Python", "Selenium", "Azure PostgreSQL", "OpenAI"],
+    description: "A Flutter application that centralizes support-service information, backed by PostgreSQL and Python collection workflows using Selenium and BeautifulSoup.",
+    tech: ["Flutter", "Python", "Selenium", "BeautifulSoup", "PostgreSQL", "OpenAI"],
     links: [
-        { type: "github", url: "https://github.com/MuhdArshadd/MYCare" },
-        { type: "demo", url: "https://youtu.be/Q9NCwTdgixY" }
+      { type: "github", url: "https://github.com/MuhdArshadd/MYCare" },
+      { type: "demo", url: "https://youtu.be/Q9NCwTdgixY" }
     ],
     status: "Completed",
     details: {
-      challenge: "Young adults in low-income communities often struggle to find centralized, real-time information regarding food banks, medical services, and skill-building programs.",
-      solution: "Engineered a cross-platform mobile app that aggregates live community data using Python automated web scraping scripts, guided by an intelligent chatbot.",
+      challenge: "Young adults in underserved communities can struggle to find current, centralized information about food banks, medical services and skill-building programmes.",
+      solution: "Led a student Agile team building a mobile application and Python data-collection workflow, translating coursework requirements into technical tasks and integrated features.",
       features: [
-          "Real-Time Data via automated Python scraping (BeautifulSoup/Selenium)", 
-          "AI-Powered Chatbot integrated with OpenAI for user guidance", 
-          "Google Maps/Places integration for locating nearby food banks", 
-          "Skill-Building Module linked to Harvard Online & Coursera"
+        "Selenium and BeautifulSoup collection from 10+ web sources",
+        "Validation of scraped fields and content before integration",
+        "OpenAI-powered guidance chatbot",
+        "Google Maps and Places integration"
       ],
-      outcome: "Successfully bridged the gap between marginalized communities and support services while enhancing full-stack and automation skills."
+      outcome: "Delivered a working community-support application while demonstrating team leadership, mobile development, data automation and integration testing."
     }
   },
   {
     id: 5,
-    categories: ["DESKTOP", "OOP", "MANAGEMENT"],
-    title: "Car Service Maintenance System",
-    description: "Object-Oriented Programming (OOP) system developed in Java. Facilitates customer car service requests, payment processing, and staff job assignments.",
-    tech: ["Java", "Eclipse", "MySQL", "XAMPP"],
+    projectArea: "development",
+    categories: ["MOBILE", "BACKEND", "TOURISM"],
+    title: "TourEase - Smart Heritage Guide",
+    description: "A collaborative Flutter tourism application integrating backend data, third-party APIs, maps and an AI assistant. Awarded first place at DICRATHON 2024.",
+    tech: ["Flutter", "Dart", "Python", "REST APIs", "Postman", "Azure PostgreSQL"],
     links: [
-        { type: "demo", url: "https://youtu.be/DDuG1yB9RN0" }
+      { type: "github", url: "https://github.com/MuhdArshadd/TourEase" },
+      { type: "demo", url: "https://youtu.be/gQyQ8sYruE4" }
     ],
     status: "Completed",
     details: {
-      challenge: "Manual tracking of car service bookings, mechanic job assignments, and invoice generation leads to operational inefficiencies.",
-      solution: "Built a robust Java-based desktop application utilizing pure Object-Oriented principles and an interconnected MySQL database.",
+      challenge: "Help tourists access relevant heritage information, navigation and assistance through a single mobile experience.",
+      solution: "Contributed application features that integrated third-party REST APIs and backend data, validating responses with Postman and Python checks before application integration.",
       features: [
-          "Secure user authentication for Staff and Customers", 
-          "End-to-end service booking and schedule management", 
-          "Payment processing and automated invoice receipt generation", 
-          "Staff dashboard for job assignment and review"
+        "Google Maps navigation and destination discovery",
+        "AI-assisted tourist guidance",
+        "HTTP status, JSON field and response-structure validation",
+        "Backend and external API integration"
       ],
-      outcome: "Created a highly structured, modular codebase demonstrating strong foundational knowledge of Java and OOP patterns."
+      outcome: "Contributed to the functional prototype that received first place at the UPSI Digital Creative Marathon."
     }
   },
   {
     id: 6,
-    categories: ["CLI", "C++", "DATABASES"],
-    title: "Tuition Centre Management System",
-    description: "A robust Command Line Interface (CLI) application addressing operational inefficiencies in education institutions, upgraded with PostgreSQL for enterprise-grade transactional safety.",
-    tech: ["C++", "PostgreSQL", "Visual Studio 2026", "OOP", "libpqxx"],
+    projectArea: "development",
+    categories: ["WEB", "FRONTEND", "CLIENT PROJECT"],
+    title: "BWR Services - Aircond Specialist",
+    description: "A responsive business website designed to establish a professional web presence and move visitors directly into a pre-filled WhatsApp booking flow.",
+    tech: ["React", "Tailwind CSS", "Vite", "Vercel"],
     links: [
-        { type: "github", url: "https://github.com/MuhdArshadd/TuitionCentre" }
+      { type: "github", url: "https://github.com/MuhdArshadd/BWR_SERVICES" },
+      { type: "website", url: "https://bwr-services.vercel.app/" }
     ],
     status: "Completed",
     details: {
-      challenge: "Tuition centers face administrative bottlenecks managing student enrollments, tracking unpaid fees, and maintaining complex relational data integrity across multiple user types.",
-      solution: "Engineered a scalable C++ application utilizing the PostgreSQL libpqxx connector, implementing modern RAII memory management and atomic database transactions.",
+      challenge: "The service business relied on social platforms and needed a focused website that clearly explained its services and made enquiries straightforward.",
+      solution: "Designed and built a responsive React landing page with clear service information, social proof and a direct WhatsApp conversion path.",
       features: [
-          "Dynamic Enrollment/Unroll module with real-time quota tracking and safe LEFT JOIN timetable generation", 
-          "Automated tuition fee calculation and simulated payment processing via pqxx::work transactional wrappers", 
-          "Subject and User management modules enforcing strict Foreign Key cascading and relational data integrity", 
-          "Memory-safe execution architecture designed to completely eradicate memory leaks and double-free hazards"
+        "Responsive mobile and desktop layouts",
+        "Pre-filled WhatsApp booking messages",
+        "Customer review presentation",
+        "Service-work image gallery"
       ],
-      outcome: "Successfully refactored a digital transformation prototype into an enterprise-ready, memory-safe CLI application with robust database architecture."
+      outcome: "Delivered a live, shareable business website that provides customers with a clearer path from discovery to enquiry."
     }
   },
+  {
+    id: 7,
+    projectArea: "development",
+    categories: ["DESKTOP", "JAVA", "OOP"],
+    title: "Car Service Maintenance System",
+    description: "A Java desktop system for customer service requests, payments and staff job assignments, built around object-oriented design and relational data.",
+    tech: ["Java", "MySQL", "OOP", "Eclipse"],
+    links: [
+      { type: "demo", url: "https://youtu.be/DDuG1yB9RN0" }
+    ],
+    status: "Completed",
+    details: {
+      challenge: "Replace manual tracking of service bookings, mechanic assignments and invoices with a structured application workflow.",
+      solution: "Built a role-based Java desktop application connected to MySQL, applying object-oriented principles across customer and staff workflows.",
+      features: [
+        "Staff and customer authentication",
+        "Service booking and schedule management",
+        "Payment and invoice workflows",
+        "Staff job-assignment dashboard"
+      ],
+      outcome: "Demonstrates foundational Java, object-oriented design and relational database integration."
+    }
+  },
+  {
+    id: 8,
+    projectArea: "development",
+    categories: ["CLI", "C++", "DATABASES"],
+    title: "Tuition Centre Management System",
+    description: "A command-line management system built in C++ with MySQL to support enrolment, fee tracking and administrative workflows.",
+    tech: ["C++", "MySQL", "OOP", "SQL"],
+    links: [
+      { type: "github", url: "https://github.com/MuhdArshadd/TuitionCentre" }
+    ],
+    status: "Completed",
+    details: {
+      challenge: "Reduce manual administration around student enrolment, class availability, fees and related records.",
+      solution: "Developed a C++ command-line application using object-oriented design and a relational MySQL database.",
+      features: [
+        "Student enrolment and class-capacity tracking",
+        "Tuition fee calculation and payment records",
+        "Subject and user-management workflows",
+        "Relational data retrieval with SQL"
+      ],
+      outcome: "Demonstrates early foundations in C++, object-oriented programming, SQL and end-to-end system development."
+    }
+  }
 ];
