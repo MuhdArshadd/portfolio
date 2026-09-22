@@ -30,7 +30,7 @@ export const projectsData = [
     description: "A focused unit-testing project using dependency injection, mocks and automated build/test workflows to isolate C++ components and verify behaviour.",
     tech: ["C++", "GoogleTest", "GoogleMock", "CMake", "CTest", "GitLab CI"],
     links: [
-        { type: "github", url: "https://gitlab.com/arshad-group3/cpp-unit-testing-training" },
+        { type: "gitlab", url: "https://gitlab.com/arshad-group3/cpp-unit-testing-training" },
     ],
     status: "Practice Project",
     details: {
