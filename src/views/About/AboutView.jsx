@@ -1,5 +1,6 @@
 import React from "react";
 import { Icons } from "../../components/icons/Icons";
+import { portfolioData } from "../../data";
 import "./AboutView.css";
 import "../index.css";
 
@@ -98,27 +99,33 @@ export const AboutView = () => {
       <h2 className="section-heading">CERTIFICATIONS &amp; PROFESSIONAL LEARNING</h2>
 
       <div className="about-card credential-card">
-        <div className="credential-item">
-          <div>
-            <div className="credential-name">TalentLabs Certified Associate in Back-End Development</div>
-            <div className="credential-note">Backend development programme</div>
+        {portfolioData.certificationsAndLearning.map((credential) => (
+          <div className="credential-item" key={credential.id}>
+            <div>
+              <div className="credential-name">{credential.name}</div>
+              <div className="credential-note">
+                {credential.note}
+                {credential.link && (
+                  <>
+                    {" "}
+                    <a
+                      className="credential-link"
+                      href={credential.link.url}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {credential.link.label}
+                    </a>
+                    .
+                  </>
+                )}
+              </div>
+            </div>
+            <span className={`credential-status ${credential.statusClass}`}>
+              {credential.status}
+            </span>
           </div>
-          <span className="credential-status completed">Completed</span>
-        </div>
-        <div className="credential-item">
-          <div>
-            <div className="credential-name">ISTQB Certified Tester Foundation Level (CTFL) v4.0</div>
-            <div className="credential-note">Certification preparation</div>
-          </div>
-          <span className="credential-status learning">Self-study in progress</span>
-        </div>
-        <div className="credential-item">
-          <div>
-            <div className="credential-name">Certified Quantitative Risk Management (CQRM)</div>
-            <div className="credential-note">Examination completed</div>
-          </div>
-          <span className="credential-status pending">Certification pending</span>
-        </div>
+        ))}
       </div>
 
       {/* Education Section */}

@@ -64,9 +64,25 @@ export const ExperiencesView = () => {
                     </h2>
 
                     <div className="timeline-container">
-                        {/* 1. Multi-Award Winner (HeartCare) */}
+                        {/* 1. MyMahir TalentLabs */}
                         <div className="timeline-item">
                             <div className="timeline-dot dot-purple active"></div>
+                            <div className="timeline-date">2026</div>
+                            <h3 className="timeline-role">MyMahir TalentLabs — Associate Back-End Development</h3>
+                            <div className="timeline-company">@ TalentLabs x MyMahir</div>
+                            <p className="timeline-desc">
+                                Selected for an industry-focused Train-&-Place programme covering backend development, Express.js, algorithms, coding practice, and career readiness to prepare participants for technology roles.
+                            </p>
+                            <div className="timeline-tech">
+                                <span className="tech-badge">Backend Development</span>
+                                <span className="tech-badge">Upskilling</span>
+                                <span className="tech-badge">Career Readiness</span>
+                            </div>
+                        </div>
+
+                        {/* 2. Multi-Award Winner (HeartCare) */}
+                        <div className="timeline-item">
+                            <div className="timeline-dot dot-purple"></div>
                             <div className="timeline-date">2025 - 2026</div>
                             <h3 className="timeline-role">HeartCare Innovation Awards</h3>
                             <div className="timeline-company">@ iDRIVE, InnoGEN & WINSTEM</div>
@@ -79,7 +95,7 @@ export const ExperiencesView = () => {
                             </div>
                         </div>
 
-                        {/* 2. KYouthXGIFT Distinction */}
+                        {/* 3. KYouthXGIFT Distinction */}
                         <div className="timeline-item">
                             <div className="timeline-dot dot-purple"></div>
                             <div className="timeline-date">2025</div>
@@ -94,7 +110,7 @@ export const ExperiencesView = () => {
                             </div>
                         </div>
 
-                        {/* 3. D’FTMK-A-THON Hackathon */}
+                        {/* 4. D’FTMK-A-THON Hackathon */}
                         <div className="timeline-item">
                             <div className="timeline-dot dot-purple"></div>
                             <div className="timeline-date">2025</div>
@@ -109,7 +125,7 @@ export const ExperiencesView = () => {
                             </div>
                         </div>
 
-                        {/* 4. DICRATHON Hackathon */}
+                        {/* 5. DICRATHON Hackathon */}
                         <div className="timeline-item">
                             <div className="timeline-dot dot-purple"></div>
                             <div className="timeline-date">2024</div>
@@ -124,7 +140,7 @@ export const ExperiencesView = () => {
                             </div>
                         </div>
 
-                        {/* 5. IoT Bootcamp Mentor */}
+                        {/* 6. IoT Bootcamp Mentor */}
                         <div className="timeline-item">
                             <div className="timeline-dot dot-purple"></div>
                             <div className="timeline-date">2024</div>
@@ -140,7 +156,7 @@ export const ExperiencesView = () => {
                             </div>
                         </div>
 
-                        {/* 6. YBR Scholarship */}
+                        {/* 7. YBR Scholarship */}
                         <div className="timeline-item">
                             <div className="timeline-dot dot-purple"></div>
                             <div className="timeline-date">2023</div>

@@ -13,7 +13,41 @@ export const portfolioData = {
         email: "arshadmuhd50@gmail.com",
         github: "https://github.com/MuhdArshadd",
         linkedin: "https://www.linkedin.com/in/muhdarshad50/"
-    }
+    },
+    certificationsAndLearning: [
+        {
+            id: "talentlabs-backend-development",
+            name: "TalentLabs Certified Associate in Back-End Development",
+            note: "Backend development programme",
+            status: "Completed",
+            statusClass: "completed"
+        },
+        {
+            id: "istqb-ctfl-v4",
+            name: "ISTQB Certified Tester Foundation Level (CTFL) v4.0",
+            note: "Certification preparation",
+            status: "Self-study in progress",
+            statusClass: "learning"
+        },
+        {
+            id: "cqrm",
+            name: "Certified Quantitative Risk Management (CQRM)",
+            note: "Examination completed",
+            status: "Certification pending",
+            statusClass: "pending"
+        },
+        {
+            id: "kyouthxgift-2025",
+            name: "KYouthXGIFT 2025",
+            note: "Online upskilling and professional readiness program in Malaysia under Khazanah Nasional's broader",
+            status: "Top 15% Distinction",
+            statusClass: "distinction",
+            link: {
+                label: "K-Youth Development Programme",
+                url: "https://www.khazanah.com.my/for-malaysia-and-its-people/capacity-building-initiatives/k-youth/"
+            }
+        }
+    ]
 };
 
 export const rolesData = [

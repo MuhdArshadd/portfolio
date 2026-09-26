@@ -120,6 +120,15 @@
     font-size: 12px;
 }
 
+.credential-link {
+    color: #4fc1ff;
+    text-decoration: none;
+}
+
+.credential-link:hover {
+    text-decoration: underline;
+}
+
 .credential-status {
     flex-shrink: 0;
     padding: 4px 8px;
@@ -133,6 +142,7 @@
 .credential-status.completed { color: #4ec9b0; border-color: rgba(78, 201, 176, 0.45); }
 .credential-status.learning { color: #4fc1ff; border-color: rgba(79, 193, 255, 0.45); }
 .credential-status.pending { color: #ce9178; border-color: rgba(206, 145, 120, 0.45); }
+.credential-status.distinction { color: #dcdcaa; border-color: rgba(220, 220, 170, 0.55); }
 
 /* Education Cards */
 .edu-card {
