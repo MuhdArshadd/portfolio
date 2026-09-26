@@ -50,6 +50,10 @@
     margin: 0;
 }
 
+.intro-details p {
+    margin-top: 1.8em;
+}
+
 .highlight-blue {
     color: #4fc1ff;
     font-weight: bold;
@@ -86,6 +90,98 @@
     font-size: 16px;
 }
 
+/* Selected recognition */
+.recognition-panel {
+    padding: 20px;
+}
+
+.recognition-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.recognition-card {
+    padding: 18px;
+    border: 1px solid #333333;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.015);
+}
+
+.recognition-category {
+    color: #c586c0;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.recognition-card h3 {
+    margin: 8px 0 12px;
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 15px;
+}
+
+.recognition-card ul {
+    margin: 0;
+    padding-left: 18px;
+    color: #9d9d9d;
+    font-size: 12px;
+    line-height: 1.65;
+}
+
+.recognition-card li::marker {
+    color: #dcdcaa;
+}
+
+.recognition-link,
+.mobile-disclosure-button {
+    border: 0;
+    background: transparent;
+    color: #4fc1ff;
+    cursor: pointer;
+    font-family: 'Consolas', monospace;
+    font-size: 12px;
+}
+
+.recognition-link {
+    display: block;
+    margin: 18px 0 0 auto;
+    padding: 0;
+}
+
+.recognition-link:hover {
+    text-decoration: underline;
+}
+
+.mobile-disclosure-button:hover {
+    color: #ffffff;
+}
+
+.recognition-link:focus-visible,
+.mobile-disclosure-button:focus-visible {
+    outline: 1px solid #4fc1ff;
+    outline-offset: 4px;
+}
+
+.mobile-disclosure-button {
+    display: none;
+}
+
+.disclosure-chevron {
+    width: 7px;
+    height: 7px;
+    border-right: 1px solid currentColor;
+    border-bottom: 1px solid currentColor;
+    transform: rotate(45deg);
+    transition: transform 0.15s ease;
+}
+
+.mobile-disclosure-button[aria-expanded="true"] .disclosure-chevron {
+    transform: rotate(225deg);
+}
+
 /* Certifications */
 .credential-card {
     display: flex;
@@ -102,7 +198,7 @@
     border-bottom: 1px solid #333333;
 }
 
-.credential-item:last-child {
+.credential-item:last-of-type {
     padding-bottom: 0;
     border-bottom: none;
 }
@@ -214,6 +310,19 @@
         gap: 15px;
     }
 
+    .recognition-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .recognition-card {
+        padding: 15px;
+    }
+
+    .recognition-link {
+        margin-left: 0;
+        text-align: left;
+    }
+
     /* 4. Prevent Education title & date from crashing into each other */
     .edu-header {
         flex-direction: column;
@@ -226,10 +335,65 @@
         padding: 15px;
     }
 
+    .intro-details {
+        display: none;
+    }
+
+    .intro-details.is-visible {
+        display: block;
+    }
+
     .credential-item {
         align-items: flex-start;
         flex-direction: column;
         gap: 10px;
+    }
+
+    .credential-item-extra {
+        display: none;
+    }
+
+    .credential-card.show-all .credential-item-extra {
+        display: flex;
+    }
+
+    .mobile-disclosure-button {
+        display: flex;
+        align-items: center;
+        align-self: stretch;
+        justify-content: space-between;
+        width: 100%;
+        padding: 10px 0 2px;
+        color: #cccccc;
+        text-align: left;
+        text-decoration: none;
+    }
+
+    .intro-disclosure {
+        margin-top: 8px;
+        border-top: 1px solid #333333;
+    }
+
+    .education-disclosure {
+        margin: -5px 0 20px;
+        padding: 10px 0;
+        border-top: 1px solid #333333;
+        border-bottom: 1px solid #333333;
+    }
+
+    .earlier-education {
+        display: none;
+    }
+
+    .earlier-education.is-visible {
+        display: block;
+    }
+
+    .about-container.animate-view > .education-disclosure,
+    .about-container.animate-view > .earlier-education {
+        opacity: 1;
+        transform: none;
+        animation: none;
     }
     
     /* 6. Tighten up the section margins */

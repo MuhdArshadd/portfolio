@@ -14,6 +14,28 @@ export const portfolioData = {
         github: "https://github.com/MuhdArshadd",
         linkedin: "https://www.linkedin.com/in/muhdarshad50/"
     },
+    selectedRecognition: [
+        {
+            id: "heartcare-innovation-awards",
+            category: "Innovation",
+            title: "HeartCare Innovation Awards",
+            results: [
+                "Gold — iDRIVE 2025",
+                "Silver — WINSTEM 2025",
+                "Silver — InnoGEN 2026"
+            ]
+        },
+        {
+            id: "hackathon-placements",
+            category: "Hackathons",
+            title: "Competitive Placements",
+            results: [
+                "1st Place — UPSI DICRATHON 2024",
+                "2nd Place — UTeM Code for Innovation 2025",
+                "Bronze Award  — STGEMS x SULAM IoT Bootcamp & Challenge 2024"
+            ]
+        }
+    ],
     certificationsAndLearning: [
         {
             id: "talentlabs-backend-development",
@@ -46,6 +68,20 @@ export const portfolioData = {
                 label: "K-Youth Development Programme",
                 url: "https://www.khazanah.com.my/for-malaysia-and-its-people/capacity-building-initiatives/k-youth/"
             }
+        },
+        {
+            id: "all-semester-deans-list",
+            name: "All-Semester Dean's List",
+            note: "Recognised on the Dean's List for every semester at UTeM",
+            status: "All Semesters",
+            statusClass: "distinction"
+        },
+        {
+            id: "yayasan-bank-rakyat-scholarship",
+            name: "Yayasan Bank Rakyat Scholarship Recipient",
+            note: "Awarded a bond-free scholarship in recognition of academic performance and extracurricular involvement",
+            status: "Scholarship Recipient",
+            statusClass: "distinction"
         }
     ]
 };
